@@ -1,0 +1,337 @@
+CSCE 2014 - Laboratory Report
+Student Information:
+Name: Sebastian Vivo
+UAID: 010849203
+Assignment: lab14
+Laboratory Contents:
+
+
+Step #1:
+int main()
+{
+   Heap heap;
+   int num = 0;
+   heap.Insert(3);
+   heap.Print();
+   heap.Insert(1);
+   heap.Print();
+   heap.Insert(4);
+   heap.Print();
+   heap.Insert(1);
+   heap.Print();
+   heap.Insert(5);
+   heap.Print();
+   heap.Insert(9);
+   heap.Print();
+
+   while(!heap.IsEmpty())
+   {
+     heap.Remove(num);
+     cout << "Number removed: " << num << endl;
+     heap.Print();
+   }
+}
+
+
+Step #2:
+3
+3 1
+4 1 3
+4 1 3 1
+5 4 3 1 1
+9 4 5 1 1 3
+Number removed: 9
+5 4 3 1 1
+Number removed: 5
+4 1 3 1
+Number removed: 4
+3 1 1
+Number removed: 3
+1 1
+Number removed: 1
+1
+Number removed: 1
+
+Step #3:
+7
+7 4
+8 4 7
+8 8 7 4
+10 8 7 4 8
+10 8 7 4 8 2
+10 8 9 4 8 2 7
+10 8 9 8 8 2 7 4
+10 8 9 8 8 2 7 4 8
+10 8 9 8 8 2 7 4 8 4
+10 8 9 8 8 2 7 4 8 4 0
+10 8 9 8 8 5 7 4 8 4 0 2
+12 8 10 8 8 9 7 4 8 4 0 2 5
+12 8 10 8 8 9 7 4 8 4 0 2 5 2
+12 8 12 8 8 9 10 4 8 4 0 2 5 2 7
+Number removed: 12
+12 8 10 8 8 9 7 4 8 4 0 2 5 2
+Number removed: 12
+10 8 9 8 8 5 7 4 8 4 0 2 2
+Number removed: 10
+9 8 7 8 8 5 2 4 8 4 0 2
+Number removed: 9
+8 8 7 8 8 5 2 4 2 4 0
+Number removed: 8
+8 8 7 4 8 5 2 0 2 4
+Number removed: 8
+8 8 7 4 4 5 2 0 2
+Number removed: 8
+8 4 7 2 4 5 2 0
+Number removed: 8
+7 4 5 2 4 0 2
+Number removed: 7
+5 4 2 2 4 0
+Number removed: 5
+4 4 2 2 0
+Number removed: 4
+4 2 2 0
+Number removed: 4
+2 0 2
+Number removed: 2
+2 0
+Number removed: 2
+0
+Number removed: 0
+
+7
+9 7
+13 7 9
+18 13 9 7
+18 13 9 7 10
+18 13 12 7 10 9
+18 13 12 7 10 9 4
+18 18 12 13 10 9 4 7
+18 18 12 13 10 9 4 7 3
+18 18 12 13 10 9 4 7 3 9
+18 18 12 13 10 9 4 7 3 9 0
+18 18 12 13 10 9 4 7 3 9 0 5
+18 18 12 13 10 12 4 7 3 9 0 5 9
+18 18 12 13 10 12 4 7 3 9 0 5 9 2
+18 18 12 13 10 12 7 7 3 9 0 5 9 2 4
+18 18 12 13 10 12 7 7 3 9 0 5 9 2 4 3
+18 18 12 13 10 12 7 7 3 9 0 5 9 2 4 3 7
+18 18 12 13 10 12 7 7 9 9 0 5 9 2 4 3 7 3
+18 18 12 13 10 12 7 7 9 9 0 5 9 2 4 3 7 3 0
+18 18 12 13 12 12 7 7 9 10 0 5 9 2 4 3 7 3 0 9
+Number removed: 18
+18 13 12 9 12 12 7 7 9 10 0 5 9 2 4 3 7 3 0
+Number removed: 18
+13 12 12 9 10 12 7 7 9 0 0 5 9 2 4 3 7 3
+Number removed: 13
+12 10 12 9 3 12 7 7 9 0 0 5 9 2 4 3 7
+Number removed: 12
+12 10 12 9 3 9 7 7 9 0 0 5 7 2 4 3
+Number removed: 12
+12 10 9 9 3 7 7 7 9 0 0 5 3 2 4
+Number removed: 12
+10 9 9 9 3 7 7 7 4 0 0 5 3 2
+Number removed: 10
+9 9 9 7 3 7 7 2 4 0 0 5 3
+Number removed: 9
+9 7 9 4 3 7 7 2 3 0 0 5
+Number removed: 9
+9 7 7 4 3 5 7 2 3 0 0
+Number removed: 9
+7 4 7 3 3 5 7 2 0 0
+Number removed: 7
+7 4 7 3 3 5 0 2 0
+Number removed: 7
+7 4 5 3 3 0 0 2
+Number removed: 7
+5 4 2 3 3 0 0
+Number removed: 5
+4 3 2 0 3 0
+Number removed: 4
+3 3 2 0 0
+Number removed: 3
+3 0 2 0
+Number removed: 3
+2 0 0
+Number removed: 2
+0 0
+Number removed: 0
+0
+Number removed: 0
+
+7
+24 7
+24 7 23
+24 8 23 7
+24 8 23 7 5
+24 8 23 7 5 22
+24 8 23 7 5 22 19
+24 8 23 7 5 22 19 3
+24 23 23 8 5 22 19 3 7
+24 23 23 8 9 22 19 3 7 5
+24 23 23 8 15 22 19 3 7 5 9
+24 23 23 8 15 22 19 3 7 5 9 15
+24 23 23 8 15 22 19 3 7 5 9 15 17
+24 23 23 8 15 22 19 3 7 5 9 15 17 17
+24 23 23 8 15 22 19 3 7 5 9 15 17 17 12
+24 23 23 8 15 22 19 3 7 5 9 15 17 17 12 3
+24 23 23 8 15 22 19 3 7 5 9 15 17 17 12 3 2
+24 23 23 8 15 22 19 3 7 5 9 15 17 17 12 3 2 4
+24 23 23 15 15 22 19 3 8 5 9 15 17 17 12 3 2 4 7
+24 23 23 15 15 22 19 3 8 12 9 15 17 17 12 3 2 4 7 5
+24 23 23 15 15 22 19 3 8 12 9 15 17 17 12 3 2 4 7 5 3
+24 23 23 15 19 22 19 3 8 12 15 15 17 17 12 3 2 4 7 5 3 9
+24 23 23 15 19 22 19 3 8 12 15 15 17 17 12 3 2 4 7 5 3 9 9
+24 23 23 15 19 22 19 3 8 12 15 15 17 17 12 3 2 4 7 5 3 9 9 7
+24 23 23 15 19 22 19 3 8 12 15 15 17 17 12 3 2 4 7 5 3 9 9 7 10
+Number removed: 24
+23 19 23 15 15 22 19 3 8 12 10 15 17 17 12 3 2 4 7 5 3 9 9 7
+Number removed: 23
+23 19 22 15 15 17 19 3 8 12 10 15 7 17 12 3 2 4 7 5 3 9 9
+Number removed: 23
+22 19 19 15 15 17 17 3 8 12 10 15 7 9 12 3 2 4 7 5 3 9
+Number removed: 22
+19 15 19 9 15 17 17 3 8 12 10 15 7 9 12 3 2 4 7 5 3
+Number removed: 19
+19 15 17 9 15 15 17 3 8 12 10 3 7 9 12 3 2 4 7 5
+Number removed: 19
+17 15 17 9 15 15 12 3 8 12 10 3 7 9 5 3 2 4 7
+Number removed: 17
+17 15 15 9 15 7 12 3 8 12 10 3 7 9 5 3 2 4
+Number removed: 17
+15 15 15 9 12 7 12 3 8 4 10 3 7 9 5 3 2
+Number removed: 15
+15 12 15 9 10 7 12 3 8 4 2 3 7 9 5 3
+Number removed: 15
+15 12 12 9 10 7 9 3 8 4 2 3 7 3 5
+Number removed: 15
+12 10 12 9 5 7 9 3 8 4 2 3 7 3
+Number removed: 12
+12 10 9 9 5 7 3 3 8 4 2 3 7
+Number removed: 12
+10 9 9 8 5 7 3 3 7 4 2 3
+Number removed: 10
+9 8 9 7 5 7 3 3 3 4 2
+Number removed: 9
+9 8 7 7 5 2 3 3 3 4
+Number removed: 9
+8 7 7 4 5 2 3 3 3
+Number removed: 8
+7 5 7 4 3 2 3 3
+Number removed: 7
+7 5 3 4 3 2 3
+Number removed: 7
+5 4 3 3 3 2
+Number removed: 5
+4 3 3 2 3
+Number removed: 4
+3 3 3 2
+Number removed: 3
+3 2 3
+Number removed: 3
+3 2
+Number removed: 3
+2
+Number removed: 2
+
+
+Step #4:
+To be added...
+
+Step #5:
+void Heap::Print()
+{
+   for (int index = 1; index <= Count; index++)
+      cout << -1 * heap[index] << " ";
+   cout << endl;
+}
+int main()
+{
+   Heap heap;
+   int n = 0;
+   int num = 0;
+   cout << "Enter an integer between 0 - 25: ";
+   cin >> n;
+
+   for(int i = 0; i < n; i++)
+   {
+     int val = -1 * (rand() % n);
+     heap.Insert(val);
+     heap.Print();
+   }
+
+   while(!heap.IsEmpty())
+   {
+     heap.Remove(num);
+     cout << "Number removed: " << -1 * num << endl;
+     heap.Print();
+   }
+}
+
+Step #6:
+7
+7 9
+7 9 13
+7 9 13 18
+7 9 13 18 10
+7 9 12 18 10 13
+4 9 7 18 10 13 12
+4 9 7 18 10 13 12 18
+3 4 7 9 10 13 12 18 18
+3 4 7 9 9 13 12 18 18 10
+0 3 7 9 4 13 12 18 18 10 9
+0 3 5 9 4 7 12 18 18 10 9 13
+0 3 5 9 4 7 12 18 18 10 9 13 12
+0 3 2 9 4 7 5 18 18 10 9 13 12 12
+0 3 2 9 4 7 5 18 18 10 9 13 12 12 7
+0 3 2 3 4 7 5 9 18 10 9 13 12 12 7 18
+0 3 2 3 4 7 5 7 18 10 9 13 12 12 7 18 9
+0 3 2 3 4 7 5 7 9 10 9 13 12 12 7 18 9 18
+0 0 2 3 4 7 5 7 3 10 9 13 12 12 7 18 9 18 9
+0 0 2 3 4 7 5 7 3 10 9 13 12 12 7 18 9 18 9 12
+Number removed: 0
+0 3 2 3 4 7 5 7 9 10 9 13 12 12 7 18 9 18 12
+Number removed: 0
+2 3 5 3 4 7 7 7 9 10 9 13 12 12 12 18 9 18
+Number removed: 2
+3 3 5 7 4 7 7 9 9 10 9 13 12 12 12 18 18
+Number removed: 3
+3 4 5 7 9 7 7 9 9 10 18 13 12 12 12 18
+Number removed: 3
+4 7 5 9 9 7 7 18 9 10 18 13 12 12 12
+Number removed: 4
+5 7 7 9 9 12 7 18 9 10 18 13 12 12
+Number removed: 5
+7 9 7 9 9 12 7 18 12 10 18 13 12
+Number removed: 7
+7 9 7 9 9 12 12 18 12 10 18 13
+Number removed: 7
+7 9 12 9 9 13 12 18 12 10 18
+Number removed: 7
+9 9 12 12 9 13 12 18 18 10
+Number removed: 9
+9 9 12 12 10 13 12 18 18
+Number removed: 9
+9 10 12 12 18 13 12 18
+Number removed: 9
+10 12 12 18 18 13 12
+Number removed: 10
+12 12 12 18 18 13
+Number removed: 12
+12 13 12 18 18
+Number removed: 12
+12 13 18 18
+Number removed: 12
+13 18 18
+Number removed: 13
+18 18
+Number removed: 18
+18
+Number removed: 18
+
+
+
+
+Instructions:
+Show your lab report to your GTA for grading and feedback.
+Backup any files you want to keep and delete unwanted files.
+Logout from your machine.

@@ -1,0 +1,107 @@
+Name: Sebastian Vivo
+UAID: 010849203
+Assignment: lab13
+
+Step #1:
+int main()
+{
+  BinaryTree tree;
+  for(int i = 0; i < 10; i++)
+  {
+    int val = rand() % 10;
+    if (tree.Insert(val) == true)
+      cout << "Insert successful.\n";
+    else
+      cout << "Insert Failed.\n";
+  }
+}
+
+Step #2:
+Insert successful.
+Insert successful.
+Insert successful.
+Insert successful.
+Insert successful.
+Insert successful.
+Insert successful.
+Insert Failed.
+Insert Failed.
+Insert Failed.
+
+Step #3:
+int main()
+{
+  BinaryTree tree;
+  for(int i = 0; i < 10; i++)
+  {
+    int val = rand() % 10;
+    if (tree.Insert(val) == true)
+      cout << "Insert successful.\n";
+    else
+      cout << "Insert Failed.\n";
+  }
+}
+
+Step #4:
+Insert successful.
+Insert successful.
+Insert successful.
+Insert successful.
+Insert successful.
+Insert successful.
+Insert successful.
+Insert Failed.
+Insert Failed.
+Insert Failed.
+
+Step #5:
+int main()
+{
+  BinaryTree tree;
+  for(int i = 0; i < 10; i++)
+  {
+    int val = rand() % 10;
+    if (tree.Insert(val) == true)
+      cout << "Insert successful.\n";
+    else
+      cout << "Insert Failed.\n";
+  }
+}
+
+Step #6:
+Insert successful.
+Insert successful.
+Insert successful.
+Insert successful.
+Insert successful.
+Insert successful.
+Insert successful.
+Insert Failed.
+Insert Failed.
+Insert Failed.
+
+Step #7:
+int main()
+{
+  BinaryTree tree;
+  for(int i = 0; i < 10; i++)
+  {
+    int val = rand() % 10;
+    if (tree.Insert(val) == true)
+      cout << "Insert successful.\n";
+    else
+      cout << "Insert Failed.\n";
+  }
+}
+
+Step #8:
+Insert successful.
+Insert successful.
+Insert successful.
+Insert successful.
+Insert successful.
+Insert successful.
+Insert successful.
+Insert Failed.
+Insert Failed.
+Insert Failed.

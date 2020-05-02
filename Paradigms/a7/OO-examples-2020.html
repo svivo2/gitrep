@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+
+<p id="demo"></p>
+
+<script>
+
+// Weird string conversions
+console.log("1.1" + "1.1");
+
+console.log((+"1.1") + (+"1.1"));
+
+console.log(+"1.1" + +"1.1");
+
+console.log("This is a string".length);
+
+// Weird array behavior
+myArray = ["zero", "one", , "three"];
+console.log("myArray length: " + myArray.length);
+
+console.log("Array contents(1):");
+for (s in myArray) {
+	console.log(s + " " + myArray[s]);
+}
+
+console.log("Array contents(2):");
+for (var i = 0; i<myArray.length; i++) {
+	console.log(i + " " + myArray[i]);
+}
+console.log(myArray);
+console.log(typeof(myArray));
+
+
+
+// Weird object behavior
+var car = { myCar: "Honda",  engine: "V6", mileage: 100000};
+
+console.log("looking at car(1):");
+console.log(car["myCar"]);
+console.log(car.myCar);
+
+console.log("looking at car(2):");
+var Sales = "Toyota";
+function CarTypes(name) {
+	if (name == "Honda") {
+		return name;
+	} else {
+		return "Sorry, we don't sell " + name + ".";
+	}
+}
+var car = { myCar: "Saturn", getCar: CarTypes("Honda"), special: Sales };
+console.log(car.myCar); // Saturn
+console.log(car.getCar); // Honda
+console.log(car.special); // Toyota
+
+console.log("looking at car(3:");
+var car = { manyCars: {a: "Saab", "b": "Jeep"}, 7: "Mazda" };
+console.log(car.manyCars.b); // Jeep
+console.log(car[7]); // Mazda
+console.log(car["7"]); // Mazda
+
+console.log("unusual property names");
+
+var unusualPropertyNames = {
+	"": "An empty string",
+	"!": "Bang!"
+}
+//console.log(unusualPropertyNames.""); // SyntaxError: Unexpected string
+console.log(unusualPropertyNames[""]); // "An empty string"
+//console.log(unusualPropertyNames.!); // SyntaxError: Unexpected token !
+console.log(unusualPropertyNames["!"]); // "Bang!"
+
+var foo = {a: "alpha", 2: "two"};
+console.log(foo.a); // alpha
+console.log(foo[2]); // two
+//console.log(foo.2); // Error: missing ) after argument list
+//console.log(foo[a]); // Error: a is not defined
+console.log(foo["a"]); // alpha
+console.log(foo["2"]); // two
+
+console.log("using an object as a key");
+var str = "myString";
+var rand = Math.random();
+var obj = new Object();
+obj["foo"] = "FOO";
+
+var myObj = new Object();
+myObj.type              = "Dot syntax";
+myObj["date created"]   = "String with space";
+myObj[str]              = "String value";
+myObj[rand]             = "Random Number";
+myObj[obj]              = "Object as key";
+myObj[""]               = "Even an empty string";
+myObj["FOO"]			= "blah";
+
+console.log(myObj.type);
+console.log(myObj["type"]);
+console.log(myObj);
+console.log(myObj[""]);
+//console.log(myObj."");
+console.log(myObj.obj);
+console.log(myObj[obj]);
+console.log(obj.foo);
+console.log(myObj[obj.foo]);
+
+////////////////////////////////////////////////////////////////
+// Create an object:
+console.log("looking at person...");
+var person = {
+  firstName: "John",
+  lastName : "Doe",
+  id     : 5566,
+  fullName : function() {
+	console.log(this);
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+// Display data from the object:
+console.log(person.fullName());
+
+
+console.log("looking at Person2...");
+function Person2(first, last) {
+	this.first = first;
+	this.last = last;
+	console.log(this);
+}
+
+Person2.prototype.sayHello = function() {
+	console.log("Hi, my name is " + this.first + " " + this.last);
+}
+
+Person2("Some", "Body");
+var foo = new Person2("Tom", "Hanks");
+
+
+
+Person2();
+console.log(foo);
+console.log(foo.__proto__);
+
+foo.sayHello();
+
+
+var sayHelloFunction = foo.sayHello;
+
+sayHelloFunction();
+
+console.log(sayHelloFunction === foo.sayHello);
+
+console.log(sayHelloFunction === Person2.sayHello);
+
+console.log(sayHelloFunction === Person2.prototype.sayHello);
+
+sayHelloFunction.call(foo);
+
+
+
+function Car(brand) {
+	this.brand = brand;
+}
+Car.prototype.getBrand = function() {
+	console.log("This car's brand is " + this.brand);
+}
+Car.prototype.drive = function() {
+	console.log("Vroooooooom...");
+}
+
+
+mycar = new Car("Ford");
+
+console.log(mycar);
+console.log(foo);
+
+mycar.drive();
+
+function Convertible(brand) {
+	Car.call(this, brand);
+}
+Convertible.prototype = new Car();
+Convertible.prototype.constructor = Convertible;
+Convertible.prototype.openRoof = function() {
+	console.log("Feel the wind in your hair!");
+}
+Convertible.prototype.closeRoof = function() {
+	console.log("Block out that rain.");
+}
+
+var conv = new Convertible("Ferrari");
+conv.getBrand();
+conv.drive();
+conv.openRoof();
+
+console.log(conv instanceof Car);
+console.log(conv instanceof Convertible);
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+// Using ECMAScript2015 syntax - only as an example!! This is NOT how we'll create classes
+class CarX {
+  constructor(brand) {
+    this.carname = brand;
+  }
+}
+
+var c = new CarX("Junker");
+console.log(c);  // Notice how it still uses prototypes! The "class" keyword is just syntactic sugar.
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

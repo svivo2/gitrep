@@ -1,0 +1,299 @@
+
+<!-- saved from url=(0056)http://www.csce.uark.edu/~jgauch/2014/S19/labs/lab1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>CSCE 2014 - Laboratory Assignment 1</title>
+</head>
+
+<body>
+<script>
+function subproc()
+{
+if (! document.form1.firstname.value)
+   { alert("Error: Missing FIRST name"); }
+else if (! document.form1.lastname.value)
+   { alert("Error: Missing LAST name"); }
+else if (! document.form1.uaid.value)
+   { alert("Error: Missing UAID"); }
+else
+   { document.form1.submit(); }
+}
+</script> 
+ 
+<form action="http://www.csce.uark.edu/~jgauch/2014/S19/labs/upload_lab.cgi" method="post" name="form1">
+
+<center><h2> CSCE 2014 - Laboratory Assignment 1</h2></center>
+<ol>
+
+<p>The purpose of this lab is to get students started using the CSCE computers
+and the C++ programming environment we will be using this semester. In particular,
+we will start with an introduction to Mac OSX, and then we will start working 
+with the NetBeans programming environment. Since this will be the first time 
+using this software for most of you, our advice is to work through the instructions 
+one step at a time and ask your lab instructor and your classmates questions when 
+you are stuck.
+
+</p><h4><li>Introduction</li></h4>
+
+<p>Mac OSX is a Unix-based operating system derived from the the NeXT operating system, 
+which followed Steve Jobs on his return to Apple in the 90s. Even though Mac OSX is 
+proprietary, it is Unix-based and shares a lot of functionality with other Unix-based 
+operating systems. We have configured the lab machines with the NetBeans programming
+environment. We will use this to software to edit/compile/run programs. We will also 
+be using Unix commands to create directories and manage files.
+
+</p><p>Linux is an open source implementation of Unix that was started
+by Linus Torvalds in 1991. It is free and runs on a wide variety of hardware. For 
+students who want to program on their personal PC or laptop, it is possible to download
+a Linux virtual machine and use this programming environment outside lab times.
+We will talk more about this at a later date.
+
+</p><h4><li>Summary of Unix Commands</li></h4>
+
+<p>A number of useful Unix commands are listed and explained below. 
+To find out more about any Unix command, use the online manual pages 
+provided by the system. These pages typically show the different 
+options available, examples and list any known bugs. The following 
+list contains some common linux commands we will be working with today:
+
+</p><ul>
+<li>man: Display the manual pages of Linux commands
+</li><li>ls: Listing the contents of your current directory
+</li><li>more: Display a file a screen full at a time
+</li><li>rm: Deleting a file
+</li><li>pwd: Display the current working directory
+</li><li>mkdir: Creating a new directory
+</li><li>rmdir: Deleting an empty directory
+</li><li>cp: Copy one file/directory to another file/directory
+</li><li>mv: Rename/Moving a file/directory
+</li><li>cd: Changing to a directory
+</li><li>chmod: Changing user permissions of files/directories
+</li><li>top: Providing an ongoing look at processor activities in real time
+</li></ul>
+
+<h4><li>Practice with Unix Commands</li></h4>
+
+<p>In this section, students will get some practice with the Unix commands
+listed above to create and manage folders for labs and homework in this class.
+Since we will be creating a LOT of files and directories this semester, 
+we STRONGLY recommend that you keep everything organized as shown below.
+At the end of this lab, we will explain how to store/retrieve all your 2014
+files on the turing file server.
+
+</p><p>To open a command window, click on the "Terminal" icon at the bottom of 
+the page (it is supposed to look like an old black/white monitor).
+
+</p><p>In order to view the manual pages for these commands, you can use the "man" command.
+
+</p><pre>	man <command name=""></command>
+</pre>
+
+<p>Use "man" for 2-3 of the commands above to see what these pages look like.
+
+</p><p>Create a directory called csce2014 from inside your home directory.
+
+</p><pre>	cd ~
+	mkdir csce2014
+</pre>
+
+<p>Create the directories called lab1, lab2, and tmp from inside csce2014.
+
+</p><pre>	cd csce2014
+	mkdir lab1 lab2 tmp
+</pre>
+
+<p>From your home directory, list all the sub-directories inside csce2014 with their details.
+
+</p><pre>	cd ~
+	ls -al csce2014
+</pre>
+
+<p>Copy and paste the output results of the "ls" command below.
+</p><p><textarea name="step1" cols="70" rows="10"></textarea>
+
+</p><p>Use "man" to display the manual pages of the "rm" command. This time, 
+instead of displaying the page to the screen, you can save it to a text file 
+inside the tmp directory created above.
+
+</p><pre>	cd ~
+	man rm &gt; csce2014/tmp/rm_manual.txt
+</pre>
+
+<p>The "more" command will let you look at rm_manual.txt file one page at a time.
+
+</p><pre>	more csce2014/tmp/rm_manual.txt
+</pre>
+
+<p>Make a copy of the rm_manual.txt file in the lab1 directory called new_manual.txt.
+
+</p><pre>	cd ~/csce2014
+	cp -i tmp/rm_manual.txt lab1/new_manual.txt
+</pre>
+
+<p>Execute the "cp" command again. What happened?
+
+</p><p>Move the rm_manual.txt file from the tmp directory to the lab1 directory.
+
+</p><pre>	mv -i tmp/rm_manual.txt lab1/
+</pre>
+
+<p>Delete the empty directory tmp.
+
+</p><pre>	rmdir tmp
+</pre>
+
+<p>From csce2014, use "ls" to list the details of subdirectories as well as their contents.
+
+</p><pre>	cd ~/csce2014
+	ls -Ral
+</pre>
+
+<p>Copy and paste the output results of the "ls" command below.
+</p><p><textarea name="step2" cols="70" rows="10"></textarea>
+
+</p><h4><li>Configure your Unix Environment</li></h4>
+
+<p>When you login or create a new terminal window on OSX or Linux, 
+the system reads your ".bashrc" file in your home directory to load 
+your personalized settings. This file lets you create your own "alias" 
+for common commands, and set up your own search path when you
+have collected/created a number of programs.
+
+</p><p>Type in "alias" in your terminal window to see what the default
+aliases are on your machine. You will probably get a different 
+result on turing and on your local Mac, but hopefully you will 
+see the following. These aliases make the cp, mv, and rm command
+prompt you before removing or overwriting a file. This will save
+you from clobbering an important file at the least convenient time.
+
+</p><pre>	alias cp='cp -i'
+	alias mv='mv -i'
+	alias rm='rm -i'
+</pre>
+
+<p>If you do NOT see the aliases above, edit your .bashrc file in your 
+home directory using your favorite editor. Copy the lines above into 
+the bottom of file. If you type in "alias" right away, you will not
+see your new aliases yet. You need to create a new terminal window 
+or run "bash" in the current window to initialize these aliases.
+
+</p><p>NOTE: The .bashrc file above is local to the Mac you are using today. 
+If you move to another Mac next week, you will need to repeat the steps 
+above to set up your .bashrc aliases.
+
+</p><h4><li>Introduction to NetBeans</li></h4>
+
+<p>NetBeans is a popular integrated development environment (IDE) for writing and debugging
+programs in Java, C++, and other languages. Most IDEs have editors that are "syntax aware"
+and will help with indenting. They also have interfaces that let you click on compiler
+errors/warnings and jump directly to the incorrect code. There are also several features that 
+assist in tracing and debugging programs. On the downside, many IDEs have dozens of menu
+items, so it takes a while to learn how to use them effectively. 
+
+</p><p>For this lab, go through the following steps to create and compile a simple program.
+
+</p><ul>
+<li>Open the NetBeans application.
+</li><li>Now we can create an empty C++ program and NetBeans project to compile this code.
+</li><li>In the "File" menu, choose "New Project".
+</li><li>In Categories choose "C/C++", in Projects choose "C/C++ Application".
+</li><li>Click "Next".
+</li><li>Enter project name as "lab1".
+</li><li>Enter project location as "<em>your-home-directory</em>/csce2014".
+</li><li>The project folder will be automatically written as 
+"<em>your-home-directory</em>/csce2014/lab1".
+</li><li>Check option "Create Main File".
+</li><li>Click "Finish".
+</li><li>The IDE will now create a project called "lab1" in the left panel.
+</li><li>Inside the "Source Files" section there is a file called "main.cpp".
+</li><li>To compile and run this program click the green arrow button on the top bar.
+</li><li>Your program output (which should be blank) should appear in an output window.
+</li></ul>
+
+<p>Congratulations, you have now created your first C++ program using NetBeans! 
+The next step is to edit the source file and compile and run the program.
+
+</p><ul>
+<li>In the tab "Projects" in the left window, expand the "Source Files" section.
+</li><li>Double click on "main.cpp" to open up this file.
+</li><li>Edit the main function to add 'cout "testing 1 2 3\n"' (which has syntax errors).
+</li><li>To compile the program, select "Build Main Project" in the "Run" menu 
+(or just click the hammer button in the top bar).
+</li><li>You will see several error messages in the dialog box below the source code.
+</li><li>Click on the error message to go to bad line in "main.cpp" and fix the errors.
+</li><li>Compile and run the program again using the "Run" menu or by clicking on the green arrow.
+</li><li>You should see a different error message now.
+</li><li>Add the #include lines to add the iostream library and run the code again.
+</li><li>A new window should pop up with the message "testing 1 2 3" in it.
+</li><li>Finally, edit the program again to remove the testing 1 2 3 line and print out your 
+name and UAID number instead.
+</li></ul>
+
+<p>Copy and paste your program output into the text box below.
+</p><p><textarea name="step3" cols="70" rows="10"></textarea>
+
+</p><h4><li>Creating C++ Classes in NetBeans</li></h4>
+
+<p>In this section, we will be adding a C++ class called "Student" to the "lab1" project.
+There are several ways to do this, but we will show how NetBeans can be used to create
+skeleton code for the class (and save you lots of typing).
+
+</p><ul>
+<li>In the tab "Projects" in the left window, expand the "Source Files" section.
+</li><li>Right click on "Source Files," hover over "New," and click "C++ Class."
+</li><li>Type in "Student" for the class name, and click on "Finish".
+</li><li>You should now see "Student.cpp" and "Student.h" in the "Source Files" section.
+</li><li>Compile and run your program. It should still output your name and UAID number.
+</li><li>Now edit "Student.cpp" and add the following statements to the appropriate methods.
+<pre>	cout &lt;&lt; "In constructor\n";
+	cout &lt;&lt; "In copy constructor\n";
+	cout &lt;&lt; "In destructor\n";
+</pre>
+</li><li>Next edit "Student.h" and add the following statements above the class definition.
+<pre>	#include &lt;iostream&gt;
+	using namespace std;
+</pre>
+</li><li>Finally, edit "main.cpp" and declare two objects of the Student class.
+<pre>	Student thing1;
+	Student thing2(thing1);
+</pre>
+</li><li>Compile the program. You should get a "Student undeclared" error message.
+</li><li>Add the necessary include statement to "main.cpp" and run again.
+</li><li>You should get some output showing how the Student methods are called.
+</li><li>This style of incremental software development is a good habit to get into 
+as you create more complex programs this semester.
+</li></ul>
+
+<p>Copy and paste your final program output into the text box below.
+</p><p><textarea name="step4" cols="70" rows="10"></textarea>
+
+</p><h4><li>Submit Work</li></h4>
+
+<p>When you have completed all of the steps to this lab: 
+</p><ul>
+<li>Fill in the information below and hit "Submit Lab". 
+</li><li>This will produce a lab report showing what you have done. 
+</li><li>Show your lab report to your GTA for grading and feedback.
+</li><li>Backup any files you want to keep and delete unwanted files.
+</li><li>Logout from your machine. 
+</li></ul>
+
+<p><table border="0">
+<tbody><tr>
+<td>Enter your FIRST name: </td>
+<td><input type="text" size="20" name="firstname"></td>
+</tr>
+<tr>
+<td>Enter your LAST name: </td>
+<td><input type="text" size="20" name="lastname"></td>
+</tr>
+<tr>
+<td>Enter your UAID number: </td>
+<td><input type="text" size="20" name="uaid"></td>
+</tr>
+</tbody></table>
+<input type="hidden" name="prefix" value="lab1">
+</p><p><input type="button" value="Submit Lab" onclick="subproc();">
+
+</p></ol></form> 
+ 
+</body></html>

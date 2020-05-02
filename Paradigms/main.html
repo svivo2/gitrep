@@ -1,0 +1,140 @@
+
+Skip to content
+
+    Why GitHub?
+
+
+
+
+Enterprise
+Explore
+
+
+
+Marketplace
+Pricing
+
+
+
+
+
+Sign in
+Sign up
+
+3
+7
+
+    22
+
+kevin578/javascript-quiz
+Code
+Issues 1
+Pull requests 0
+Projects 0
+Security
+Insights
+Join GitHub today
+
+GitHub is home to over 40 million developers working together to host and review code, manage projects, and build software together.
+javascript-quiz/index.html
+kevin578 cleaned up 14833e3 on Oct 16, 2016
+49 lines (28 sloc) 1.09 KB
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Kevin's Kwiz!</title>
+<link href ="style.css" rel ="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<script src = "main.js"></script>
+
+</head>
+
+
+<body>
+<script>function eval(){
+
+  var question1 = document.quiz.question1.value;
+  var question2 = document.quiz.question2.value;
+  var question3 = document.quiz.question3.value;
+  var correct = 0;
+
+
+  if (question1 == "right") {
+    correct++;
+  }
+  if (question2 == "photosynthesis") {
+    correct++;
+  }
+  if (question3 == "soil") {
+    correct++;
+  }
+
+  var messages = ["Great job!", "That's just okay", "You really need to do better"];
+  var score;
+
+  if (correct == 0) {
+    score = 2;
+  }
+
+  if (correct > 0 && correct < 3) {
+    score = 1;
+  }
+
+  if (correct == 3) {
+    score = 0;
+  }
+
+  document.getElementById("after_submit").style.visibility = "visible";
+
+  document.getElementById("message").innerHTML = messages[score];
+  document.getElementById("number_correct").innerHTML = "You got " + correct + " correct.";
+  document.getElementById("picture").src = pictures[score];
+  }
+</script>
+
+
+<form id = "quiz" name = "quiz">
+
+
+<p>What is the capital of Rhode Island?</p>
+<input id = "textbox" type = "text" name = "question1">
+
+<p>What is the capital of Connecticut?</p>
+<input type = "radio" id = "mc" name = "question2" value = "Hartford" onclick = "eval();"> Hartford<br>
+<input type = "radio" id = "mc" name = "question2" value = "Heartford" onclick = "eval();"> Heartford<br>
+
+<p>What is the capital of New York?</p>
+
+<input type = "radio" id = "mc" name = "question3" value = "Albany" onclick = "eval();"> Albany<br>
+<input type = "radio" id = "mc" name = "question3" value = "All Benny's" onclick = "eval();"> All Benny's<br>
+
+<input id = "button" type = "button" value = "I'm finished!" onclick = "eval();">
+
+
+</form>
+
+<div id = "after_submit">
+<p id = "number_correct"></p>
+<p id = "message"></p>
+<img id = "picture">
+</div>
+</html>
+
+</body>
+
+
+
+    © 2019 GitHub, Inc.
+    Terms
+    Privacy
+    Security
+    Status
+    Help
+
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About

@@ -1,0 +1,304 @@
+//----------------------------------------------------------------
+void insertion_sort(int data[], int low, int high)
+{
+  // Insert each element of unsorted list into sorted list
+  for (int unsorted = low+1; unsorted <= high; unsorted++)
+  {
+    compare_counter++;
+    // Select unsorted value to be inserted
+    int value = data[unsorted];
+    int posn = unsorted;
+
+    // Make room for new data value
+    while ((posn > 0) && (data[posn - 1] > value))
+    {
+      compare_counter++;
+      data[posn] = data[posn - 1];
+      posn--;
+      move_counter++;
+    }
+
+    // Put new value into array
+    data[posn] = value;
+    move_counter++;
+  }
+}
+
+----------------------------------------------------------------------------------
+Random Data Move Counter with 10 values: 37
+Random Data Compare Counter with 10 values: 37
+Mostly Sorted Data Move Counter with 10 values: 20
+Mostly Sorted Data Compare Counter with 10 values: 20
+Sorted Data Move Counter with 10 values: 10
+Sorted Data Compare Counter with 10 values: 10
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Random Data Move Counter with 100 values: 2551
+Random Data Compare Counter with 100 values: 2551
+Mostly Sorted Data Move Counter with 100 values: 855
+Mostly Sorted Data Compare Counter with 100 values: 855
+Sorted Data Move Counter with 100 values: 100
+Sorted Data Compare Counter with 100 values: 100
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Random Data Move Counter with 1000 values: 249822
+Random Data Compare Counter with 1000 values: 249822
+Mostly Sorted Data Move Counter with 1000 values: 53998
+Mostly Sorted Data Compare Counter with 1000 values: 53998
+Sorted Data Move Counter with 1000 values: 1000
+Sorted Data Compare Counter with 1000 values: 1000
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Random Data Move Counter with 10000 values: 25060067
+Random Data Compare Counter with 10000 values: 25060067
+Mostly Sorted Data Move Counter with 10000 values: 5852079
+Mostly Sorted Data Compare Counter with 10000 values: 5852079
+Sorted Data Move Counter with 10000 values: 10000
+Sorted Data Compare Counter with 10000 values: 10000
+----------------------------------------------------------------------------------
+
+//----------------------------------------------------------------
+// Partition function used by Quicksort.
+//----------------------------------------------------------------
+void partition(int data[], int low, int high, int &mid)
+{
+   // Select pivot value
+   int pivot = data[high];
+   int left = low;
+   int right = high;
+   // Partition array into two parts
+   while (left < right)
+   {
+      // Scan left to right
+      while ((left < right) && (data[left] < pivot))
+      {
+        left++;
+        compare_counter++;
+      }
+
+      // Scan right to left
+      while ((left < right) && (data[right] >= pivot))
+      {
+        right--;
+        compare_counter++;
+      }
+      // Swap data values
+      int temp = data[left];
+      data[left] = data[right];
+      data[right] = temp;
+      move_counter++;
+   }
+
+   // Swap pivot to mid
+   mid = left;
+   data[high] = data[mid];
+   data[mid] = pivot;
+   move_counter++;
+}
+
+//----------------------------------------------------------------
+// Recursive Quicksort algorithm using basic partition function.
+//----------------------------------------------------------------
+void quick_sort(int data[], int low, int high)
+{
+   // Check terminating condition
+   if (low < high)
+   {
+      // Partition data into two parts
+      int mid = 0;
+      partition(data, low, high, mid);
+
+      // Recursive calls to sort array
+      quick_sort(data, low, mid - 1);
+      quick_sort(data, mid + 1, high);
+   }
+}
+
+//----------------------------------------------------------------
+// Mergesort using secondary storage for data merging.
+//----------------------------------------------------------------
+void merge_sort(int data[], int low, int high)
+{
+  // Check terminating condition
+  int range = high - low + 1;
+  if (range > 1)
+  {
+    // Divide the array and sort both halves
+    int mid = (low + high) / 2;
+    merge_sort(data, low, mid);
+    merge_sort(data, mid + 1, high);
+
+    // Create temporary array for merged data
+    int *copy = new int[range];
+
+    // Initialize array indices
+    int index1 = low;
+    int index2 = mid + 1;
+    int index = 0;
+
+    // Merge smallest data elements into copy array
+    while (index1 <= mid && index2 <= high)
+    {
+      if (data[index1] < data[index2])
+        copy[index++] = data[index1++];
+      else
+        copy[index++] = data[index2++];
+      compare_counter++;
+      move_counter++;
+    }
+
+    // Copy any remaining entries from the first half
+    while (index1 <= mid)
+    {
+      copy[index++] = data[index1++];
+      move_counter++;
+    }
+
+    // Copy any remaining entries from the second half
+    while (index2 <= high)
+    {
+      copy[index++] = data[index2++];
+      move_counter++;
+    }
+    // Copy data back from the temporary array
+    for (index = 0; index < range; index++)
+    {
+      data[low + index] = copy[index];
+      move_counter++;
+    }
+    delete []copy;
+  }
+}
+
+----------------------------------------------------------------------------------
+Insertion Sort Test
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Random Data Move Counter with 10 values: 26
+Random Data Compare Counter with 10 values: 26
+Mostly Sorted Data Move Counter with 10 values: 28
+Mostly Sorted Data Compare Counter with 10 values: 28
+Sorted Data Move Counter with 10 values: 10
+Sorted Data Compare Counter with 10 values: 10
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Merge Sort Test
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Random Data Move Counter with 10 values: 78
+Random Data Compare Counter with 10 values: 31
+Mostly Sorted Data Move Counter with 10 values: 68
+Mostly Sorted Data Compare Counter with 10 values: 20
+Sorted Data Move Counter with 10 values: 68
+Sorted Data Compare Counter with 10 values: 19
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Quick Sort Test
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Random Data Move Counter with 10 values: 84
+Random Data Compare Counter with 10 values: 42
+Mostly Sorted Data Move Counter with 10 values: 18
+Mostly Sorted Data Compare Counter with 10 values: 45
+Sorted Data Move Counter with 10 values: 18
+Sorted Data Compare Counter with 10 values: 45
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Insertion Sort Test
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Random Data Move Counter with 100 values: 2604
+Random Data Compare Counter with 100 values: 2631
+Mostly Sorted Data Move Counter with 100 values: 903
+Mostly Sorted Data Compare Counter with 100 values: 903
+Sorted Data Move Counter with 100 values: 100
+Sorted Data Compare Counter with 100 values: 100
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Merge Sort Test
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Random Data Move Counter with 100 values: 1444
+Random Data Compare Counter with 100 values: 644
+Mostly Sorted Data Move Counter with 100 values: 1344
+Mostly Sorted Data Compare Counter with 100 values: 484
+Sorted Data Move Counter with 100 values: 1344
+Sorted Data Compare Counter with 100 values: 356
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Quick Sort Test
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Random Data Move Counter with 100 values: 1583
+Random Data Compare Counter with 100 values: 1034
+Mostly Sorted Data Move Counter with 100 values: 192
+Mostly Sorted Data Compare Counter with 100 values: 1755
+Sorted Data Move Counter with 100 values: 198
+Sorted Data Compare Counter with 100 values: 4950
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Insertion Sort Test
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Random Data Move Counter with 1000 values: 243547
+Random Data Compare Counter with 1000 values: 248299
+Mostly Sorted Data Move Counter with 1000 values: 70021
+Mostly Sorted Data Compare Counter with 1000 values: 70021
+Sorted Data Move Counter with 1000 values: 1000
+Sorted Data Compare Counter with 1000 values: 1000
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Merge Sort Test
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Random Data Move Counter with 1000 values: 20952
+Random Data Compare Counter with 1000 values: 9719
+Mostly Sorted Data Move Counter with 1000 values: 19952
+Mostly Sorted Data Compare Counter with 1000 values: 8034
+Sorted Data Move Counter with 1000 values: 19952
+Sorted Data Compare Counter with 1000 values: 5044
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Quick Sort Test
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Random Data Move Counter with 1000 values: 22991
+Random Data Compare Counter with 1000 values: 16228
+Mostly Sorted Data Move Counter with 1000 values: 2043
+Mostly Sorted Data Compare Counter with 1000 values: 33635
+Sorted Data Move Counter with 1000 values: 1998
+Sorted Data Compare Counter with 1000 values: 499500
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Insertion Sort Test
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Random Data Move Counter with 10000 values: 24932771
+Random Data Compare Counter with 10000 values: 25430273
+Mostly Sorted Data Move Counter with 10000 values: 5895753
+Mostly Sorted Data Compare Counter with 10000 values: 5895753
+Sorted Data Move Counter with 10000 values: 10000
+Sorted Data Compare Counter with 10000 values: 10000
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Merge Sort Test
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Random Data Move Counter with 10000 values: 277232
+Random Data Compare Counter with 10000 values: 130475
+Mostly Sorted Data Move Counter with 10000 values: 267232
+Mostly Sorted Data Compare Counter with 10000 values: 115445
+Sorted Data Move Counter with 10000 values: 267232
+Sorted Data Compare Counter with 10000 values: 69008
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Quick Sort Test
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Random Data Move Counter with 10000 values: 305405
+Random Data Compare Counter with 10000 values: 227435
+Mostly Sorted Data Move Counter with 10000 values: 21691
+Mostly Sorted Data Compare Counter with 10000 values: 657352
+Sorted Data Move Counter with 10000 values: 19998
+Sorted Data Compare Counter with 10000 values: 49995000
+----------------------------------------------------------------------------------

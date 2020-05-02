@@ -1,0 +1,367 @@
+Student Information:
+
+Name: Sebastian Vivo
+UAID: 010849203
+Assignment: lab2
+
+-------------------------------------------------------------------------------------------------------------
+
+Laboratory Contents:
+
+Step #1:
+string songName;
+int year;
+string albumName;
+string artistName;
+string labelName;
+
+Step #2:
+//-----------------------------------------------------
+// Filename: MusicVivo.h
+// Purpose:  The header file for the MusicVivo class
+//-----------------------------------------------------
+
+#include <iostream>
+using namespace std;
+
+class Music
+{
+
+public:
+  // Constructors
+  Music();
+  Music(const string song, const int release, const string album, const string artist, const string label);
+  Music(const Music &otherMusic);
+
+  // Destructor
+  ~Music();
+
+private:
+  string songName;
+  int year;
+  string albumName;
+  string artistName;
+  string labelName;
+
+};
+
+
+Step #3:
+//-----------------------------------------------------
+// Filename: Music.cpp
+// Purpose:  The implementation of the Music class
+//-----------------------------------------------------
+
+#include <iostream>
+#include "Music.h"
+using namespace std;
+
+//----------- Constructors and Destructors ----------
+
+// Default Constructor
+Music::Music()
+{
+  cout << "\nIn Default Constructor\n";
+
+  songName = 0;
+  year = 2018;
+  albumName = "";
+  artistName = "";
+  labelName = "";
+}
+// Non-default Constructor
+Music::Music(const string song, const int release, const string album, const string artist, const string label)
+{
+  cout << "\nIn Non-default Constructor\n";
+
+  songName = song;
+  year = release;
+  albumName = album;
+  artistName = artist;
+  labelName = label;
+}
+
+// Copy Constructor
+Music::Music(const Music &otherMusic)
+{
+  cout << "\nIn Copy Constructor\n";
+
+  songName = otherMusic.songName;
+  year = otherMusic.year;
+  albumName = otherMusic.albumName;
+  artistName = otherMusic.artistName;
+  labelName = otherMusic.labelName;
+}
+
+// Destructor
+Music::~Music(){ cout << "\nIn Destructor\n";}
+
+Step #4:
+MusicTemp.cpp:58:34: warning: control reaches end of non-void function [-Wreturn-type]
+string Music::getSongName() const{  }
+                                 ^
+MusicTemp.cpp:59:30: warning: control reaches end of non-void function [-Wreturn-type]
+int Music::getYear() const{  }
+                             ^
+MusicTemp.cpp:60:38: warning: control reaches end of non-void function [-Wreturn-type]
+string Music::getAlbumName() const{  }
+                                     ^
+MusicTemp.cpp:61:39: warning: control reaches end of non-void function [-Wreturn-type]
+string Music::getArtistName() const{  }
+                                      ^
+MusicTemp.cpp:62:38: warning: control reaches end of non-void function [-Wreturn-type]
+string Music::getLabelName() const{  }
+
+Step #5:
+In Default Constructor
+
+In Copy Constructor
+
+In getYear method
+
+In getSongName method
+
+In getArtistName method
+
+In Destructor
+
+In Destructor
+
+Step #6:
+//-----------------------------------------------------
+// Filename: MusicVivo.h
+// Purpose:  The header file for the MusicVivo class
+//-----------------------------------------------------
+
+#include <iostream>
+using namespace std;
+
+class Music
+{
+
+public:
+  // Constructors
+  Music();
+  Music(const string song, const int release, const string album, const string artist, const string label);
+  Music(const Music &otherMusic);
+
+  // Destructor
+  ~Music();
+
+  // Setters
+  void setSongName(const string song);
+  void setYear(const int release);
+  void setAlbumName(const string album);
+  void setArtistName(const string artist);
+  void setLabelName(const string label);
+
+  // Getters
+  string getSongName() const;
+  int getYear() const;
+  string getAlbumName() const;
+  string getArtistName() const;
+  string getLabelName() const;
+
+  // Others
+  void Print() const;
+  void PrintSubset() const;
+
+
+private:
+  string songName;
+  int year;
+  string albumName;
+  string artistName;
+  string labelName;
+
+};
+
+Step #7:
+//-----------------------------------------------------
+// Filename: Music.cpp
+// Purpose:  The implementation of the Music class
+//-----------------------------------------------------
+
+#include <iostream>
+#include "Music.h"
+using namespace std;
+
+//----------- Constructors and Destructors ----------
+
+// Default Constructor
+Music::Music()
+{
+  cout << "\nIn Default Constructor\n";
+
+  songName = "";
+  year = 2018;
+  albumName = "";
+  artistName = "";
+  labelName = "";
+}
+// Non-default Constructor
+Music::Music(const string song, const int release, const string album, const string artist, const string label)
+{
+  cout << "\nIn Non-default Constructor\n";
+
+  songName = song;
+  year = release;
+  albumName = album;
+  artistName = artist;
+  labelName = label;
+}
+
+// Copy Constructor
+Music::Music(const Music &otherMusic)
+{
+  cout << "\nIn Copy Constructor\n";
+
+  songName = otherMusic.songName;
+  year = otherMusic.year;
+  albumName = otherMusic.albumName;
+  artistName = otherMusic.artistName;
+  labelName = otherMusic.labelName;
+}
+
+// Destructor
+Music::~Music(){ cout << "\nIn Destructor\n"; }
+
+// Setters
+void Music::setSongName(const string song)
+{
+  cout << "\nIn setSongName method\n";
+  songName = song;
+}
+void Music::setYear(const int release)
+{
+  cout << "\nIn setYear method\n";
+  year = release;
+}
+void Music::setAlbumName(const string album)
+{
+  cout << "\nIn setAlbumName method\n";
+  albumName = album;
+}
+void Music::setArtistName(const string artist)
+{
+  cout << "\nIn setArtistName method\n";
+  artistName = artist;
+}
+void Music::setLabelName(const string label)
+{
+  cout << "\nIn setLabelName method\n";
+  labelName = label;
+}
+
+// Getters
+string Music::getSongName() const
+{
+  cout << "\nIn getSongName method\n";
+  return(songName);
+}
+int Music::getYear() const
+{
+  cout << "\nIn getYear method\n";
+  return(year);
+}
+string Music::getAlbumName() const
+{
+  cout << "\nIn getAlbumName method\n";
+  return(albumName);
+}
+string Music::getArtistName() const
+{
+  cout << "\nIn getArtistName method\n";
+  return(artistName);
+}
+string Music::getLabelName() const
+{
+  cout << "\nIn getLabelName method\n";
+  return (labelName);
+}
+
+// Others
+void Music::Print() const
+{
+  cout << "\nIn Print Method\n";
+  cout << "Song: " << songName << endl;
+  cout << "Artist: " << artistName << endl;
+  cout << "Album: " << albumName << endl;
+  cout << "Release: " << year << endl;
+  cout << "Label: " << labelName << endl;
+}
+
+void Music::PrintSubset() const
+{
+  cout << "\nIn PrintSubset Method\n";
+  cout << "Song: " << songName << endl;
+  cout << "Artist: " << artistName << endl;
+  cout << "Album: " << albumName << endl;
+}
+
+Step #8:
+#include <iostream>
+#include "Music.h"
+using namespace std;
+
+int main(){
+  Music song1;
+  Music song2(song1);
+  song2.setSongName("Rainbow");
+  song2.setArtistName("Romare");
+  song2.setAlbumName("Projections");
+  song2.setYear(2015);
+  song2.setLabelName("Ninja Tune");
+  song1.getSongName();
+  song1.getArtistName();
+  song1.getAlbumName();
+  song1.getYear();
+  song1.getLabelName();
+  song2.Print();
+  song2.PrintSubset();
+
+}
+
+
+Step #9:
+In Default Constructor
+
+In Copy Constructor
+
+In setSongName method
+
+In setArtistName method
+
+In setAlbumName method
+
+In setYear method
+
+In setLabelName method
+
+In getSongName method
+
+In getArtistName method
+
+In getAlbumName method
+
+In getYear method
+
+In getLabelName method
+
+In Print Method
+Song: Rainbow
+Artist: Romare
+Album: Projections
+Release: 2015
+Label: Ninja Tune
+
+In PrintSubset Method
+Song: Rainbow
+Artist: Romare
+Album: Projections
+
+In Destructor
+
+In Destructor
+
+------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,135 @@
+
+<!-- saved from url=(0061)http://www.csce.uark.edu/~jgauch/2014/S19/labs/upload_lab.cgi -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>report.html</title></head><body>
+<center><h2>CSCE 2014 - Laboratory Report</h2></center>
+<h4>Student Information:</h4>
+<li>Name: Sebastian Vivo
+</li><li>UAID: 010849203
+</li><li>Assignment: lab4
+<h4>Laboratory Contents:</h4>
+<p><textarea name="lab" cols="70" rows="30">
+Step #1:
+
+  float *ptr = new float;
+  *ptr = 3.14159;
+  cout &lt;&lt; *ptr &lt;&lt; endl;
+
+  Student *john = new Student();
+  john-&gt;setName("John");
+  john-&gt;setAddress("Johnson, AR");
+  john-&gt;setGPA(3.2);
+  john-&gt;print();
+
+  Student *fred = new Student();
+  fred-&gt;setName("Fred");
+  fred-&gt;setAddress("Fredville, AR");
+  fred-&gt;setGPA(3.4);
+  fred-&gt;print();
+ 
+
+Step #2:
+//----------------------------------------------
+StudentNode::StudentNode()
+{
+   Name = "";
+   Address = "";
+   GPA = 0;
+   Next = NULL;
+}
+
+//----------------------------------------------
+StudentNode::StudentNode(string name, string address, float gpa)
+{
+   Name = name;
+   Address = address;
+   GPA = gpa;
+   Next = NULL;
+}
+
+//----------------------------------------------
+StudentNode::StudentNode(const StudentNode &amp; student)
+{
+   Name = student.Name;
+   Address = student.Address;
+   GPA = student.GPA;
+   Next = student.Next;
+}
+
+Step #3:
+
+StudentNode * StudentNode::getNext() const
+{
+  return Next;
+}
+
+void StudentNode::setNext(StudentNode* node)
+{
+  Next = node;
+}
+
+
+Step #4:
+Name: John
+Address: Johnson, AR
+GPA: 2.5
+
+Name: Fred
+Address: Fayetteville, AR
+GPA: 3.5
+
+Name: Sam
+Address: Springdale, AR
+GPA: 2.9
+
+Step #5:
+
+  StudentNode *ptr1 = new StudentNode("John", "Johnson, AR", 2.5);
+  StudentNode *ptr2 = new StudentNode("Fred", "Fayetteville, AR", 3.5);
+  StudentNode *ptr3 = new StudentNode("Sam", "Springdale, AR", 2.9);
+  StudentNode *ptr4 = new StudentNode("Jack", "Jacksonville, AR", 3.4);
+  StudentNode *ptr5 = new StudentNode("Jill", "Jillandale, AR", 3.2);
+
+
+  ptr1-&gt;setNext(ptr2);
+  ptr2-&gt;setNext(ptr3);
+  ptr1-&gt;print();
+
+  ptr2-&gt;setNext(ptr1);
+  ptr1-&gt;setNext(ptr3);
+  ptr2-&gt;print();
+
+  ptr3-&gt;setNext(ptr4);
+  ptr4-&gt;setNext(ptr5);
+  ptr2-&gt;print();
+
+Step #6:
+  string name;
+  string address;
+  float gpa;
+  StudentNode *head = NULL;
+  for (int i=0; i&lt;5; i++)
+  {
+     cout &lt;&lt; "Enter name: ";
+     cin &gt;&gt; name;
+     cout &lt;&lt; "Enter address: ";
+     cin &gt;&gt; address;
+     cout &lt;&lt; "Enter GPA: ";
+     cin &gt;&gt; gpa;
+
+     StudentNode * tmp  = new StudentNode(name, address, gpa);
+     tmp-&gt;setNext(head);
+     head = tmp;
+     tmp = NULL;
+     delete tmp;
+
+
+  }
+  head-&gt;print();
+</textarea>
+</p><h4>Instructions:</h4>
+</li><li>Show your lab report to your GTA for grading and feedback.
+</li><li>Backup any files you want to keep and delete unwanted files.
+</li><li>Logout from your machine.
+
+
+</li></body></html>

@@ -1,0 +1,219 @@
+Student Information:
+
+Name: Sebastian Vivo
+UAID: 010849203
+Assignment: lab3
+Laboratory Contents:
+
+--------------------------------------------------------
+
+Step #1:
+Enter filename:Numbers.txt
+data = 14 15 92 65 35 89 79 32 38 46 26 43 38 32 79 50 28 84 19 71 69 39 93 75 10 58 20 97 49 44 59 23 7 81 64 6 28 62 8 99 86 28 3 48 25 34 21 17 6 79 82 14 80 86 51 32 82 30 66 47 9 38 44 60 95 50 58 22 31 72 53 59 40 81 28 48 11 17 45 2 84 10 27 1 93 85 21 10 55 59 64 46 22 94 89 54 93 3 81
+min = 1
+max = 99
+mean = 47
+
+
+Step #2:
+int Numbers::findVariance()
+{
+   int mean = Numbers::findMean();
+   int total = 0;
+   for (int index = 0; index < Count; index++)
+      total += ((Data[index] - mean) * (Data[index] - mean));
+   if (Count > 0)
+      return total / Count;
+   else
+      return 0;
+}
+
+//----------------------------------------------
+int Numbers::findStandardDeviation()
+{
+   int variance = Numbers::findVariance();
+   float standardDeviation = sqrt(variance);
+   return standardDeviation;
+}
+
+Step #3:
+Enter filename:Numbers.txt
+data = 14 15 92 65 35 89 79 32 38 46 26 43 38 32 79 50 28 84 19 71 69 39 93 75 10 58 20 97 49 44 59 23 7 81 64 6 28 62 8 99 86 28 3 48 25 34 21 17 6 79 82 14 80 86 51 32 82 30 66 47 9 38 44 60 95 50 58 22 31 72 53 59 40 81 28 48 11 17 45 2 84 10 27 1 93 85 21 10 55 59 64 46 22 94 89 54 93 3 81
+min = 1
+max = 99
+mean = 47
+variance = 804
+standard deviation = 28
+
+Step #4:
+//----------------------------------------------
+// Purpose: Numbers class with basic operations
+// Author:  John Gauch
+//----------------------------------------------
+
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+//----------------------------------------------
+typedef float DataType;
+class Numbers
+{
+ public:
+   // Constructors
+   Numbers();
+   ~Numbers();
+
+   // Methods
+   void readFile(string filename);
+   DataType getCount();
+   DataType getValue(int index);
+   DataType findMin();
+   DataType findMax();
+   DataType findMean();
+   DataType findVariance();
+   DataType findStandardDeviation();
+
+ private:
+   static const int SIZE = 100;
+   int Count;
+   int Data[SIZE];
+};
+
+Step #5:
+Enter filename:Numbers.txt
+data = 14 15 92 65 35 89 79 32 38 46 26 43 38 32 79 50 28 84 19 71 69 39 93 75 10 58 20 97 49 44 59 23 7 81 64 6 28 62 8 99 86 28 3 48 25 34 21 17 6 79 82 14 80 86 51 32 82 30 66 47 9 38 44 60 95 50 58 22 31 72 53 59 40 81 28 48 11 17 45 2 84 10 27 1 93 85 21 10 55 59 64 46 22 94 89 54 93 3 81
+min = 1
+max = 99
+mean = 47
+variance = 804
+standard deviation = 28.3549
+
+Step #6:
+char and string have problems, the rest work fine
+
+Step #7:
+//----------------------------------------------
+// Purpose: Numbers class with basic operations
+// Author:  John Gauch
+//----------------------------------------------
+
+#include "Numbers.h"
+#include <cmath>
+
+//----------------------------------------------
+template <class DataType>
+Numbers<DataType>::Numbers()
+{
+   // Initialize variables
+   Count = 0;
+   for (int i = 0; i < SIZE; i++)
+      Data[i] = 0;
+}
+
+//----------------------------------------------
+template <class DataType>
+Numbers<DataType>::~Numbers()
+{
+}
+
+//----------------------------------------------
+template <class DataType>
+void Numbers<DataType>::readFile(string filename)
+{
+   // Open input file
+   ifstream din;
+   din.open(filename.c_str());
+   if (din.fail())
+      return;
+
+   // Read integers into Data array
+   Count = 0;
+   int num;
+   din >> num;
+   while (!din.eof() && Count < SIZE)
+   {
+      Data[Count++] = num;
+      din >> num;
+   }
+   din.close();
+}
+
+//----------------------------------------------
+template <class DataType>
+DataType Numbers<DataType>::getCount()
+{
+   return Count;
+}
+
+//----------------------------------------------
+template <class DataType>
+DataType Numbers<DataType>::getValue(int index)
+{
+   // Return specified value
+   if (index < Count)
+      return Data[index];
+   else
+      return 0;
+}
+
+//----------------------------------------------
+template <class DataType>
+DataType Numbers<DataType>::findMin()
+{
+   // Search array for min
+   DataType min = Data[0];
+   for (int index = 0; index < Count; index++)
+      if (min > Data[index])
+   min = Data[index];
+   return min;
+}
+
+//----------------------------------------------
+template <class DataType>
+DataType Numbers<DataType>::findMax()
+{
+   // Search array for max
+   DataType max = Data[0];
+   for (int index = 0; index < Count; index++)
+      if (max < Data[index])
+   max = Data[index];
+   return max;
+}
+
+//----------------------------------------------
+template <class DataType>
+DataType Numbers<DataType>::findMean()
+{
+   // Calculate mean value of array
+   DataType total = 0;
+   for (int index = 0; index < Count; index++)
+      total += Data[index];
+   if (Count > 0)
+      return total / Count;
+   else
+      return 0;
+}
+
+//----------------------------------------------
+template <class DataType>
+DataType Numbers<DataType>::findVariance()
+{
+   DataType mean = Numbers::findMean();
+   int total = 0;
+   for (int index = 0; index < Count; index++)
+      total += ((Data[index] - mean) * (Data[index] - mean));
+   if (Count > 0)
+      return total / Count;
+   else
+      return 0;
+}
+
+//----------------------------------------------
+template <class DataType>
+DataType Numbers<DataType>::findStandardDeviation()
+{
+   DataType variance = Numbers::findVariance();
+   DataType standardDeviation = sqrt(variance);
+   return standardDeviation;
+}

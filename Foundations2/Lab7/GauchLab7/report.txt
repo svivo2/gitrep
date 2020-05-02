@@ -1,0 +1,185 @@
+
+Step #1:
+depends on the values of c and r, c+1 does fill in the entire array when calling fill(0,0).
+
+1 1
+1 2
+1 3
+1 4
+.....
+.####
+.....
+.....
+.....
+Sebastians-Air:gauchlab7 sebastianvivo$ g++ -Wall main.cpp -o main
+Sebastians-Air:gauchlab7 sebastianvivo$ ./main
+1 1
+1 2
+1 3
+1 4
+2 4
+2 3
+3 4
+2 2
+3 3
+4 4
+.....
+.####
+..###
+...##
+....#
+Sebastians-Air:gauchlab7 sebastianvivo$ g++ -Wall main.cpp -o main
+Sebastians-Air:gauchlab7 sebastianvivo$ ./main
+1 1
+1 2
+1 3
+1 4
+2 4
+3 4
+4 4
+2 3
+3 3
+4 3
+2 2
+3 2
+4 2
+2 1
+3 1
+4 1
+.....
+.####
+.####
+.####
+.####
+Sebastians-Air:gauchlab7 sebastianvivo$ g++ -Wall main.cpp -o main
+Sebastians-Air:gauchlab7 sebastianvivo$ ./main
+0 0
+0 1
+0 2
+0 3
+0 4
+1 4
+2 4
+3 4
+4 4
+1 3
+2 3
+3 3
+4 3
+1 2
+2 2
+3 2
+4 2
+1 1
+2 1
+3 1
+4 1
+1 0
+2 0
+3 0
+4 0
+#####
+#####
+#####
+#####
+#####
+
+Step #2:
+void fill(int r, int c, char value)
+{
+   // Check first terminating condition
+   if ((r < 0) || (r >= ROWS) || (c < 0) || (c >= COLS))
+      return;
+
+   // Check second terminating condition
+   else if (pixel[r][c] == value)
+      return;
+
+   // Handle recursive case
+   else
+   {
+      cout << r << " " << c << endl;
+      pixel[r][c] = value;
+      fill(r + 1,c, value);
+      fill(r,c + 1, value);
+      fill(r - 1,c, value);
+      fill(r,c - 1, value);
+
+   }
+}
+
+
+Step #3:
+Input = 123.456hello
+Position = 0
+ParseInt = 123
+ParseFloat =
+Input = 123 456hello
+Position = 0
+ParseInt = 123
+ParseFloat =
+Input = hello123.456hello
+Position = 0
+ParseInt =
+ParseFloat =
+Input = hello123.456hello
+Position = 5
+ParseInt = 123
+ParseFloat =
+Position = 4
+Input = 123.456.789hello
+ParseInt = 456
+ParseFloat =
+
+Step #4:
+//----------------------------------------------
+string ParseInt(const string Input, const int pos)
+{
+   if ((pos < 0) || (pos >= Input.length()))
+      return "";
+   else if ((Input[pos] < '0') || (Input[pos] > '9'))
+      return "";
+   else
+      return (Input[pos] + ParseInt(Input, pos+1));
+}
+
+//----------------------------------------------
+string ParseFloat(const string Input, const int pos)
+{
+  string result = ParseInt(Input, pos);
+  if ((Input[pos + result.length()]) != '.')
+    return result;
+  else
+    return (result + '.' + ParseInt(Input, pos + result.length() + 1));
+}
+
+
+Step #5:
+Input = 123.456hello
+Position = 0
+ParseInt = 123
+ParseFloat = 123.456
+Input = 123 456hello
+Position = 0
+ParseInt = 123
+ParseFloat = 123
+Input = hello123.456hello
+Position = 2
+ParseInt =
+ParseFloat =
+Input = hello123.456hello
+Position = 5
+ParseInt = 123
+ParseFloat = 123.456
+Input = 123.456.789hello
+Position = 4
+ParseInt = 456
+ParseFloat = 456.789
+Input = 1o12.456hello
+Position = 2
+ParseInt = 12
+ParseFloat = 12.456
+Input = 123.456.789hello
+Position = 0
+ParseInt = 123
+ParseFloat = 123.456

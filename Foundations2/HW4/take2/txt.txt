@@ -1,0 +1,96 @@
+Sebastians-Air:take2 sebastianvivo$ ./main
+Empty Function seems to be working.
+It is an empty list!
+------------------------------------------------------------------------------------------
+Node   0   Elem:   0   Address: 0x7f95a8d02700   Next Address:      0x0   Prev Address:      0x0
+------------------------------------------------------------------------------------------
+Node   0   Elem:   0   Address: 0x7f95a8d02700   Next Address:      0x0   Prev Address:      0x0
+------------------------------------------------------------------------------------------
+Testing explicit constructor
+Node   0   Elem:   0   Address: 0x7f95a8d02720   Next Address: 0x7f95a8d02740   Prev Address:      0x0
+Node   1   Elem:   1   Address: 0x7f95a8d02740   Next Address: 0x7f95a8d02760   Prev Address: 0x7f95a8d02720
+Node   2   Elem:   2   Address: 0x7f95a8d02760   Next Address: 0x7f95a8d02780   Prev Address: 0x7f95a8d02740
+Node   3   Elem:   3   Address: 0x7f95a8d02780   Next Address: 0x7f95a8d027a0   Prev Address: 0x7f95a8d02760
+Node   4   Elem:   4   Address: 0x7f95a8d027a0   Next Address:      0x0   Prev Address: 0x7f95a8d02780
+------------------------------------------------------------------------------------------
+Node   4   Elem:   4   Address: 0x7f95a8d027a0   Next Address:      0x0   Prev Address: 0x7f95a8d02780
+Node   3   Elem:   3   Address: 0x7f95a8d02780   Next Address: 0x7f95a8d027a0   Prev Address: 0x7f95a8d02760
+Node   2   Elem:   2   Address: 0x7f95a8d02760   Next Address: 0x7f95a8d02780   Prev Address: 0x7f95a8d02740
+Node   1   Elem:   1   Address: 0x7f95a8d02740   Next Address: 0x7f95a8d02760   Prev Address: 0x7f95a8d02720
+Node   0   Elem:   0   Address: 0x7f95a8d02720   Next Address: 0x7f95a8d02740   Prev Address:      0x0
+------------------------------------------------------------------------------------------
+Testing push front 7
+Node   0   Elem:   7   Address: 0x7f95a8c00020   Next Address: 0x7f95a8d02720   Prev Address:      0x0
+Node   1   Elem:   0   Address: 0x7f95a8d02720   Next Address: 0x7f95a8d02740   Prev Address: 0x7f95a8c00020
+Node   2   Elem:   1   Address: 0x7f95a8d02740   Next Address: 0x7f95a8d02760   Prev Address: 0x7f95a8d02720
+Node   3   Elem:   2   Address: 0x7f95a8d02760   Next Address: 0x7f95a8d02780   Prev Address: 0x7f95a8d02740
+Node   4   Elem:   3   Address: 0x7f95a8d02780   Next Address: 0x7f95a8d027a0   Prev Address: 0x7f95a8d02760
+Node   5   Elem:   4   Address: 0x7f95a8d027a0   Next Address:      0x0   Prev Address: 0x7f95a8d02780
+------------------------------------------------------------------------------------------
+Node   5   Elem:   4   Address: 0x7f95a8d027a0   Next Address:      0x0   Prev Address: 0x7f95a8d02780
+Node   4   Elem:   3   Address: 0x7f95a8d02780   Next Address: 0x7f95a8d027a0   Prev Address: 0x7f95a8d02760
+Node   3   Elem:   2   Address: 0x7f95a8d02760   Next Address: 0x7f95a8d02780   Prev Address: 0x7f95a8d02740
+Node   2   Elem:   1   Address: 0x7f95a8d02740   Next Address: 0x7f95a8d02760   Prev Address: 0x7f95a8d02720
+Node   1   Elem:   0   Address: 0x7f95a8d02720   Next Address: 0x7f95a8d02740   Prev Address: 0x7f95a8c00020
+Node   0   Elem:   7   Address: 0x7f95a8c00020   Next Address: 0x7f95a8d02720   Prev Address:      0x0
+------------------------------------------------------------------------------------------
+Testing push back -1
+Node   0   Elem:   7   Address: 0x7f95a8c00020   Next Address: 0x7f95a8d02720   Prev Address:      0x0
+Node   1   Elem:   0   Address: 0x7f95a8d02720   Next Address: 0x7f95a8d02740   Prev Address: 0x7f95a8c00020
+Node   2   Elem:   1   Address: 0x7f95a8d02740   Next Address: 0x7f95a8d02760   Prev Address: 0x7f95a8d02720
+Node   3   Elem:   2   Address: 0x7f95a8d02760   Next Address: 0x7f95a8d02780   Prev Address: 0x7f95a8d02740
+Node   4   Elem:   3   Address: 0x7f95a8d02780   Next Address: 0x7f95a8d027a0   Prev Address: 0x7f95a8d02760
+Node   5   Elem:   4   Address: 0x7f95a8d027a0   Next Address: 0x7f95a8c00040   Prev Address: 0x7f95a8d02780
+Node   6   Elem:  -1   Address: 0x7f95a8c00040   Next Address:      0x0   Prev Address: 0x7f95a8d027a0
+------------------------------------------------------------------------------------------
+Node   6   Elem:  -1   Address: 0x7f95a8c00040   Next Address:      0x0   Prev Address: 0x7f95a8d027a0
+Node   5   Elem:   4   Address: 0x7f95a8d027a0   Next Address: 0x7f95a8c00040   Prev Address: 0x7f95a8d02780
+Node   4   Elem:   3   Address: 0x7f95a8d02780   Next Address: 0x7f95a8d027a0   Prev Address: 0x7f95a8d02760
+Node   3   Elem:   2   Address: 0x7f95a8d02760   Next Address: 0x7f95a8d02780   Prev Address: 0x7f95a8d02740
+Node   2   Elem:   1   Address: 0x7f95a8d02740   Next Address: 0x7f95a8d02760   Prev Address: 0x7f95a8d02720
+Node   1   Elem:   0   Address: 0x7f95a8d02720   Next Address: 0x7f95a8d02740   Prev Address: 0x7f95a8c00020
+Node   0   Elem:   7   Address: 0x7f95a8c00020   Next Address: 0x7f95a8d02720   Prev Address:      0x0
+------------------------------------------------------------------------------------------
+Testing insert 5 at position 2
+Node   0   Elem:   7   Address: 0x7f95a8c00020   Next Address: 0x7f95a8d02720   Prev Address:      0x0
+Node   1   Elem:   0   Address: 0x7f95a8d02720   Next Address: 0x7f95a8d02740   Prev Address: 0x7f95a8c00020
+Node   2   Elem:   1   Address: 0x7f95a8d02740   Next Address: 0x7f95a8e00000   Prev Address: 0x7f95a8d02720
+Node   3   Elem:   5   Address: 0x7f95a8e00000   Next Address: 0x7f95a8d02760   Prev Address: 0x7f95a8d02740
+Node   4   Elem:   2   Address: 0x7f95a8d02760   Next Address: 0x7f95a8d02780   Prev Address: 0x7f95a8e00000
+Node   5   Elem:   3   Address: 0x7f95a8d02780   Next Address: 0x7f95a8d027a0   Prev Address: 0x7f95a8d02760
+Node   6   Elem:   4   Address: 0x7f95a8d027a0   Next Address: 0x7f95a8c00040   Prev Address: 0x7f95a8d02780
+Node   7   Elem:  -1   Address: 0x7f95a8c00040   Next Address:      0x0   Prev Address: 0x7f95a8d027a0
+------------------------------------------------------------------------------------------
+Node   7   Elem:  -1   Address: 0x7f95a8c00040   Next Address:      0x0   Prev Address: 0x7f95a8d027a0
+Node   6   Elem:   4   Address: 0x7f95a8d027a0   Next Address: 0x7f95a8c00040   Prev Address: 0x7f95a8d02780
+Node   5   Elem:   3   Address: 0x7f95a8d02780   Next Address: 0x7f95a8d027a0   Prev Address: 0x7f95a8d02760
+Node   4   Elem:   2   Address: 0x7f95a8d02760   Next Address: 0x7f95a8d02780   Prev Address: 0x7f95a8e00000
+Node   3   Elem:   5   Address: 0x7f95a8e00000   Next Address: 0x7f95a8d02760   Prev Address: 0x7f95a8d02740
+Node   2   Elem:   1   Address: 0x7f95a8d02740   Next Address: 0x7f95a8e00000   Prev Address: 0x7f95a8d02720
+Node   1   Elem:   0   Address: 0x7f95a8d02720   Next Address: 0x7f95a8d02740   Prev Address: 0x7f95a8c00020
+Node   0   Elem:   7   Address: 0x7f95a8c00020   Next Address: 0x7f95a8d02720   Prev Address:      0x0
+------------------------------------------------------------------------------------------
+Testing explicit constructor (0)
+It is an empty list!
+------------------------------------------------------------------------------------------
+It is an empty list!
+------------------------------------------------------------------------------------------
+Testing sort
+Node   0   Elem:  -1   Address: 0x7f95a8c00040   Next Address: 0x7f95a8c00020   Prev Address:      0x0
+Node   1   Elem:   7   Address: 0x7f95a8c00020   Next Address: 0x7f95a8d02720   Prev Address: 0x7f95a8c00040
+Node   2   Elem:   0   Address: 0x7f95a8d02720   Next Address: 0x7f95a8d02740   Prev Address: 0x7f95a8c00020
+Node   3   Elem:   1   Address: 0x7f95a8d02740   Next Address: 0x7f95a8e00000   Prev Address: 0x7f95a8d02720
+Node   4   Elem:   5   Address: 0x7f95a8e00000   Next Address: 0x7f95a8d02760   Prev Address: 0x7f95a8d02740
+Node   5   Elem:   2   Address: 0x7f95a8d02760   Next Address: 0x7f95a8d02780   Prev Address: 0x7f95a8e00000
+Node   6   Elem:   3   Address: 0x7f95a8d02780   Next Address: 0x7f95a8d027a0   Prev Address: 0x7f95a8d02760
+Node   7   Elem:   4   Address: 0x7f95a8d027a0   Next Address:      0x0   Prev Address: 0x7f95a8d02780
+------------------------------------------------------------------------------------------
+Node   7   Elem:   4   Address: 0x7f95a8d027a0   Next Address:      0x0   Prev Address: 0x7f95a8d02780
+Node   6   Elem:   3   Address: 0x7f95a8d02780   Next Address: 0x7f95a8d027a0   Prev Address: 0x7f95a8d02760
+Node   5   Elem:   2   Address: 0x7f95a8d02760   Next Address: 0x7f95a8d02780   Prev Address: 0x7f95a8e00000
+Node   4   Elem:   5   Address: 0x7f95a8e00000   Next Address: 0x7f95a8d02760   Prev Address: 0x7f95a8d02740
+Node   3   Elem:   1   Address: 0x7f95a8d02740   Next Address: 0x7f95a8e00000   Prev Address: 0x7f95a8d02720
+Node   2   Elem:   0   Address: 0x7f95a8d02720   Next Address: 0x7f95a8d02740   Prev Address: 0x7f95a8c00020
+Node   1   Elem:   7   Address: 0x7f95a8c00020   Next Address: 0x7f95a8d02720   Prev Address: 0x7f95a8c00040
+Node   0   Elem:  -1   Address: 0x7f95a8c00040   Next Address: 0x7f95a8c00020   Prev Address:      0x0
+------------------------------------------------------------------------------------------

@@ -1,0 +1,990 @@
+
+Step #1:
+3 :  3  1  4
+queue overflow
+5 :  3  1  4  1  5
+3 :  4  1  5
+1 :  5
+queue underflow
+0 :
+
+Step #2:
+does not even take a second. it is only once I go up to 100000 that it takes more than a second.
+int main()
+{
+  Queue q;
+  int val = 0;
+  int num;
+  for (int i = 0; !q.IsFull(); i++)
+  {
+    val = rand() % 100;
+    q.Insert(val);
+  }
+  q.Print();
+
+  while(!q.IsEmpty())
+    q.Remove(num);
+
+  q.Print();
+}
+
+Step #3:
+Line: 0 NumElements: 1 :  2
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 0 :
+Line: 3 NumElements: 0 :
+Line: 4 NumElements: 0 :
+-----------------------------------------
+Line: 0 NumElements: 1 :  2
+Line: 1 NumElements: 1 :  1
+Line: 2 NumElements: 0 :
+Line: 3 NumElements: 0 :
+Line: 4 NumElements: 0 :
+-----------------------------------------
+Line: 0 NumElements: 1 :  2
+Line: 1 NumElements: 1 :  1
+Line: 2 NumElements: 1 :  1
+Line: 3 NumElements: 0 :
+Line: 4 NumElements: 0 :
+-----------------------------------------
+Line: 0 NumElements: 1 :  2
+Line: 1 NumElements: 1 :  1
+Line: 2 NumElements: 1 :  1
+Line: 3 NumElements: 1 :  3
+Line: 4 NumElements: 0 :
+-----------------------------------------
+Line: 0 NumElements: 1 :  2
+Line: 1 NumElements: 1 :  1
+Line: 2 NumElements: 1 :  1
+Line: 3 NumElements: 1 :  3
+Line: 4 NumElements: 1 :  2
+-----------------------------------------
+Line: 0 NumElements: 2 :  2  3
+Line: 1 NumElements: 1 :  1
+Line: 2 NumElements: 1 :  1
+Line: 3 NumElements: 1 :  3
+Line: 4 NumElements: 1 :  2
+-----------------------------------------
+Line: 0 NumElements: 2 :  2  3
+Line: 1 NumElements: 2 :  1  5
+Line: 2 NumElements: 1 :  1
+Line: 3 NumElements: 1 :  3
+Line: 4 NumElements: 1 :  2
+-----------------------------------------
+Line: 0 NumElements: 2 :  2  3
+Line: 1 NumElements: 2 :  1  5
+Line: 2 NumElements: 2 :  1  2
+Line: 3 NumElements: 1 :  3
+Line: 4 NumElements: 1 :  2
+-----------------------------------------
+Line: 0 NumElements: 2 :  2  3
+Line: 1 NumElements: 2 :  1  5
+Line: 2 NumElements: 2 :  1  2
+Line: 3 NumElements: 2 :  3  2
+Line: 4 NumElements: 1 :  2
+-----------------------------------------
+Line: 0 NumElements: 2 :  2  3
+Line: 1 NumElements: 2 :  1  5
+Line: 2 NumElements: 2 :  1  2
+Line: 3 NumElements: 2 :  3  2
+Line: 4 NumElements: 2 :  2  2
+-----------------------------------------
+Line: 0 NumElements: 3 :  2  3  4
+Line: 1 NumElements: 2 :  1  5
+Line: 2 NumElements: 2 :  1  2
+Line: 3 NumElements: 2 :  3  2
+Line: 4 NumElements: 2 :  2  2
+-----------------------------------------
+Line: 0 NumElements: 3 :  2  3  4
+Line: 1 NumElements: 3 :  1  5  5
+Line: 2 NumElements: 2 :  1  2
+Line: 3 NumElements: 2 :  3  2
+Line: 4 NumElements: 2 :  2  2
+-----------------------------------------
+Line: 0 NumElements: 3 :  2  3  4
+Line: 1 NumElements: 3 :  1  5  5
+Line: 2 NumElements: 3 :  1  2  1
+Line: 3 NumElements: 2 :  3  2
+Line: 4 NumElements: 2 :  2  2
+-----------------------------------------
+Line: 0 NumElements: 3 :  2  3  4
+Line: 1 NumElements: 3 :  1  5  5
+Line: 2 NumElements: 3 :  1  2  1
+Line: 3 NumElements: 3 :  3  2  4
+Line: 4 NumElements: 2 :  2  2
+-----------------------------------------
+Line: 0 NumElements: 3 :  2  3  4
+Line: 1 NumElements: 3 :  1  5  5
+Line: 2 NumElements: 3 :  1  2  1
+Line: 3 NumElements: 3 :  3  2  4
+Line: 4 NumElements: 3 :  2  2  1
+-----------------------------------------
+Line: 0 NumElements: 4 :  2  3  4  3
+Line: 1 NumElements: 3 :  1  5  5
+Line: 2 NumElements: 3 :  1  2  1
+Line: 3 NumElements: 3 :  3  2  4
+Line: 4 NumElements: 3 :  2  2  1
+-----------------------------------------
+Line: 0 NumElements: 4 :  2  3  4  3
+Line: 1 NumElements: 4 :  1  5  5  4
+Line: 2 NumElements: 3 :  1  2  1
+Line: 3 NumElements: 3 :  3  2  4
+Line: 4 NumElements: 3 :  2  2  1
+-----------------------------------------
+Line: 0 NumElements: 4 :  2  3  4  3
+Line: 1 NumElements: 4 :  1  5  5  4
+Line: 2 NumElements: 4 :  1  2  1  3
+Line: 3 NumElements: 3 :  3  2  4
+Line: 4 NumElements: 3 :  2  2  1
+-----------------------------------------
+Line: 0 NumElements: 4 :  2  3  4  3
+Line: 1 NumElements: 4 :  1  5  5  4
+Line: 2 NumElements: 4 :  1  2  1  3
+Line: 3 NumElements: 4 :  3  2  4  2
+Line: 4 NumElements: 3 :  2  2  1
+-----------------------------------------
+Line: 0 NumElements: 4 :  2  3  4  3
+Line: 1 NumElements: 4 :  1  5  5  4
+Line: 2 NumElements: 4 :  1  2  1  3
+Line: 3 NumElements: 4 :  3  2  4  2
+Line: 4 NumElements: 4 :  2  2  1  3
+-----------------------------------------
+Line: 0 NumElements: 5 :  2  3  4  3  4
+Line: 1 NumElements: 4 :  1  5  5  4
+Line: 2 NumElements: 4 :  1  2  1  3
+Line: 3 NumElements: 4 :  3  2  4  2
+Line: 4 NumElements: 4 :  2  2  1  3
+-----------------------------------------
+Line: 0 NumElements: 5 :  2  3  4  3  4
+Line: 1 NumElements: 5 :  1  5  5  4  5
+Line: 2 NumElements: 4 :  1  2  1  3
+Line: 3 NumElements: 4 :  3  2  4  2
+Line: 4 NumElements: 4 :  2  2  1  3
+-----------------------------------------
+Line: 0 NumElements: 5 :  2  3  4  3  4
+Line: 1 NumElements: 5 :  1  5  5  4  5
+Line: 2 NumElements: 5 :  1  2  1  3  3
+Line: 3 NumElements: 4 :  3  2  4  2
+Line: 4 NumElements: 4 :  2  2  1  3
+-----------------------------------------
+Line: 0 NumElements: 5 :  2  3  4  3  4
+Line: 1 NumElements: 5 :  1  5  5  4  5
+Line: 2 NumElements: 5 :  1  2  1  3  3
+Line: 3 NumElements: 5 :  3  2  4  2  5
+Line: 4 NumElements: 4 :  2  2  1  3
+-----------------------------------------
+Line: 0 NumElements: 5 :  2  3  4  3  4
+Line: 1 NumElements: 5 :  1  5  5  4  5
+Line: 2 NumElements: 5 :  1  2  1  3  3
+Line: 3 NumElements: 5 :  3  2  4  2  5
+Line: 4 NumElements: 5 :  2  2  1  3  1
+-----------------------------------------
+
+Step #4:
+//-----------------------------------------------------------
+//  Purpose:    This program demonstrates how multiple queues
+//              can be used to simulate customer arrivals.
+//  Author:     John Gauch
+//-----------------------------------------------------------
+#include "queue.h"
+
+//-----------------------------------------------------------
+// Main program uses the Queue class to simulate customers.
+//-----------------------------------------------------------
+int main()
+{
+   int i = 0;
+   int NumLines = 5;
+   int NumCustomers = 25;
+   int CurrentTime = 0;
+   int NumItems = 0;
+   Queue *Vendor = new Queue[NumLines];
+
+   // Add customers to different queues
+   for (int Customer = 0; Customer < NumCustomers; Customer++)
+   {
+      // Generate customer data
+      CurrentTime += 5 + random() % 20;
+      NumItems = 1 + random() % 5;
+
+      // Search for shortest queue
+      int ShortLine = 0;
+      int ShortLength = Vendor[0].GetLength();
+      for (int Line = 1; Line < NumLines; Line++)
+      {
+      	 int Length = Vendor[Line].GetLength();
+      	 if (Length < ShortLength)
+      	 {
+      	    ShortLine = Line;
+      	    ShortLength = Length;
+      	 }
+      }
+
+      // Add customer to shortest line
+      Vendor[ShortLine].Insert(NumItems);
+
+      // Remove costumers
+      if ((random() % 100) < 20)
+      {
+        Vendor[i++ % NumLines].Remove(NumItems);
+      }
+      // Print all customer lines
+      for (int Line = 0; Line < NumLines; Line++)
+      {
+         cout << "Line: " << Line << " ";
+         Vendor[Line].Print();
+      }
+      cout << "-----------------------------------------\n";
+
+   }
+   //Finish removing costumers
+   while(!Vendor[NumLines-1].IsEmpty())
+   {
+     if ((random() % 100) < 20)
+     {
+       Vendor[i++ % NumLines].Remove(NumItems);
+     }
+     for (int Line = 0; Line < NumLines; Line++)
+     {
+        cout << "Line: " << Line << " ";
+        Vendor[Line].Print();
+     }
+     cout << "-----------------------------------------\n";
+   }
+   cout << endl;
+}
+
+
+Step #5:
+Line: 0 NumElements: 1 :  2
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 0 :
+Line: 3 NumElements: 0 :
+Line: 4 NumElements: 0 :
+-----------------------------------------
+Line: 0 NumElements: 1 :  2
+Line: 1 NumElements: 1 :  4
+Line: 2 NumElements: 0 :
+Line: 3 NumElements: 0 :
+Line: 4 NumElements: 0 :
+-----------------------------------------
+Line: 0 NumElements: 1 :  2
+Line: 1 NumElements: 1 :  4
+Line: 2 NumElements: 1 :  3
+Line: 3 NumElements: 0 :
+Line: 4 NumElements: 0 :
+-----------------------------------------
+Line: 0 NumElements: 1 :  2
+Line: 1 NumElements: 1 :  4
+Line: 2 NumElements: 1 :  3
+Line: 3 NumElements: 1 :  3
+Line: 4 NumElements: 0 :
+-----------------------------------------
+Line: 0 NumElements: 1 :  2
+Line: 1 NumElements: 1 :  4
+Line: 2 NumElements: 1 :  3
+Line: 3 NumElements: 1 :  3
+Line: 4 NumElements: 1 :  5
+-----------------------------------------
+Line: 0 NumElements: 2 :  2  1
+Line: 1 NumElements: 1 :  4
+Line: 2 NumElements: 1 :  3
+Line: 3 NumElements: 1 :  3
+Line: 4 NumElements: 1 :  5
+-----------------------------------------
+Line: 0 NumElements: 1 :  1
+Line: 1 NumElements: 2 :  4  2
+Line: 2 NumElements: 1 :  3
+Line: 3 NumElements: 1 :  3
+Line: 4 NumElements: 1 :  5
+-----------------------------------------
+Line: 0 NumElements: 2 :  1  3
+Line: 1 NumElements: 2 :  4  2
+Line: 2 NumElements: 1 :  3
+Line: 3 NumElements: 1 :  3
+Line: 4 NumElements: 1 :  5
+-----------------------------------------
+Line: 0 NumElements: 2 :  1  3
+Line: 1 NumElements: 2 :  4  2
+Line: 2 NumElements: 2 :  3  1
+Line: 3 NumElements: 1 :  3
+Line: 4 NumElements: 1 :  5
+-----------------------------------------
+Line: 0 NumElements: 2 :  1  3
+Line: 1 NumElements: 2 :  4  2
+Line: 2 NumElements: 2 :  3  1
+Line: 3 NumElements: 2 :  3  3
+Line: 4 NumElements: 1 :  5
+-----------------------------------------
+Line: 0 NumElements: 2 :  1  3
+Line: 1 NumElements: 2 :  4  2
+Line: 2 NumElements: 2 :  3  1
+Line: 3 NumElements: 2 :  3  3
+Line: 4 NumElements: 2 :  5  3
+-----------------------------------------
+Line: 0 NumElements: 3 :  1  3  5
+Line: 1 NumElements: 2 :  4  2
+Line: 2 NumElements: 2 :  3  1
+Line: 3 NumElements: 2 :  3  3
+Line: 4 NumElements: 2 :  5  3
+-----------------------------------------
+Line: 0 NumElements: 3 :  1  3  5
+Line: 1 NumElements: 2 :  2  2
+Line: 2 NumElements: 2 :  3  1
+Line: 3 NumElements: 2 :  3  3
+Line: 4 NumElements: 2 :  5  3
+-----------------------------------------
+Line: 0 NumElements: 3 :  1  3  5
+Line: 1 NumElements: 3 :  2  2  5
+Line: 2 NumElements: 2 :  3  1
+Line: 3 NumElements: 2 :  3  3
+Line: 4 NumElements: 2 :  5  3
+-----------------------------------------
+Line: 0 NumElements: 3 :  1  3  5
+Line: 1 NumElements: 3 :  2  2  5
+Line: 2 NumElements: 3 :  3  1  5
+Line: 3 NumElements: 2 :  3  3
+Line: 4 NumElements: 2 :  5  3
+-----------------------------------------
+Line: 0 NumElements: 3 :  1  3  5
+Line: 1 NumElements: 3 :  2  2  5
+Line: 2 NumElements: 3 :  3  1  5
+Line: 3 NumElements: 3 :  3  3  4
+Line: 4 NumElements: 2 :  5  3
+-----------------------------------------
+Line: 0 NumElements: 3 :  1  3  5
+Line: 1 NumElements: 3 :  2  2  5
+Line: 2 NumElements: 2 :  1  5
+Line: 3 NumElements: 3 :  3  3  4
+Line: 4 NumElements: 3 :  5  3  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  1  3  5
+Line: 1 NumElements: 3 :  2  2  5
+Line: 2 NumElements: 3 :  1  5  2
+Line: 3 NumElements: 3 :  3  3  4
+Line: 4 NumElements: 3 :  5  3  1
+-----------------------------------------
+Line: 0 NumElements: 4 :  1  3  5  4
+Line: 1 NumElements: 3 :  2  2  5
+Line: 2 NumElements: 3 :  1  5  2
+Line: 3 NumElements: 3 :  3  3  4
+Line: 4 NumElements: 3 :  5  3  1
+-----------------------------------------
+Line: 0 NumElements: 4 :  1  3  5  4
+Line: 1 NumElements: 4 :  2  2  5  2
+Line: 2 NumElements: 3 :  1  5  2
+Line: 3 NumElements: 3 :  3  3  4
+Line: 4 NumElements: 3 :  5  3  1
+-----------------------------------------
+Line: 0 NumElements: 4 :  1  3  5  4
+Line: 1 NumElements: 4 :  2  2  5  2
+Line: 2 NumElements: 4 :  1  5  2  1
+Line: 3 NumElements: 3 :  3  3  4
+Line: 4 NumElements: 3 :  5  3  1
+-----------------------------------------
+Line: 0 NumElements: 4 :  1  3  5  4
+Line: 1 NumElements: 4 :  2  2  5  2
+Line: 2 NumElements: 4 :  1  5  2  1
+Line: 3 NumElements: 3 :  3  4  2
+Line: 4 NumElements: 3 :  5  3  1
+-----------------------------------------
+Line: 0 NumElements: 4 :  1  3  5  4
+Line: 1 NumElements: 4 :  2  2  5  2
+Line: 2 NumElements: 4 :  1  5  2  1
+Line: 3 NumElements: 4 :  3  4  2  5
+Line: 4 NumElements: 2 :  3  1
+-----------------------------------------
+Line: 0 NumElements: 4 :  1  3  5  4
+Line: 1 NumElements: 4 :  2  2  5  2
+Line: 2 NumElements: 4 :  1  5  2  1
+Line: 3 NumElements: 4 :  3  4  2  5
+Line: 4 NumElements: 3 :  3  1  5
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 4 :  2  2  5  2
+Line: 2 NumElements: 4 :  1  5  2  1
+Line: 3 NumElements: 4 :  3  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 4 :  2  2  5  2
+Line: 2 NumElements: 4 :  1  5  2  1
+Line: 3 NumElements: 4 :  3  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 4 :  2  2  5  2
+Line: 2 NumElements: 4 :  1  5  2  1
+Line: 3 NumElements: 4 :  3  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 4 :  2  2  5  2
+Line: 2 NumElements: 4 :  1  5  2  1
+Line: 3 NumElements: 4 :  3  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 4 :  2  2  5  2
+Line: 2 NumElements: 4 :  1  5  2  1
+Line: 3 NumElements: 4 :  3  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 4 :  2  2  5  2
+Line: 2 NumElements: 4 :  1  5  2  1
+Line: 3 NumElements: 4 :  3  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 4 :  2  2  5  2
+Line: 2 NumElements: 4 :  1  5  2  1
+Line: 3 NumElements: 4 :  3  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 4 :  1  5  2  1
+Line: 3 NumElements: 4 :  3  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 4 :  1  5  2  1
+Line: 3 NumElements: 4 :  3  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 4 :  1  5  2  1
+Line: 3 NumElements: 4 :  3  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 4 :  1  5  2  1
+Line: 3 NumElements: 4 :  3  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 4 :  1  5  2  1
+Line: 3 NumElements: 4 :  3  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 4 :  3  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 4 :  3  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 4 :  3  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 4 :  3  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 4 :  3  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 4 :  3  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 4 :  3  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 4 :  3  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 4 :  3  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 3 :  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 3 :  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 3 :  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 3 :  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 3 :  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 3 :  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 3 :  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 3 :  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 3 :  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 3 :  4  2  5
+Line: 4 NumElements: 4 :  3  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 3 :  4  2  5
+Line: 4 NumElements: 3 :  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 3 :  3  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 3 :  4  2  5
+Line: 4 NumElements: 3 :  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 2 :  5  4
+Line: 1 NumElements: 3 :  2  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 3 :  4  2  5
+Line: 4 NumElements: 3 :  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 2 :  5  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 3 :  4  2  5
+Line: 4 NumElements: 3 :  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 2 :  5  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 3 :  4  2  5
+Line: 4 NumElements: 3 :  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 2 :  5  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 3 :  4  2  5
+Line: 4 NumElements: 3 :  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 2 :  5  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 3 :  5  2  1
+Line: 3 NumElements: 3 :  4  2  5
+Line: 4 NumElements: 3 :  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 2 :  5  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 3 :  4  2  5
+Line: 4 NumElements: 3 :  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 2 :  5  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 3 :  4  2  5
+Line: 4 NumElements: 3 :  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 2 :  5  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 3 :  4  2  5
+Line: 4 NumElements: 3 :  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 2 :  5  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 3 :  4  2  5
+Line: 4 NumElements: 3 :  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 2 :  5  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 3 :  4  2  5
+Line: 4 NumElements: 3 :  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 2 :  5  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 3 :  4  2  5
+Line: 4 NumElements: 3 :  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 2 :  5  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 3 :  4  2  5
+Line: 4 NumElements: 3 :  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 2 :  5  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 3 :  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 2 :  5  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 3 :  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 2 :  5  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 3 :  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 2 :  5  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 3 :  1  5  1
+-----------------------------------------
+Line: 0 NumElements: 2 :  5  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 2 :  5  1
+-----------------------------------------
+Line: 0 NumElements: 2 :  5  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 2 :  5  1
+-----------------------------------------
+Line: 0 NumElements: 2 :  5  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 2 :  5  1
+-----------------------------------------
+Line: 0 NumElements: 2 :  5  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 2 :  5  1
+-----------------------------------------
+Line: 0 NumElements: 2 :  5  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 2 :  5  1
+-----------------------------------------
+Line: 0 NumElements: 1 :  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 2 :  5  1
+-----------------------------------------
+Line: 0 NumElements: 1 :  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 2 :  5  1
+-----------------------------------------
+Line: 0 NumElements: 1 :  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 2 :  5  1
+-----------------------------------------
+Line: 0 NumElements: 1 :  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 2 :  5  1
+-----------------------------------------
+Line: 0 NumElements: 1 :  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 2 :  5  1
+-----------------------------------------
+Line: 0 NumElements: 1 :  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 2 :  5  1
+-----------------------------------------
+Line: 0 NumElements: 1 :  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 2 :  5  1
+-----------------------------------------
+Line: 0 NumElements: 1 :  4
+Line: 1 NumElements: 2 :  5  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 2 :  5  1
+-----------------------------------------
+Line: 0 NumElements: 1 :  4
+Line: 1 NumElements: 1 :  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 2 :  5  1
+-----------------------------------------
+Line: 0 NumElements: 1 :  4
+Line: 1 NumElements: 1 :  2
+Line: 2 NumElements: 2 :  2  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 2 :  5  1
+-----------------------------------------
+Line: 0 NumElements: 1 :  4
+Line: 1 NumElements: 1 :  2
+Line: 2 NumElements: 1 :  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 2 :  5  1
+-----------------------------------------
+Line: 0 NumElements: 1 :  4
+Line: 1 NumElements: 1 :  2
+Line: 2 NumElements: 1 :  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 2 :  5  1
+-----------------------------------------
+Line: 0 NumElements: 1 :  4
+Line: 1 NumElements: 1 :  2
+Line: 2 NumElements: 1 :  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 2 :  5  1
+-----------------------------------------
+Line: 0 NumElements: 1 :  4
+Line: 1 NumElements: 1 :  2
+Line: 2 NumElements: 1 :  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 2 :  5  1
+-----------------------------------------
+Line: 0 NumElements: 1 :  4
+Line: 1 NumElements: 1 :  2
+Line: 2 NumElements: 1 :  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 2 :  5  1
+-----------------------------------------
+Line: 0 NumElements: 1 :  4
+Line: 1 NumElements: 1 :  2
+Line: 2 NumElements: 1 :  1
+Line: 3 NumElements: 2 :  2  5
+Line: 4 NumElements: 2 :  5  1
+-----------------------------------------
+Line: 0 NumElements: 1 :  4
+Line: 1 NumElements: 1 :  2
+Line: 2 NumElements: 1 :  1
+Line: 3 NumElements: 1 :  5
+Line: 4 NumElements: 2 :  5  1
+-----------------------------------------
+Line: 0 NumElements: 1 :  4
+Line: 1 NumElements: 1 :  2
+Line: 2 NumElements: 1 :  1
+Line: 3 NumElements: 1 :  5
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 1 :  4
+Line: 1 NumElements: 1 :  2
+Line: 2 NumElements: 1 :  1
+Line: 3 NumElements: 1 :  5
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 1 :  4
+Line: 1 NumElements: 1 :  2
+Line: 2 NumElements: 1 :  1
+Line: 3 NumElements: 1 :  5
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 0 :
+Line: 1 NumElements: 1 :  2
+Line: 2 NumElements: 1 :  1
+Line: 3 NumElements: 1 :  5
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 0 :
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 1 :  1
+Line: 3 NumElements: 1 :  5
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 0 :
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 1 :  1
+Line: 3 NumElements: 1 :  5
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 0 :
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 1 :  1
+Line: 3 NumElements: 1 :  5
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 0 :
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 1 :  1
+Line: 3 NumElements: 1 :  5
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 0 :
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 1 :  1
+Line: 3 NumElements: 1 :  5
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 0 :
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 0 :
+Line: 3 NumElements: 1 :  5
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 0 :
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 0 :
+Line: 3 NumElements: 1 :  5
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 0 :
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 0 :
+Line: 3 NumElements: 1 :  5
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 0 :
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 0 :
+Line: 3 NumElements: 1 :  5
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 0 :
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 0 :
+Line: 3 NumElements: 1 :  5
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 0 :
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 0 :
+Line: 3 NumElements: 1 :  5
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 0 :
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 0 :
+Line: 3 NumElements: 1 :  5
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 0 :
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 0 :
+Line: 3 NumElements: 1 :  5
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 0 :
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 0 :
+Line: 3 NumElements: 1 :  5
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 0 :
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 0 :
+Line: 3 NumElements: 1 :  5
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 0 :
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 0 :
+Line: 3 NumElements: 1 :  5
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 0 :
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 0 :
+Line: 3 NumElements: 1 :  5
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 0 :
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 0 :
+Line: 3 NumElements: 1 :  5
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 0 :
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 0 :
+Line: 3 NumElements: 0 :
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 0 :
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 0 :
+Line: 3 NumElements: 0 :
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 0 :
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 0 :
+Line: 3 NumElements: 0 :
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 0 :
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 0 :
+Line: 3 NumElements: 0 :
+Line: 4 NumElements: 1 :  1
+-----------------------------------------
+Line: 0 NumElements: 0 :
+Line: 1 NumElements: 0 :
+Line: 2 NumElements: 0 :
+Line: 3 NumElements: 0 :
+Line: 4 NumElements: 0 :
+-----------------------------------------

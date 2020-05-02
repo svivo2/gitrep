@@ -1,0 +1,327 @@
+Step #1:
+string songName;
+string artistName;
+string musicLabel;
+double songDuration;
+int releaseYear;
+
+Step #2:
+#include <iostream>
+using namespace std;
+
+class Music
+{
+public:
+  // Constructors and Destructors
+  Music();
+  Music(const Music &otherMusic);
+  ~Music();
+
+private:
+  string songName;
+  string artistName;
+  string musicLabel;
+  double songDuration;
+  int releaseYear;
+};
+
+
+Step #3:
+#include "music.h"
+
+// Default Constructor
+Music::Music()
+{
+  cout << "\nIn default Constructor\n";
+
+  songName = "\0";
+  artistName = "\0";
+  musicLabel = "\0";
+  songDuration = 0;
+  releaseYear = 0;
+}
+
+// Copy Constructor
+Music::Music(const Music & otherMusic)
+{
+  cout << "\nIn copy Constructor\n";
+
+  songName = otherMusic.songName;
+  artistName = otherMusic.artistName;
+  musicLabel = otherMusic.musicLabel;
+  songDuration = otherMusic.songDuration;
+  releaseYear = otherMusic.releaseYear;
+
+}
+
+// Destructor
+Music::~Music()
+{
+  cout << "\nIn Destructor\n";
+}
+
+
+Step #4:
+Undefined symbols for architecture x86_64:
+  "Music::getSongName()", referenced from:
+      _main in main-90b979.o
+  "Music::getArtistName()", referenced from:
+      _main in main-90b979.o
+  "Music::getMusicLabel()", referenced from:
+      _main in main-90b979.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Step #5:
+
+In default Constructor
+
+In copy Constructor
+
+In getSongName method
+
+In getArtistName method
+
+In getMusicLabel method
+
+In Destructor
+
+In Destructor
+
+Step #6:
+#include <iostream>
+using namespace std;
+
+class Music
+{
+public:
+  // Constructors and Destructors
+  Music();
+  Music(const Music &otherMusic);
+  ~Music();
+
+  //Getters
+  string getSongName();
+  string getArtistName();
+  string getMusicLabel();
+  int getSongDuration();
+  int getReleaseYear();
+
+  //Setters
+  void setSongName(const string song);
+  void setArtistName(const string artist);
+  void setMusicLabel(const string label);
+  void setSongDuration(const int duration);
+  void setReleaseYear(const int year);
+
+  //Print
+  void print();
+  void printSubset();
+
+private:
+  string songName;
+  string artistName;
+  string musicLabel;
+  int songDuration;
+  int releaseYear;
+};
+
+
+Step #7:
+#include "music.h"
+
+// Default Constructor
+Music::Music()
+{
+  cout << "\nIn default Constructor\n";
+
+  songName = "\0";
+  artistName = "\0";
+  musicLabel = "\0";
+  songDuration = 0;
+  releaseYear = 0;
+}
+
+// Copy Constructor
+Music::Music(const Music & otherMusic)
+{
+  cout << "\nIn copy Constructor\n";
+
+  songName = otherMusic.songName;
+  artistName = otherMusic.artistName;
+  musicLabel = otherMusic.musicLabel;
+  songDuration = otherMusic.songDuration;
+  releaseYear = otherMusic.releaseYear;
+
+}
+
+// Destructor
+Music::~Music()
+{
+  cout << "\nIn Destructor\n";
+}
+
+// Getters
+string Music::getSongName()
+{
+  cout << "\nIn getSongName method\n";
+
+  return songName;
+}
+
+string Music::getArtistName()
+{
+  cout << "\nIn getArtistName method\n";
+
+  return artistName;
+}
+
+string Music::getMusicLabel()
+{
+  cout << "\nIn getMusicLabel method\n";
+
+  return musicLabel;
+}
+
+int Music::getSongDuration()
+{
+  cout << "\nIn getSongDuration method\n";
+
+  return songDuration;
+}
+
+int Music::getReleaseYear()
+{
+  cout << "\nIn getReleaseYear method\n";
+
+  return releaseYear;
+}
+
+void Music::setSongName(const string song)
+{
+  cout << "\nIn setSongName method\n";
+
+  songName = song;
+}
+
+//Setters
+void Music::setArtistName(const string artist)
+{
+  cout << "\nIn setArtistName method\n";
+
+  artistName = artist;
+}
+
+void Music::setMusicLabel(const string label)
+{
+  cout << "\nIn setMusicLabel method\n";
+
+  musicLabel = label;
+}
+
+void Music::setSongDuration(const int duration)
+{
+  cout << "\nIn setSongDuration method\n";
+
+  songDuration = duration;
+}
+
+void Music::setReleaseYear(const int year)
+{
+  cout << "\nIn setReleaseYear method\n";
+
+  releaseYear = year;
+}
+
+//Print
+void Music::print()
+{
+  cout << "\nIn print method\n";
+
+  cout << "\nSong Name: " << songName;
+  cout << "\nArtist Name: " << artistName;
+  cout << "\nMusic Label: " << musicLabel;
+  cout << "\nSong Duration: " << songDuration / 60
+      << " minutes " << songDuration % 60 << " seconds";
+  cout << "\nRelease Year: " << releaseYear << endl;
+}
+
+void Music::printSubset()
+{
+  cout << "\nIn printSubset method\n";
+
+  cout << "\nSong Name: " << songName;
+  cout << "\nArtist Name: " << artistName;
+  cout << "\nSong Duration: " << songDuration / 60
+      << " minutes " << songDuration % 60 << " seconds";
+}
+
+
+Step #8:
+#include "music.h"
+
+int main()
+{
+  Music song1;
+
+  song1.setSongName("Boogie Nights");
+  song1.setArtistName("Heatwave");
+  song1.setMusicLabel("GTO Records");
+  song1.setSongDuration(302);
+  song1.setReleaseYear(1977);
+
+  Music song2(song1);
+
+  song2.getSongName();
+  song2.getArtistName();
+  song2.getMusicLabel();
+  song2.getSongDuration();
+  song2.getReleaseYear();
+
+  song1.print();
+  song2.printSubset();
+}
+
+
+Step #9:
+
+In default Constructor
+
+In setSongName method
+
+In setArtistName method
+
+In setMusicLabel method
+
+In setSongDuration method
+
+In setReleaseYear method
+
+In copy Constructor
+
+In getSongName method
+
+In getArtistName method
+
+In getMusicLabel method
+
+In getSongDuration method
+
+In getReleaseYear method
+
+In print method
+
+Song Name: Boogie Nights
+Artist Name: Heatwave
+Music Label: GTO Records
+Song Duration: 5 minutes 2 seconds
+Release Year: 1977
+
+In printSubset method
+
+Song Name: Boogie Nights
+Artist Name: Heatwave
+Song Duration: 5 minutes 2 seconds
+In Destructor
+
+In Destructor

@@ -1,0 +1,13 @@
+* Timing / Code analysis questions (Lab 4)
+  - dividing by 2 or multiplying by 2 can mean O(log base 2(N))
+* Bubble sort AND Selection sort (choose)
+  - optimizations for Bubble sort
+    - inner for loop run n - 1 - i
+      - the largest number will be place at the end after each pass over the array
+    - no swaps = already sorted
+      - inversion true / false
+* Binary search
+  - optimizations
+* Linked List, Stacks, Queues
+* Know how to use stack for postfix, infix to postfix
+* Know % and / (integer division)

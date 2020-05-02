@@ -1,0 +1,106 @@
+
+Step #1:
+int main()
+{
+  int Data[100];
+
+  create_random_data(Data,100,100);
+  write_data("random.txt", Data, 100);
+  create_mostly_sorted_data(Data, 100, 50);
+  write_data("mostlySorted.txt", Data, 100);
+
+}
+
+Step #2:
+100
+0 28 2 3 94 26 54 7 4 31 10 65 12 70 14 62 9 85 18 68
+47 67 22 44 24 66 60 27 71 29 13 90 32 33 25 15 36 58 63 35
+79 41 11 43 95 75 46 17 48 49 59 51 40 53 23 55 56 38 37 50
+89 61 6 8 64 99 34 21 16 69 30 97 39 73 74 45 76 1 78 82
+80 81 52 83 84 96 86 87 88 57 20 91 92 93 5 19 98 77 72 42
+
+Step #3:
+int main()
+{
+  int N = 50000;
+  int Data[N];
+
+  create_random_data(Data,N,N);
+  // Get start time
+  clock_t time1=clock();
+
+  bubble_sort(Data, N);
+
+  // Get end time
+  clock_t time2=clock();
+  double run_time = (time2-time1)/(double)CLOCKS_PER_SEC;
+  cout << "bubble_sort with " << N << " random values run time: " << run_time << " seconds\n";
+
+  create_mostly_sorted_data(Data, N, N/10);
+
+  // Get start time
+  time1=clock();
+
+  bubble_sort(Data, N);
+
+  // Get end time
+  time2=clock();
+  run_time = (time2-time1)/(double)CLOCKS_PER_SEC;
+  cout << "bubble_sort with " << N/10 <<" swaps run time: " << run_time << " seconds\n";
+
+  create_mostly_sorted_data(Data, N, 0);
+
+  // Get start time
+  time1=clock();
+
+  bubble_sort(Data, N);
+
+  // Get end time
+  time2=clock();
+  run_time = (time2-time1)/(double)CLOCKS_PER_SEC;
+  cout << "bubble_sort with " << N << " sorted values run time: " << run_time << " seconds\n";
+
+  create_random_data(Data,N,N);
+  // Get start time
+  time1=clock();
+
+  selection_sort(Data, 0, N);
+
+  // Get end time
+  time2=clock();
+  run_time = (time2-time1)/(double)CLOCKS_PER_SEC;
+  cout << "selection_sort with " << N << " random values run time: " << run_time << " seconds\n";
+
+  create_mostly_sorted_data(Data, N, N/10);
+
+  // Get start time
+  time1=clock();
+
+  selection_sort(Data,0,N);
+
+  // Get end time
+  time2=clock();
+  run_time = (time2-time1)/(double)CLOCKS_PER_SEC;
+  cout << "selection_sort with " << N/10 << " swaps run time: " << run_time << " seconds\n";
+
+  create_mostly_sorted_data(Data, N, 0);
+
+  // Get start time
+  time1=clock();
+
+  selection_sort(Data,0,N);
+
+  // Get end time
+  time2=clock();
+  run_time = (time2-time1)/(double)CLOCKS_PER_SEC;
+  cout << "selection_sort with " << N << " sorted values run time: " << run_time << " seconds\n";
+
+}
+
+Step #4:
+bubble_sort with 50000 random values run time: 9.21727 seconds
+bubble_sort with 5000 swaps run time: 4.75262 seconds
+bubble_sort with 50000 sorted values run time: 0.000161 seconds
+selection_sort with 50000 random values run time: 3.37142 seconds
+selection_sort with 5000 swaps run time: 3.34477 seconds
+selection_sort with 50000 sorted values run time: 3.59067 seconds

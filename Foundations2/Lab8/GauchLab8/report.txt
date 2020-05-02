@@ -1,0 +1,165 @@
+
+Step #1:
+//-----------------------------------------------------------
+// Main program.
+//-----------------------------------------------------------
+#include "stack.h"
+
+int main()
+{
+   Stack stack;
+   int i = 0;
+
+   cout << "\nPushing 3";
+   stack.Push(3);
+   cout << "\nPushing 1";
+   stack.Push(1);
+   cout << "\nPushing 4";
+   stack.Push(4);
+   cout << "\nPushing 1";
+   stack.Push(1);
+   cout << "\nPushing 5";
+   stack.Push(5);
+   cout << "\nPushing 9";
+   stack.Push(9);
+
+   stack.Pop(i);
+   cout << "\nPoping " << i ;
+   stack.Pop(i);
+   cout << "\nPoping " << i ;
+   stack.Pop(i);
+   cout << "\nPoping " << i ;
+   stack.Pop(i);
+   cout << "\nPoping " << i ;
+   stack.Pop(i);
+   cout << "\nPoping " << i ;
+   stack.Pop(i);
+   cout << "\nPoping " << i ;
+
+}
+
+
+Step #2:
+Pushing 3
+Pushing 1
+Pushing 4
+Pushing 1
+Pushing 5
+Pushing 9
+Poping 9
+Poping 5
+Poping 1
+Poping 4
+Poping 1
+
+
+Step #3:
+void Stack::Top(int &Number)
+{
+  // Check for empty stack
+  if (IsEmpty())
+     return;
+
+  // Extract information from node
+  Number = Head->Number;
+}
+
+Step #4:
+//-----------------------------------------------------------
+// This routine prints all records in the stack.
+//-----------------------------------------------------------
+void Stack::Print()
+{
+  StackNode * temp = Head;
+   while(temp->Next != NULL)
+   {
+     cout << temp->Number << " ";
+     temp = temp->Next;
+   }
+   cout << endl;
+   temp = NULL;
+   delete temp;
+}
+
+Step #5:
+//-----------------------------------------------------------
+// Main program.
+//-----------------------------------------------------------
+#include "stack.h"
+
+int main()
+{
+   Stack stack;
+   int n = 0;
+
+   cout << "\nPushing 3";
+   stack.Push(3);
+   stack.Top(n);
+   cout << "\nTop: " << n << endl;
+   cout << "\nPushing 1";
+   stack.Push(1);
+   stack.Top(n);
+   cout << "\nTop: " << n << endl;
+   cout << "\nPushing 4";
+   stack.Push(4);
+   stack.Top(n);
+   cout << "\nTop: " << n << endl;
+   cout << "\nPushing 1";
+   stack.Push(1);
+   stack.Top(n);
+   cout << "\nTop: " << n << endl;
+   cout << "\nPushing 5";
+   stack.Push(5);
+   stack.Top(n);
+   cout << "\nTop: " << n << endl;
+   cout << "\nPushing 9";
+   stack.Push(9);
+   stack.Top(n);
+   cout << "\nTop: " << n << endl;
+
+   cout << "\nPrint: ";
+   stack.Print();
+
+   stack.Pop(n);
+   cout << "\nPoping " << n ;
+   stack.Pop(n);
+   cout << "\nPoping " << n ;
+   stack.Pop(n);
+   cout << "\nPoping " << n ;
+   stack.Pop(n);
+   cout << "\nPoping " << n ;
+   stack.Pop(n);
+   cout << "\nPoping " << n ;
+   stack.Pop(n);
+   cout << "\nPoping " << n << endl;
+
+}
+
+
+Step #6:
+Pushing 3
+Top: 3
+
+Pushing 1
+Top: 1
+
+Pushing 4
+Top: 4
+
+Pushing 1
+Top: 1
+
+Pushing 5
+Top: 5
+
+Pushing 9
+Top: 9
+
+Print: 9 5 1 4 1
+
+Poping 9
+Poping 5
+Poping 1
+Poping 4
+Poping 1
+Poping 3
