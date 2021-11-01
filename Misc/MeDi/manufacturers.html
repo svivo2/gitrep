@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Manufacturers </title>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+  </head>
+  <header>
+    <a href="home.html"> Home </a>
+    <a href="manufacturers.html"> Manufacturers </a>
+    <a href="distributors.html"> Distributors </a>
+    <a href="hospitals.html"> Hospitals </a>
+    <a href="patients.html"> Patients </a>
+  </header>
+  <body>
+    <div>
+      <p> Send Pallet to Distributor <p>
+      <form id = "OwnerTransfer" name = "OwnerTransfer">
+        <div>
+          <label for "oldOwner"> Manufacturer: </label>
+          <input type = "text" id = "oldOwner"  name = "oldOwner" required>
+        </div>
+        <div>
+          <label for "newOwner"> Distributor: </label>
+          <input type = "text" id = "newOwner"  name = "newOwner" required>
+        </div>
+        <div>
+          <label for "serialNum"> Serial Number: </label>
+          <input type = "text" id = "serialNum"  name = "serialNum" required>
+        </div>
+        <div>
+          <input type = "submit" value = "Submit" onclick = "transaction();">
+        </div>
+      </form>
+    </div>
+    <div>
+      <p> Create Device <p>
+      <form id = "CreateDevice" name = "CreateDevice">
+        <div>
+          <label for "metal"> Metal: </label>
+          <input type = "text" id = "metal"  name = "metal" required>
+        </div>
+        <div>
+          <label for "plastic"> Plastic: </label>
+          <input type = "text" id = "plastic"  name = "plastic" required>
+        </div>
+        <div>
+          <label for "serialNum"> Serial Number: </label>
+          <input type = "text" id = "serialNum"  name = "serialNum" required>
+        </div>
+        <div>
+          <input type = "submit" value = "Submit" onclick = "makeDevice();">
+        </div>
+      </form>
+    </div>
+    <script>
+      function transaction(){
+        var oldOwner = document.OwnerTransfer.oldOwner.value;
+        var newOwner = document.OwnerTransfer.newOwner.value;
+        var serialNum = document.OwnerTransfer.serialNum.value;
+
+        console.log(oldOwner);
+        console.log(newOwner);
+        console.log(serialNum);
+
+        newData = {
+          "owner" : "resource:org.medid.Manufacture#" + oldOwner,
+          "newowner" : "resource:org.medid.Distributor#" + newOwner,
+          "SN" : "resource:org.medid.device#" + serialNum
+        }
+
+        console.log(newData);
+
+        $.ajax({
+          url : "http://10.25.12.134:3000/api/org.medid.transferdeviceowner",
+          type: "POST",
+          dataType: "json",
+          data:newData,
+          success: function () {
+            console.log("Success!")
+          },
+          error: function () {
+            console.log("Sorry, there was a problem!");
+          },
+          complete: function () {
+            console.log("The request is complete!");
+          }
+        });
+      }
+      function makeDevice(){
+        var metal = document.CreateDevice.metal.value;
+        var plastic = document.CreateDevice.plastic.value;
+        var serialNum = document.CreateDevice.serialNum.value;
+        // var owner = document.CreateDevice.owner.value;
+
+        console.log(metal);
+        console.log(plastic);
+        console.log(serialNum);
+        // console.log(owner);
+
+        newData = {
+          "SN" : "resource:org.medid.device#" + serialNum,
+          "plastic" : "resource:org.medid.device#" + newOwner,
+          "SN" : "resource:org.medid.device#" + serialNum
+        }
+
+
+
+      }
+    </script>
+  </body>
+</html>

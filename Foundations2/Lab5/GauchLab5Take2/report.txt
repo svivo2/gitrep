@@ -1,0 +1,114 @@
+
+Step #1:
+   // Test the student list class
+   StudentList list;
+   list.insertHead("John", "Johnson, AR", 3.2);
+   list.insertTail("Jack", "Jacksonville, AR", 3.4);
+   list.insertTail("Sam", "Springdale, AR", 3.0);
+   list.insertHead("Ben", "Bentonville, AR", 2.8);
+   list.insertHead("Jill", "Jillandale, AR", 2.6);
+   list.print();
+
+Step #2:
+Name: Jill
+Address: Jillandale, AR
+GPA: 2.6
+Name: Ben
+Address: Bentonville, AR
+GPA: 2.8
+Name: Sam
+Address: Springdale, AR
+GPA: 3
+Name: Jack
+Address: Jacksonville, AR
+GPA: 3.4
+Name: John
+Address: Johnson, AR
+GPA: 3.2
+
+
+Step #3:
+Name: John
+Address: Johnson, AR
+GPA: 3.2
+Name: Jack
+Address: Jacksonville, AR
+GPA: 3.4
+Name: Sam
+Address: Springdale, AR
+GPA: 3
+Name: Ben
+Address: Bentonville, AR
+GPA: 2.8
+Name: Jill
+Address: Jillandale, AR
+GPA: 2.6
+
+Step #4:
+insertTail time for 5000 records = 3.29996 seconds
+insertHead time for 5000 records = 0.007851 seconds
+
+Step #5:
+StudentList search methods:
+
+//----------------------------------------------
+StudentNode * StudentList::searchStudent(const string & name)
+{
+  // Find node
+  StudentNode *ptr = Head;
+  while ((ptr != NULL) && (ptr->getNext() != NULL) && (ptr->getName() != name))
+     ptr = ptr->getNext();
+
+  if (ptr == NULL)
+  {
+    cout << "\nThere are no records matching this name\n";
+    return ptr;
+  }
+  else
+  {
+    ptr->print();
+    return ptr;
+  }
+}
+
+//----------------------------------------------
+StudentNode* StudentList::searchGPA(const float & gpa)
+{
+  // Find node
+  StudentNode *ptr = Head;
+  while ((ptr != NULL) && (ptr->getNext() != NULL) && (ptr->getGPA() < gpa))
+     ptr = ptr->getNext();
+
+  if (ptr == NULL)
+  {
+    cout << "\nThere are no records matching this gpa\n";
+    return ptr;
+  }
+  else
+  {
+    ptr->print();
+    return ptr;
+  }
+}
+
+main program:
+
+  // Test the student list class
+  StudentList list;
+  list.insertHead("John", "Johnson, AR", 3.2);
+  list.insertHead("Jack", "Jacksonville, AR", 3.4);
+  list.insertHead("Sam", "Springdale, AR", 3.0);
+  list.insertHead("Ben", "Bentonville, AR", 2.8);
+  list.insertHead("Jill", "Jillandale, AR", 2.6);
+
+  list.searchStudent("Ben");
+  list.searchGPA(3.2);
+
+
+Step #6:
+Name: Ben
+Address: Bentonville, AR
+GPA: 2.8
+Name: Jack
+Address: Jacksonville, AR
+GPA: 3.4

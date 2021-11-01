@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Hospital </title>
+  </head>
+  <header>
+    <a href="home.html"> Home </a>
+  </header>
+  <body>
+    <script>
+      function eval ()
+      {
+        var participant = document.quiz.participant;
+        document.getElementById("onClick").style.visibility = "visible";
+      }
+    </script>
+    <form id = "OwnerTransfer" name = "OwnerTransfer">
+      <input type = "radio" id = "mc" name = "participant" value = "manufacturer" onclick="eval();"> Manufacturer <br>
+      <input type = "radio" id = "mc" name = "participant" value = "distributor" onclick="eval();"> Distributor <br>
+      <input type = "radio" id = "mc" name = "participant" value = "hospital" onclick="eval();"> Hospital <br>
+      <input type = "radio" id = "mc" name = "participant" value = "patient" onclick="eval();"> Patient <br>
+      <div id = "onclick">
+
+      </div>
+    </form>
+  </body>
+</html>

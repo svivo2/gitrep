@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Assignment 11</title>
+    <header>Welcome to Sebastian Vivo's assignment11 web site!</header>
+  </head>
+  <body>
+    {%if error == 1%}
+    Wrong password.
+    {%endif%}
+    {%if error == 2%}
+    Username not found.
+    {%endif%}
+    <form id="login" name="login" action="/assignment11.html" method="get">
+        <label> Username: </label>
+        <input type = "text" name = "un" value="jDoe"/><br>
+        <label> Password: </label>
+        <input type = "text" name = "pw" value="pass"/><br>
+        <input type = "hidden" id="create" name = "create" value = "login"/>
+        <input type = "submit" value = "login"/>
+    </form><br>
+    {%if error == 3%}
+    Account already exists.
+    {%endif%}
+    {%if error == 4%}
+    Please fill in all fields.
+    {%endif%}
+    <br>
+    <form id="account" name="account" action="/assignment11.html" method="get">
+      <label> First Name: </label>
+      <input type = "text" name = "fn" value="John"/><br>
+      <label> Last Name: </label>
+      <input type = "text" name = "ln" value="Doe"/><br>
+      <label> Username: </label>
+      <input type = "text" name = "un" value="jDoe"/><br>
+      <label> Password: </label>
+      <input type = "text" name = "pw" value="pass"/><br>
+      <input type = "hidden" id="create" name = "create" value = "account"/>
+      <input type = "submit" value = "Create"/>
+    </form>
+  </body>
+</html>

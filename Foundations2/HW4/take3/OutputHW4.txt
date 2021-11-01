@@ -1,0 +1,2802 @@
+Last login: Fri Mar 15 15:22:21 on console
+Sebastians-MacBook-Air:~ sebastianvivo$ cd github/dev/devcpp/pfii/hw4/take3
+Sebastians-MacBook-Air:take3 sebastianvivo$ ls
+stack.cpp	stack.h
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp -o stack
+stack.cpp:31:13: error: no member named 'Number' in 'StackNode'
+      copy->Number = ptr->Number;
+      ~~~~  ^
+stack.cpp:31:27: error: no member named 'Number' in 'StackNode'
+      copy->Number = ptr->Number;
+                     ~~~  ^
+stack.cpp:91:10: error: no member named 'Number' in 'StackNode'
+   Temp->Number = Number;
+   ~~~~  ^
+stack.cpp:91:19: error: use of undeclared identifier 'Number'
+   Temp->Number = Number;
+                  ^
+stack.cpp:107:4: error: use of undeclared identifier 'Number'
+   Number = Head->Number;
+   ^
+stack.cpp:107:19: error: no member named 'Number' in 'StackNode'
+   Number = Head->Number;
+            ~~~~  ^
+stack.cpp:126:4: error: use of undeclared identifier 'Number'
+   Number = Head->Number;
+   ^
+stack.cpp:126:19: error: no member named 'Number' in 'StackNode'
+   Number = Head->Number;
+            ~~~~  ^
+stack.cpp:147:21: error: no member named 'Number' in 'StackNode'
+      cout << Temp->Number << " ";
+              ~~~~  ^
+9 errors generated.
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp -o stack
+stack.cpp:31:13: error: no member named 'Number' in 'StackNode'
+      copy->Number = ptr->Number;
+      ~~~~  ^
+stack.cpp:31:27: error: no member named 'Number' in 'StackNode'
+      copy->Number = ptr->Number;
+                     ~~~  ^
+stack.cpp:91:10: error: no member named 'Number' in 'StackNode'
+   Temp->Number = Number;
+   ~~~~  ^
+stack.cpp:91:19: error: use of undeclared identifier 'Number'
+   Temp->Number = Number;
+                  ^
+stack.cpp:107:4: error: use of undeclared identifier 'Number'
+   Number = Head->Number;
+   ^
+stack.cpp:107:19: error: no member named 'Number' in 'StackNode'
+   Number = Head->Number;
+            ~~~~  ^
+stack.cpp:126:4: error: use of undeclared identifier 'Number'
+   Number = Head->Number;
+   ^
+stack.cpp:126:19: error: no member named 'Number' in 'StackNode'
+   Number = Head->Number;
+            ~~~~  ^
+stack.cpp:147:21: error: no member named 'Number' in 'StackNode'
+      cout << Temp->Number << " ";
+              ~~~~  ^
+9 errors generated.
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp -o stack
+Undefined symbols for architecture x86_64:
+  "_main", referenced from:
+     implicit entry/start for main executable
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+Sebastians-MacBook-Air:take3 sebastianvivo$ -v
+-bash: -v: command not found
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp -o stack
+Sebastians-MacBook-Air:take3 sebastianvivo$ -v
+-bash: -v: command not found
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./stack
+stack: working  is  This
+stack: Mom   Hello working  is  This
+stack: Hello working  is  This
+stack: is  This
+stack:
+Sebastians-MacBook-Air:take3 sebastianvivo$ -v
+-bash: -v: command not found
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o stack
+stack.cpp:179:1: error: extraneous closing brace ('}')
+}
+^
+1 error generated.
+main.cpp:10:12: error: implicit instantiation of undefined template 'std::__1::basic_ifstream<char, std::__1::char_traits<char> >'
+  ifstream din;
+           ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iosfwd:131:32: note: template is declared here
+    class _LIBCPP_TEMPLATE_VIS basic_ifstream;
+                               ^
+main.cpp:21:40: warning: result of comparison against a string literal is unspecified (use strncmp instead) [-Wstring-compare]
+        for(int i = 0; ch != '>' && ch != " "; i++)
+                                       ^  ~~~
+main.cpp:21:40: error: comparison between pointer and integer ('char' and 'const char *')
+        for(int i = 0; ch != '>' && ch != " "; i++)
+                                    ~~ ^  ~~~
+main.cpp:32:40: warning: result of comparison against a string literal is unspecified (use strncmp instead) [-Wstring-compare]
+        for(int i = 0; ch != '>' && ch != " "; i++)
+                                       ^  ~~~
+main.cpp:32:40: error: comparison between pointer and integer ('char' and 'const char *')
+        for(int i = 0; ch != '>' && ch != " "; i++)
+                                    ~~ ^  ~~~
+main.cpp:38:9: error: no member named 'push' in 'Stack'; did you mean 'Push'?
+      s.push(str);
+        ^~~~
+        Push
+./stack.h:33:9: note: 'Push' declared here
+   void Push(string str);
+        ^
+main.cpp:43:5: error: no member named 'print' in 'Stack'; did you mean 'Print'?
+  s.print();
+    ^~~~~
+    Print
+./stack.h:37:9: note: 'Print' declared here
+   void Print();
+        ^
+2 warnings and 5 errors generated.
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o stack
+main.cpp:10:12: error: implicit instantiation of undefined template 'std::__1::basic_ifstream<char, std::__1::char_traits<char> >'
+  ifstream din;
+           ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iosfwd:131:32: note: template is declared here
+    class _LIBCPP_TEMPLATE_VIS basic_ifstream;
+                               ^
+main.cpp:21:40: warning: result of comparison against a string literal is unspecified (use strncmp instead) [-Wstring-compare]
+        for(int i = 0; ch != '>' && ch != " "; i++)
+                                       ^  ~~~
+main.cpp:21:40: error: comparison between pointer and integer ('char' and 'const char *')
+        for(int i = 0; ch != '>' && ch != " "; i++)
+                                    ~~ ^  ~~~
+main.cpp:32:40: warning: result of comparison against a string literal is unspecified (use strncmp instead) [-Wstring-compare]
+        for(int i = 0; ch != '>' && ch != " "; i++)
+                                       ^  ~~~
+main.cpp:32:40: error: comparison between pointer and integer ('char' and 'const char *')
+        for(int i = 0; ch != '>' && ch != " "; i++)
+                                    ~~ ^  ~~~
+main.cpp:38:9: error: no member named 'push' in 'Stack'; did you mean 'Push'?
+      s.push(str);
+        ^~~~
+        Push
+./stack.h:33:9: note: 'Push' declared here
+   void Push(string str);
+        ^
+main.cpp:43:5: error: no member named 'print' in 'Stack'; did you mean 'Print'?
+  s.print();
+    ^~~~~
+    Print
+./stack.h:37:9: note: 'Print' declared here
+   void Print();
+        ^
+2 warnings and 5 errors generated.
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o stack
+In file included from stack.cpp:5:
+./stack.h:8:10: fatal error: 'ifstream' file not found
+#include <ifstream>
+         ^~~~~~~~~~
+1 error generated.
+In file included from main.cpp:1:
+./stack.h:8:10: fatal error: 'ifstream' file not found
+#include <ifstream>
+         ^~~~~~~~~~
+1 error generated.
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o stack
+main.cpp:21:40: warning: result of comparison against a string literal is unspecified (use strncmp instead) [-Wstring-compare]
+        for(int i = 0; ch != '>' && ch != " "; i++)
+                                       ^  ~~~
+main.cpp:21:40: error: comparison between pointer and integer ('char' and 'const char *')
+        for(int i = 0; ch != '>' && ch != " "; i++)
+                                    ~~ ^  ~~~
+main.cpp:32:40: warning: result of comparison against a string literal is unspecified (use strncmp instead) [-Wstring-compare]
+        for(int i = 0; ch != '>' && ch != " "; i++)
+                                       ^  ~~~
+main.cpp:32:40: error: comparison between pointer and integer ('char' and 'const char *')
+        for(int i = 0; ch != '>' && ch != " "; i++)
+                                    ~~ ^  ~~~
+main.cpp:38:9: error: no member named 'push' in 'Stack'; did you mean 'Push'?
+      s.push(str);
+        ^~~~
+        Push
+./stack.h:34:9: note: 'Push' declared here
+   void Push(string str);
+        ^
+main.cpp:43:5: error: no member named 'print' in 'Stack'; did you mean 'Print'?
+  s.print();
+    ^~~~~
+    Print
+./stack.h:38:9: note: 'Print' declared here
+   void Print();
+        ^
+2 warnings and 4 errors generated.
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o stack
+main.cpp:38:9: error: no member named 'push' in 'Stack'; did you mean 'Push'?
+      s.push(str);
+        ^~~~
+        Push
+./stack.h:34:9: note: 'Push' declared here
+   void Push(string str);
+        ^
+main.cpp:43:5: error: no member named 'print' in 'Stack'; did you mean 'Print'?
+  s.print();
+    ^~~~~
+    Print
+./stack.h:38:9: note: 'Print' declared here
+   void Print();
+        ^
+2 errors generated.
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o stack
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+
+syntax error
+
+syntax error
+
+syntax error
+
+syntax error
+
+syntax error
+
+syntax error
+
+syntax error
+
+syntax error
+
+syntax error
+
+syntax error
+
+syntax error
+
+syntax error
+
+syntax error
+
+syntax error
+
+syntax error
+
+syntax error
+
+syntax error
+
+syntax error
+
+syntax error
+
+syntax error
+
+syntax error
+
+syntax error
+
+syntax error
+
+syntax error
+
+syntax error
+
+syntax error
+
+syntax error
+stack: html> li p p> li p p> li p p> li p p> li p p> li p h2> center> font> br font> td tr table center body html
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+stack: /html> /body> /p> /li> /a> a  li> p> /p> /li> /a> a  li> p> /p> /li> /a> a  li> p> /p> /li> /a> a  li> p> /p> /li> /a> a  li> p> /p> /li> /a> a  li> p> /h2> h2> /center> /table> /tr> /td> br> /font> font  br> /font> font  td  tr> table  center>? body  html>
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+stack: /html> /body> /p> /li> /a> a  li> p> /p> /li> /a> a  li> p> /p> /li> /a> a  li> p> /p> /li> /a> a  li> p> /p> /li> /a> a  li> p> /p> /li> /a> a  li> p> /h2> h2> /center> /table> /tr> /td> br> /font> font  br> /font> font  td  tr> table  center>? body  html>
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+stack: Node 0: /html> Node 1: /body> Node 2: /p> Node 3: /li> Node 4: /a> Node 5: a  Node 6: li> Node 7: p> Node 8: /p> Node 9: /li> Node 10: /a> Node 11: a  Node 12: li> Node 13: p> Node 14: /p> Node 15: /li> Node 16: /a> Node 17: a  Node 18: li> Node 19: p> Node 20: /p> Node 21: /li> Node 22: /a> Node 23: a  Node 24: li> Node 25: p> Node 26: /p> Node 27: /li> Node 28: /a> Node 29: a  Node 30: li> Node 31: p> Node 32: /p> Node 33: /li> Node 34: /a> Node 35: a  Node 36: li> Node 37: p> Node 38: /h2> Node 39: h2> Node 40: /center> Node 41: /table> Node 42: /tr> Node 43: /td> Node 44: br> Node 45: /font> Node 46: font  Node 47: br> Node 48: /font> Node 49: font  Node 50: td  Node 51: tr> Node 52: table  Node 53: center> Node 54: body  Node 55: html>
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+stack: Node 0: /html>
+Node 1: /body>
+Node 2: /p>
+Node 3: /li>
+Node 4: /a>
+Node 5: a
+Node 6: li>
+Node 7: p>
+Node 8: /p>
+Node 9: /li>
+Node 10: /a>
+Node 11: a
+Node 12: li>
+Node 13: p>
+Node 14: /p>
+Node 15: /li>
+Node 16: /a>
+Node 17: a
+Node 18: li>
+Node 19: p>
+Node 20: /p>
+Node 21: /li>
+Node 22: /a>
+Node 23: a
+Node 24: li>
+Node 25: p>
+Node 26: /p>
+Node 27: /li>
+Node 28: /a>
+Node 29: a
+Node 30: li>
+Node 31: p>
+Node 32: /p>
+Node 33: /li>
+Node 34: /a>
+Node 35: a
+Node 36: li>
+Node 37: p>
+Node 38: /h2>
+Node 39: h2>
+Node 40: /center>
+Node 41: /table>
+Node 42: /tr>
+Node 43: /td>
+Node 44: br>
+Node 45: /font>
+Node 46: font
+Node 47: br>
+Node 48: /font>
+Node 49: font
+Node 50: td
+Node 51: tr>
+Node 52: table
+Node 53: center>0
+Node 54: body
+Node 55: html>
+
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+Stack:
+Node 0: /html>
+Node 1: /body>
+Node 2: /p>
+Node 3: /li>
+Node 4: /a>
+Node 5: a
+Node 6: li>
+Node 7: p>
+Node 8: /p>
+Node 9: /li>
+Node 10: /a>
+Node 11: a
+Node 12: li>
+Node 13: p>
+Node 14: /p>
+Node 15: /li>
+Node 16: /a>
+Node 17: a
+Node 18: li>
+Node 19: p>
+Node 20: /p>
+Node 21: /li>
+Node 22: /a>
+Node 23: a
+Node 24: li>
+Node 25: p>
+Node 26: /p>
+Node 27: /li>
+Node 28: /a>
+Node 29: a
+Node 30: li>
+Node 31: p>
+Node 32: /p>
+Node 33: /li>
+Node 34: /a>
+Node 35: a
+Node 36: li>
+Node 37: p>
+Node 38: /h2>
+Node 39: h2>
+Node 40: /center>
+Node 41: /table>
+Node 42: /tr>
+Node 43: /td>
+Node 44: br>
+Node 45: /font>
+Node 46: font
+Node 47: br>
+Node 48: /font>
+Node 49: font
+Node 50: td
+Node 51: tr>
+Node 52: table
+Node 53: center>?
+Node 54: body
+Node 55: html>
+
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+Segmentation fault: 11
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+Stack:
+Node 0: /html>
+Node 1: /body>
+Node 2: /p>
+Node 3: /li>
+Node 4: /a>
+Node 5: a
+Node 6: li>
+Node 7: p>
+Node 8: /p>
+Node 9: /li>
+Node 10: /a>
+Node 11: a
+Node 12: li>
+Node 13: p>
+Node 14: /p>
+Node 15: /li>
+Node 16: /a>
+Node 17: a
+Node 18: li>
+Node 19: p>
+Node 20: /p>
+Node 21: /li>
+Node 22: /a>
+Node 23: a
+Node 24: li>
+Node 25: p>
+Node 26: /p>
+Node 27: /li>
+Node 28: /a>
+Node 29: a
+Node 30: li>
+Node 31: p>
+Node 32: /p>
+Node 33: /li>
+Node 34: /a>
+Node 35: a
+Node 36: li>
+Node 37: p>
+Node 38: /h2>
+Node 39: h2>
+Node 40: /center>
+Node 41: /table>
+Node 42: /tr>
+Node 43: /td>
+Node 44: br>
+Node 45: /font>
+Node 46: font
+Node 47: br>
+Node 48: /font>
+Node 49: font
+Node 50: td
+Node 51: tr>
+Node 52: table
+Node 53: center>
+Node 54: body
+Node 55: html>
+
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+Stack:
+Node 0: /html>
+Node 1: /body>
+Node 2: /p>
+Node 3: /li>
+Node 4: /a>
+Node 5: a
+Node 6: li>
+Node 7: p>
+Node 8: /p>
+Node 9: /li>
+Node 10: /a>
+Node 11: a
+Node 12: li>
+Node 13: p>
+Node 14: /p>
+Node 15: /li>
+Node 16: /a>
+Node 17: a
+Node 18: li>
+Node 19: p>
+Node 20: /p>
+Node 21: /li>
+Node 22: /a>
+Node 23: a
+Node 24: li>
+Node 25: p>
+Node 26: /p>
+Node 27: /li>
+Node 28: /a>
+Node 29: a
+Node 30: li>
+Node 31: p>
+Node 32: /p>
+Node 33: /li>
+Node 34: /a>
+Node 35: a
+Node 36: li>
+Node 37: p>
+Node 38: /h2>
+Node 39: h2>
+Node 40: /center>
+Node 41: /table>
+Node 42: /tr>
+Node 43: /td>
+Node 44: br>
+Node 45: /font>
+Node 46: font
+Node 47: br>
+Node 48: /font>
+Node 49: font
+Node 50: td
+Node 51: tr>
+Node 52: table
+Node 53: center>0
+Node 54: body
+Node 55: html>
+
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+Stack:
+Node 0: /html>
+Node 1: /body>
+Node 2: /p>
+Node 3: /li>
+Node 4: /a>
+Node 5: a
+Node 6: li>
+Node 7: p>
+Node 8: /p>
+Node 9: /li>
+Node 10: /a>
+Node 11: a
+Node 12: li>
+Node 13: p>
+Node 14: /p>
+Node 15: /li>
+Node 16: /a>
+Node 17: a
+Node 18: li>
+Node 19: p>
+Node 20: /p>
+Node 21: /li>
+Node 22: /a>
+Node 23: a
+Node 24: li>
+Node 25: p>
+Node 26: /p>
+Node 27: /li>
+Node 28: /a>
+Node 29: a
+Node 30: li>
+Node 31: p>
+Node 32: /p>
+Node 33: /li>
+Node 34: /a>
+Node 35: a
+Node 36: li>
+Node 37: p>
+Node 38: /h2>
+Node 39: h2>
+Node 40: /center>
+Node 41: /table>
+Node 42: /tr>
+Node 43: /td>
+Node 44: br>
+Node 45: /font>
+Node 46: font
+Node 47: br>
+Node 48: /font>
+Node 49: font
+Node 50: td
+Node 51: tr>
+Node 52: table
+Node 53: center>?
+Node 54: body
+Node 55: html>
+
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+Stack:
+Node 0: /html>
+Node 1: /body>
+Node 2: /p>
+Node 3: /li>
+Node 4: /a>
+Node 5: a
+Node 6: li>
+Node 7: p>
+Node 8: /p>
+Node 9: /li>
+Node 10: /a>
+Node 11: a
+Node 12: li>
+Node 13: p>
+Node 14: /p>
+Node 15: /li>
+Node 16: /a>
+Node 17: a
+Node 18: li>
+Node 19: p>
+Node 20: /p>
+Node 21: /li>
+Node 22: /a>
+Node 23: a
+Node 24: li>
+Node 25: p>
+Node 26: /p>
+Node 27: /li>
+Node 28: /a>
+Node 29: a
+Node 30: li>
+Node 31: p>
+Node 32: /p>
+Node 33: /li>
+Node 34: /a>
+Node 35: a
+Node 36: li>
+Node 37: p>
+Node 38: /h2>
+Node 39: h2>
+Node 40: /center>
+Node 41: /table>
+Node 42: /tr>
+Node 43: /td>
+Node 44: br>
+Node 45: /font>
+Node 46: font
+Node 47: br>
+Node 48: /font>
+Node 49: font
+Node 50: td
+Node 51: tr>
+Node 52: table
+Node 53: center>
+Node 54: body
+Node 55: html>
+
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+Stack:
+Node 0: </html
+Node 1: </body
+Node 2: </p
+Node 3: </li
+Node 4: </a
+Node 5: <a
+Node 6: <li
+Node 7: <p
+Node 8: </p
+Node 9: </li
+Node 10: </a
+Node 11: <a
+Node 12: <li
+Node 13: <p
+Node 14: </p
+Node 15: </li
+Node 16: </a
+Node 17: <a
+Node 18: <li
+Node 19: <p
+Node 20: </p
+Node 21: </li
+Node 22: </a
+Node 23: <a
+Node 24: <li
+Node 25: <p
+Node 26: </p
+Node 27: </li
+Node 28: </a
+Node 29: <a
+Node 30: <li
+Node 31: <p
+Node 32: </p
+Node 33: </li
+Node 34: </a
+Node 35: <a
+Node 36: <li
+Node 37: <p
+Node 38: </h2
+Node 39: <h2
+Node 40: </center
+Node 41: </table
+Node 42: </tr
+Node 43: </td
+Node 44: <br
+Node 45: </font
+Node 46: <font
+Node 47: <br
+Node 48: </font
+Node 49: <font
+Node 50: <td
+Node 51: <tr
+Node 52: <table
+Node 53: <center?
+Node 54: <body
+Node 55: <html
+
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+Stack:
+Node 0: /html
+Node 1: /body
+Node 2: /p
+Node 3: /li
+Node 4: /a
+Node 5: a
+Node 6: li
+Node 7: p
+Node 8: /p
+Node 9: /li
+Node 10: /a
+Node 11: a
+Node 12: li
+Node 13: p
+Node 14: /p
+Node 15: /li
+Node 16: /a
+Node 17: a
+Node 18: li
+Node 19: p
+Node 20: /p
+Node 21: /li
+Node 22: /a
+Node 23: a
+Node 24: li
+Node 25: p
+Node 26: /p
+Node 27: /li
+Node 28: /a
+Node 29: a
+Node 30: li
+Node 31: p
+Node 32: /p
+Node 33: /li
+Node 34: /a
+Node 35: a
+Node 36: li
+Node 37: p
+Node 38: /h2
+Node 39: h2
+Node 40: /center
+Node 41: /table
+Node 42: /tr
+Node 43: /td
+Node 44: br
+Node 45: /font
+Node 46: font
+Node 47: br
+Node 48: /font
+Node 49: font
+Node 50: td
+Node 51: tr
+Node 52: table
+Node 53: center
+Node 54: body
+Node 55: html
+
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+main.cpp:25:16: warning: result of comparison against a string literal is unspecified (use strncmp instead) [-Wstring-compare]
+        if(str != "br")
+               ^  ~~~~
+main.cpp:36:11: error: no member named 'top' in 'Stack'
+        s.top(tag);
+        ~ ^
+1 warning and 1 error generated.
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+Stack:
+Node 0: /html
+Node 1: /body
+Node 2: /p
+Node 3: /li
+Node 4: /a
+Node 5: a
+Node 6: li
+Node 7: p
+Node 8: /p
+Node 9: /li
+Node 10: /a
+Node 11: a
+Node 12: li
+Node 13: p
+Node 14: /p
+Node 15: /li
+Node 16: /a
+Node 17: a
+Node 18: li
+Node 19: p
+Node 20: /p
+Node 21: /li
+Node 22: /a
+Node 23: a
+Node 24: li
+Node 25: p
+Node 26: /p
+Node 27: /li
+Node 28: /a
+Node 29: a
+Node 30: li
+Node 31: p
+Node 32: /p
+Node 33: /li
+Node 34: /a
+Node 35: a
+Node 36: li
+Node 37: p
+Node 38: /h2
+Node 39: h2
+Node 40: /center
+Node 41: /table
+Node 42: /tr
+Node 43: /td
+Node 44: br
+Node 45: /font
+Node 46: font
+Node 47: br
+Node 48: /font
+Node 49: font
+Node 50: td
+Node 51: tr
+Node 52: table
+Node 53: center
+Node 54: body
+Node 55: html
+
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+main.cpp:37:15: error: use of undeclared identifier 'tag'
+        s.Top(tag);
+              ^
+main.cpp:38:19: error: use of undeclared identifier 'tag'
+        if(str != tag)
+                  ^
+2 errors generated.
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: a
+Node 4: li
+Node 5: p
+Node 6: a
+Node 7: li
+Node 8: p
+Node 9: a
+Node 10: li
+Node 11: p
+Node 12: a
+Node 13: li
+Node 14: p
+Node 15: a
+Node 16: li
+Node 17: p
+Node 18: h2
+Node 19: font
+Node 20: font
+Node 21: td
+Node 22: tr
+Node 23: table
+Node 24: center
+Node 25: body
+Node 26: html
+
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Syntax Error
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: a
+Node 4: li
+Node 5: p
+Node 6: a
+Node 7: li
+Node 8: p
+Node 9: a
+Node 10: li
+Node 11: p
+Node 12: a
+Node 13: li
+Node 14: p
+Node 15: a
+Node 16: li
+Node 17: p
+Node 18: h2
+Node 19: font
+Node 20: font
+Node 21: td
+Node 22: tr
+Node 23: table
+Node 24: center
+Node 25: body
+Node 26: html
+
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+font fontfont fonttd fontSyntax Error
+tr fontSyntax Error
+table fontSyntax Error
+center fontSyntax Error
+h2 h2a ali aSyntax Error
+p aSyntax Error
+a ali aSyntax Error
+p aSyntax Error
+a ali aSyntax Error
+p aSyntax Error
+a ali aSyntax Error
+p aSyntax Error
+a ali aSyntax Error
+p aSyntax Error
+a ali aSyntax Error
+p aSyntax Error
+body aSyntax Error
+html aSyntax Error
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: a
+Node 4: li
+Node 5: p
+Node 6: a
+Node 7: li
+Node 8: p
+Node 9: a
+Node 10: li
+Node 11: p
+Node 12: a
+Node 13: li
+Node 14: p
+Node 15: a
+Node 16: li
+Node 17: p
+Node 18: h2
+Node 19: font
+Node 20: font
+Node 21: td
+Node 22: tr
+Node 23: table
+Node 24: center
+Node 25: body
+Node 26: html
+
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+<html>
+<body>
+<center>
+<table>
+<tr>
+<td>
+<font>
+</font><br>
+<font>
+</font><br>
+</td></tr></table></center><h2>
+</h2><p>
+<li>
+<a>
+</a></li></p><p>
+<li>
+<a>
+</a></li></p><p>
+<li>
+<a>
+</a></li></p><p>
+<li>
+<a>
+</a></li></p><p>
+<li>
+<a>
+</a></li></p><p>
+<li>
+<a>
+</a></li></p></body></html>Stack:
+
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+<html>
+<body>
+<center>
+<table>
+<tr>
+<td>
+<font>
+</font>
+<br>
+<font>
+</font>
+<br>
+</td>
+</tr>
+</table>
+</center>
+<h2>
+</h2>
+<p>
+<li>
+<a>
+</a>
+</li>
+</p>
+<p>
+<li>
+<a>
+</a>
+</li>
+</p>
+<p>
+<li>
+<a>
+</a>
+</li>
+</p>
+<p>
+<li>
+<a>
+</a>
+</li>
+</p>
+<p>
+<li>
+<a>
+</a>
+</li>
+</p>
+<p>
+<li>
+<a>
+</a>
+</li>
+</p>
+</body>
+</html>
+Stack:
+
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+<html>
+<body>
+<center>
+<table>
+<tr>
+<td>
+<font>
+</font>
+font==font
+<br>
+<font>
+</font>
+font==font
+<br>
+</td>
+td==font
+</tr>
+tr==font
+</table>
+table==font
+</center>
+center==font
+<h2>
+</h2>
+h2==h2
+<p>
+<li>
+<a>
+</a>
+a==a
+</li>
+li==a
+</p>
+p==a
+<p>
+<li>
+<a>
+</a>
+a==a
+</li>
+li==a
+</p>
+p==a
+<p>
+<li>
+<a>
+</a>
+a==a
+</li>
+li==a
+</p>
+p==a
+<p>
+<li>
+<a>
+</a>
+a==a
+</li>
+li==a
+</p>
+p==a
+<p>
+<li>
+<a>
+</a>
+a==a
+</li>
+li==a
+</p>
+p==a
+<p>
+<li>
+<a>
+</a>
+a==a
+</li>
+li==a
+</p>
+p==a
+</body>
+body==a
+</html>
+html==a
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: a
+Node 4: li
+Node 5: p
+Node 6: a
+Node 7: li
+Node 8: p
+Node 9: a
+Node 10: li
+Node 11: p
+Node 12: a
+Node 13: li
+Node 14: p
+Node 15: a
+Node 16: li
+Node 17: p
+Node 18: h2
+Node 19: font
+Node 20: font
+Node 21: td
+Node 22: tr
+Node 23: table
+Node 24: center
+Node 25: body
+Node 26: html
+
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+<html>
+<body>
+<center>
+<table>
+<tr>
+<td>
+<font>
+</font>
+font==font
+<br>
+<font>
+</font>
+font==font
+<br>
+</td>
+td==td
+</tr>
+tr==tr
+</table>
+table==table
+</center>
+center==center
+<h2>
+</h2>
+h2==h2
+<p>
+<li>
+<a>
+</a>
+a==a
+</li>
+li==li
+</p>
+p==p
+<p>
+<li>
+<a>
+</a>
+a==a
+</li>
+li==li
+</p>
+p==p
+<p>
+<li>
+<a>
+</a>
+a==a
+</li>
+li==li
+</p>
+p==p
+<p>
+<li>
+<a>
+</a>
+a==a
+</li>
+li==li
+</p>
+p==p
+<p>
+<li>
+<a>
+</a>
+a==a
+</li>
+li==li
+</p>
+p==p
+<p>
+<li>
+<a>
+</a>
+a==a
+</li>
+li==li
+</p>
+p==p
+</body>
+body==body
+</html>
+html==html
+Stack:
+
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+Tag: <html>
+Tag: <body>
+Tag: <center>
+Tag: <table>
+Tag: <tr>
+Tag: <td>
+Tag: <font>
+Tag: </font>
+Tag: <br>
+Tag: <font>
+Tag: </font>
+Tag: <br>
+Tag: </td>
+Tag: </tr>
+Tag: </table>
+Tag: </center>
+Tag: <h2>
+Tag: </h2>
+Tag: <p>
+Tag: <li>
+Tag: <a>
+Tag: </a>
+Tag: </li>
+Tag: </p>
+Tag: <p>
+Tag: <li>
+Tag: <a>
+Tag: </a>
+Tag: </li>
+Tag: </p>
+Tag: <p>
+Tag: <li>
+Tag: <a>
+Tag: </a>
+Tag: </li>
+Tag: </p>
+Tag: <p>
+Tag: <li>
+Tag: <a>
+Tag: </a>
+Tag: </li>
+Tag: </p>
+Tag: <p>
+Tag: <li>
+Tag: <a>
+Tag: </a>
+Tag: </li>
+Tag: </p>
+Tag: <p>
+Tag: <li>
+Tag: <a>
+Tag: </a>
+Tag: </li>
+Tag: </p>
+Tag: </body>
+Tag: </html>
+Stack:
+
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+Tag: <html>
+Stack: Stack:
+Node 0: html
+
+Tag: <body>
+Stack: Stack:
+Node 0: body
+Node 1: html
+
+Tag: <center>
+Stack: Stack:
+Node 0: center
+Node 1: body
+Node 2: html
+
+Tag: <table>
+Stack: Stack:
+Node 0: table
+Node 1: center
+Node 2: body
+Node 3: html
+
+Tag: <tr>
+Stack: Stack:
+Node 0: tr
+Node 1: table
+Node 2: center
+Node 3: body
+Node 4: html
+
+Tag: <td>
+Stack: Stack:
+Node 0: td
+Node 1: tr
+Node 2: table
+Node 3: center
+Node 4: body
+Node 5: html
+
+Tag: <font>
+Stack: Stack:
+Node 0: font
+Node 1: td
+Node 2: tr
+Node 3: table
+Node 4: center
+Node 5: body
+Node 6: html
+
+Tag: </font>
+Tag: <br>
+Stack: Stack:
+Node 0: td
+Node 1: tr
+Node 2: table
+Node 3: center
+Node 4: body
+Node 5: html
+
+Tag: <font>
+Stack: Stack:
+Node 0: font
+Node 1: td
+Node 2: tr
+Node 3: table
+Node 4: center
+Node 5: body
+Node 6: html
+
+Tag: </font>
+Tag: <br>
+Stack: Stack:
+Node 0: td
+Node 1: tr
+Node 2: table
+Node 3: center
+Node 4: body
+Node 5: html
+
+Tag: </td>
+Tag: </tr>
+Tag: </table>
+Tag: </center>
+Tag: <h2>
+Stack: Stack:
+Node 0: h2
+Node 1: body
+Node 2: html
+
+Tag: </h2>
+Tag: <p>
+Stack: Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack: Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack: Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Tag: </li>
+Tag: </p>
+Tag: <p>
+Stack: Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack: Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack: Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Tag: </li>
+Tag: </p>
+Tag: <p>
+Stack: Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack: Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack: Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Tag: </li>
+Tag: </p>
+Tag: <p>
+Stack: Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack: Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack: Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Tag: </li>
+Tag: </p>
+Tag: <p>
+Stack: Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack: Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack: Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Tag: </li>
+Tag: </p>
+Tag: <p>
+Stack: Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack: Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack: Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Tag: </li>
+Tag: </p>
+Tag: </body>
+Tag: </html>
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+Tag: <html>
+Stack:
+Node 0: html
+
+Tag: <body>
+Stack:
+Node 0: body
+Node 1: html
+
+Tag: <center>
+Stack:
+Node 0: center
+Node 1: body
+Node 2: html
+
+Tag: <table>
+Stack:
+Node 0: table
+Node 1: center
+Node 2: body
+Node 3: html
+
+Tag: <tr>
+Stack:
+Node 0: tr
+Node 1: table
+Node 2: center
+Node 3: body
+Node 4: html
+
+Tag: <td>
+Stack:
+Node 0: td
+Node 1: tr
+Node 2: table
+Node 3: center
+Node 4: body
+Node 5: html
+
+Tag: <font>
+Stack:
+Node 0: font
+Node 1: td
+Node 2: tr
+Node 3: table
+Node 4: center
+Node 5: body
+Node 6: html
+
+Tag: </font>
+Tag: <br>
+Stack:
+Node 0: td
+Node 1: tr
+Node 2: table
+Node 3: center
+Node 4: body
+Node 5: html
+
+Tag: <font>
+Stack:
+Node 0: font
+Node 1: td
+Node 2: tr
+Node 3: table
+Node 4: center
+Node 5: body
+Node 6: html
+
+Tag: </font>
+Tag: <br>
+Stack:
+Node 0: td
+Node 1: tr
+Node 2: table
+Node 3: center
+Node 4: body
+Node 5: html
+
+Tag: </td>
+Tag: </tr>
+Tag: </table>
+Tag: </center>
+Tag: <h2>
+Stack:
+Node 0: h2
+Node 1: body
+Node 2: html
+
+Tag: </h2>
+Tag: <p>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Tag: </li>
+Tag: </p>
+Tag: <p>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Tag: </li>
+Tag: </p>
+Tag: <p>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Tag: </li>
+Tag: </p>
+Tag: <p>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Tag: </li>
+Tag: </p>
+Tag: <p>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Tag: </li>
+Tag: </p>
+Tag: <p>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Tag: </li>
+Tag: </p>
+Tag: </body>
+Tag: </html>
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+Tag: <html>
+Stack:
+Node 0: html
+
+Tag: <body>
+Stack:
+Node 0: body
+Node 1: html
+
+Tag: <center>
+Stack:
+Node 0: center
+Node 1: body
+Node 2: html
+
+Tag: <table>
+Stack:
+Node 0: table
+Node 1: center
+Node 2: body
+Node 3: html
+
+Tag: <tr>
+Stack:
+Node 0: tr
+Node 1: table
+Node 2: center
+Node 3: body
+Node 4: html
+
+Tag: <td>
+Stack:
+Node 0: td
+Node 1: tr
+Node 2: table
+Node 3: center
+Node 4: body
+Node 5: html
+
+Tag: <font>
+Stack:
+Node 0: font
+Node 1: td
+Node 2: tr
+Node 3: table
+Node 4: center
+Node 5: body
+Node 6: html
+
+Tag: </font>
+Tag: <br>
+Stack:
+Node 0: td
+Node 1: tr
+Node 2: table
+Node 3: center
+Node 4: body
+Node 5: html
+
+Tag: <font>
+Stack:
+Node 0: font
+Node 1: td
+Node 2: tr
+Node 3: table
+Node 4: center
+Node 5: body
+Node 6: html
+
+Tag: </font>
+Tag: <br>
+Stack:
+Node 0: td
+Node 1: tr
+Node 2: table
+Node 3: center
+Node 4: body
+Node 5: html
+
+Tag: </td>
+Tag: </tr>
+Tag: </table>
+Tag: </center>
+Tag: <h2>
+Stack:
+Node 0: h2
+Node 1: body
+Node 2: html
+
+Tag: </h2>
+Tag: <p>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Tag: </li>
+Tag: </p>
+Tag: <p>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Tag: </li>
+Tag: </p>
+Tag: <p>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Tag: </li>
+Tag: </p>
+Tag: <p>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Tag: </li>
+Tag: </p>
+Tag: <p>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Tag: </li>
+Tag: </p>
+Tag: <p>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Tag: </li>
+Tag: </p>
+Tag: </body>
+Tag: </html>
+Congratulations, all HTML tags match!
+Sebastians-MacBook-Air:take3 sebastianvivo$ g++ -Wall stack.cpp main.cpp -o main
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+Tag: <html>
+Stack:
+Node 0: html
+
+Tag: <body>
+Stack:
+Node 0: body
+Node 1: html
+
+Tag: <center>
+Stack:
+Node 0: center
+Node 1: body
+Node 2: html
+
+Tag: <table>
+Stack:
+Node 0: table
+Node 1: center
+Node 2: body
+Node 3: html
+
+Tag: <tr>
+Stack:
+Node 0: tr
+Node 1: table
+Node 2: center
+Node 3: body
+Node 4: html
+
+Tag: <td>
+Stack:
+Node 0: td
+Node 1: tr
+Node 2: table
+Node 3: center
+Node 4: body
+Node 5: html
+
+Tag: <font>
+Stack:
+Node 0: font
+Node 1: td
+Node 2: tr
+Node 3: table
+Node 4: center
+Node 5: body
+Node 6: html
+
+Tag: </font>
+Stack:
+Node 0: td
+Node 1: tr
+Node 2: table
+Node 3: center
+Node 4: body
+Node 5: html
+
+Tag: <br>
+Stack:
+Node 0: td
+Node 1: tr
+Node 2: table
+Node 3: center
+Node 4: body
+Node 5: html
+
+Tag: <font>
+Stack:
+Node 0: font
+Node 1: td
+Node 2: tr
+Node 3: table
+Node 4: center
+Node 5: body
+Node 6: html
+
+Tag: </font>
+Stack:
+Node 0: td
+Node 1: tr
+Node 2: table
+Node 3: center
+Node 4: body
+Node 5: html
+
+Tag: <br>
+Stack:
+Node 0: td
+Node 1: tr
+Node 2: table
+Node 3: center
+Node 4: body
+Node 5: html
+
+Tag: </td>
+Stack:
+Node 0: tr
+Node 1: table
+Node 2: center
+Node 3: body
+Node 4: html
+
+Tag: </tr>
+Stack:
+Node 0: table
+Node 1: center
+Node 2: body
+Node 3: html
+
+Tag: </table>
+Stack:
+Node 0: center
+Node 1: body
+Node 2: html
+
+Tag: </center>
+Stack:
+Node 0: body
+Node 1: html
+
+Tag: <h2>
+Stack:
+Node 0: h2
+Node 1: body
+Node 2: html
+
+Tag: </h2>
+Stack:
+Node 0: body
+Node 1: html
+
+Tag: <p>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: </li>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: </p>
+Stack:
+Node 0: body
+Node 1: html
+
+Tag: <p>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: </li>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: </p>
+Stack:
+Node 0: body
+Node 1: html
+
+Tag: <p>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: </li>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: </p>
+Stack:
+Node 0: body
+Node 1: html
+
+Tag: <p>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: </li>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: </p>
+Stack:
+Node 0: body
+Node 1: html
+
+Tag: <p>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: </li>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: </p>
+Stack:
+Node 0: body
+Node 1: html
+
+Tag: <p>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: </li>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: </p>
+Stack:
+Node 0: body
+Node 1: html
+
+Tag: </body>
+Stack:
+Node 0: html
+
+Tag: </html>
+Stack:
+
+Congratulations, all HTML tags match!
+Sebastians-MacBook-Air:take3 sebastianvivo$ clear
+
+Sebastians-MacBook-Air:take3 sebastianvivo$ ./main
+Tag: <html>
+Stack:
+Node 0: html
+
+Tag: <body>
+Stack:
+Node 0: body
+Node 1: html
+
+Tag: <center>
+Stack:
+Node 0: center
+Node 1: body
+Node 2: html
+
+Tag: <table>
+Stack:
+Node 0: table
+Node 1: center
+Node 2: body
+Node 3: html
+
+Tag: <tr>
+Stack:
+Node 0: tr
+Node 1: table
+Node 2: center
+Node 3: body
+Node 4: html
+
+Tag: <td>
+Stack:
+Node 0: td
+Node 1: tr
+Node 2: table
+Node 3: center
+Node 4: body
+Node 5: html
+
+Tag: <font>
+Stack:
+Node 0: font
+Node 1: td
+Node 2: tr
+Node 3: table
+Node 4: center
+Node 5: body
+Node 6: html
+
+Tag: </font>
+Stack:
+Node 0: td
+Node 1: tr
+Node 2: table
+Node 3: center
+Node 4: body
+Node 5: html
+
+Tag: <br>
+Stack:
+Node 0: td
+Node 1: tr
+Node 2: table
+Node 3: center
+Node 4: body
+Node 5: html
+
+Tag: <font>
+Stack:
+Node 0: font
+Node 1: td
+Node 2: tr
+Node 3: table
+Node 4: center
+Node 5: body
+Node 6: html
+
+Tag: </font>
+Stack:
+Node 0: td
+Node 1: tr
+Node 2: table
+Node 3: center
+Node 4: body
+Node 5: html
+
+Tag: <br>
+Stack:
+Node 0: td
+Node 1: tr
+Node 2: table
+Node 3: center
+Node 4: body
+Node 5: html
+
+Tag: </td>
+Stack:
+Node 0: tr
+Node 1: table
+Node 2: center
+Node 3: body
+Node 4: html
+
+Tag: </tr>
+Stack:
+Node 0: table
+Node 1: center
+Node 2: body
+Node 3: html
+
+Tag: </table>
+Stack:
+Node 0: center
+Node 1: body
+Node 2: html
+
+Tag: </center>
+Stack:
+Node 0: body
+Node 1: html
+
+Tag: <h2>
+Stack:
+Node 0: h2
+Node 1: body
+Node 2: html
+
+Tag: </h2>
+Stack:
+Node 0: body
+Node 1: html
+
+Tag: <p>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: </li>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: </p>
+Stack:
+Node 0: body
+Node 1: html
+
+Tag: <p>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: </li>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: </p>
+Stack:
+Node 0: body
+Node 1: html
+
+Tag: <p>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: </li>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: </p>
+Stack:
+Node 0: body
+Node 1: html
+
+Tag: <p>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: </li>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: </p>
+Stack:
+Node 0: body
+Node 1: html
+
+Tag: <p>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: </li>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: </p>
+Stack:
+Node 0: body
+Node 1: html
+
+Tag: <p>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: <li>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: <a>
+Stack:
+Node 0: a
+Node 1: li
+Node 2: p
+Node 3: body
+Node 4: html
+
+Tag: </a>
+Stack:
+Node 0: li
+Node 1: p
+Node 2: body
+Node 3: html
+
+Tag: </li>
+Stack:
+Node 0: p
+Node 1: body
+Node 2: html
+
+Tag: </p>
+Stack:
+Node 0: body
+Node 1: html
+
+Tag: </body>
+Stack:
+Node 0: html
+
+Tag: </html>
+Stack:
+
+Congratulations, all HTML tags match!
+Sebastians-MacBook-Air:take3 sebastianvivo$

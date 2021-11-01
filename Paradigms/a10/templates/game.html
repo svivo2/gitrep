@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Assignment 10</title>
+  </head>
+  <body>
+    {%if name%}
+    Welcome
+    {%for key, value in name.items()%}
+    {{value}}
+    {%endfor%}
+    {%endif%}
+    {%if guess%}
+    You guessed {{guess}}, wrong guess, try again.
+    {%endif%}
+    <form method = "post">
+        <label> Enter Guess: </label>
+        <input type = "number" name = "guess" > </br>
+        <input type = "submit" value = "submit"> </br>
+        <input type="hidden" id="num" name="num" value="{{num}}">
+    </form>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html style="background-color:LightGray;">
+  <head>
+    <title>Sebastian Vivo's Assignment 7</title>
+  </head>
+  <body>
+    <script>
+    function Car(tank){
+      var fuel = tank;
+      var that = this;
+
+      function tank(){return fuel;}
+
+      this.tank = function(){
+        return tank();
+      };
+    }
+
+    function createAuto(){
+      // var car = document.carForm.car.value;
+      // var eng = document.carForm.engine.value;
+      // var mpg = document.carForm.mpg.value;
+      // var maxSpeed = document.carForm.maxSpeed.value;
+      var maxFuel = document.carForm.maxFuel.value;
+      console.log(maxFuel);
+
+      //var car = new Car(car, new Engine(eng, mpg, maxSpeed), maxFuel);
+      var myCar = new Car(maxFuel);
+
+      console.log(myCar.tank());
+      return false;
+    }
+    </script>
+    <h1>Sebastian Vivo's Page</h1>
+    <form id = "carForm" name = "carForm">
+      <!-- <div>
+        <label for="engine"> Enter Engine Description: </label>
+        <input type = "text" name="engine" id="engine" value="V8">
+      </div>
+      <div>
+        <label for = "mpg"> Enter Miles per Gallon: </label>
+        <input type = "number" name="mpg" id="mpg" value="30">
+      </div>
+      <div>
+        <label for = "maxSpeed"> Enter Max Speed: </label>
+        <input type = "number" name="maxSpeed" id="maxSpeed" value="120">
+      </div>
+      <div>
+        <label for = "car" > Enter Auto Description: </label>
+        <input type = "text" name="car" id="car" value="Car">
+      </div> -->
+      <div>
+        <label for = "maxFuel"> Enter Max Fuel: </label>
+        <input type = "numeber" name="maxFuel" id="maxFuel" value="20">
+      </div>
+      <div>
+        <input type="submit" value="Create Auto" onclick="return createAuto();">
+      </div>
+    </form>
+  </body>
+</html>

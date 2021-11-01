@@ -1,0 +1,326 @@
+
+<!-- saved from url=(0061)http://www.csce.uark.edu/~jgauch/2014/S19/labs/upload_lab.cgi -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>report.html</title></head><body>
+<center><h2>CSCE 2014 - Laboratory Report</h2></center>
+<h4>Student Information:</h4>
+<li>Name: Sebastian Vivo
+</li><li>UAID: 010849203
+</li><li>Assignment: lab3
+<h4>Laboratory Contents:</h4>
+<p><textarea name="lab" cols="70" rows="30">
+Step #1:
+Enter filename:numbers.txt
+data = 14 15 92 65 35 89 79 32 38 46 26 43 38 32 79 50 28 84 19 71 69 39 93 75 10 58 20 97 49 44 59 23 7 81 64 6 28 62 8 99 86 28 3 48 25 34 21 17 6 79 82 14 80 86 51 32 82 30 66 47 9 38 44 60 95 50 58 22 31 72 53 59 40 81 28 48 11 17 45 2 84 10 27 1 93 85 21 10 55 59 64 46 22 94 89 54 93 3 81 96 
+min = 1
+max = 99
+mean = 48
+
+Step #2:
+int Numbers::findVariance()
+{
+  cout &lt;&lt; "\nIn findVariance method\n";
+  int total = 0;
+  int mean, sum = 0;
+  for (int index = 0; index &lt; Count; index++)
+     total += Data[index];
+  if (Count &gt; 0)
+     mean = total / Count;
+  else
+     cout &lt;&lt; "\nNo data available to compute variance\n";
+
+  for (int index = 0; index &lt; Count; index++)
+    sum += (Data[index] - mean) * (Data[index] - mean);
+  if (Count &gt; 0)
+    return sum / Count;
+  else
+    return 0;
+}
+
+int Numbers::findStandardDeviation()
+{
+  cout &lt;&lt; "\nIn findStandardDeviation method\n";
+  return pow(findVariance(),0.5);
+}
+
+Step #3:
+Enter filename:numbers.txt
+data = 14 15 92 65 35 89 79 32 38 46 26 43 38 32 79 50 28 84 19 71 69 39 93 75 10 58 20 97 49 44 59 23 7 81 64 6 28 62 8 99 86 28 3 48 25 34 21 17 6 79 82 14 80 86 51 32 82 30 66 47 9 38 44 60 95 50 58 22 31 72 53 59 40 81 28 48 11 17 45 2 84 10 27 1 93 85 21 10 55 59 64 46 22 94 89 54 93 3 81 96 
+min = 1
+max = 99
+mean = 48
+
+In findVariance method
+variance = 818
+
+In findStandardDeviation method
+
+In findVariance method
+standard deviation = 28
+
+Step #4:
+typedef int DataType;
+
+
+Step #5:
+//----------------------------------------------
+// Purpose: Numbers class with basic operations
+// Author:  John Gauch
+//----------------------------------------------
+
+#include "numbers.h"
+
+//----------------------------------------------
+Numbers::Numbers()
+{
+   // Initialize variables
+   Count = 0;
+   for (int i = 0; i &lt; SIZE; i++)
+      Data[i] = 0;
+}
+
+//----------------------------------------------
+Numbers::~Numbers()
+{
+}
+
+//----------------------------------------------
+void Numbers::readFile(string filename)
+{
+   // Open input file
+   ifstream din;
+   din.open(filename.c_str());
+   if (din.fail())
+      return;
+
+   // Read integers into Data array
+   Count = 0;
+   int num;
+   din &gt;&gt; num;
+   while (!din.eof() &amp;&amp; Count &lt; SIZE)
+   {
+      Data[Count++] = num;
+      din &gt;&gt; num;
+   }
+   din.close();
+}
+
+//----------------------------------------------
+DataType Numbers::getCount()
+{
+   return Count;
+}
+
+//----------------------------------------------
+DataType Numbers::getValue(int index)
+{
+   // Return specified value
+   if ((index &gt;= 0) &amp;&amp; (index &lt; Count))
+      return Data[index];
+   else
+      return 0;
+}
+
+//----------------------------------------------
+DataType Numbers::findMin()
+{
+   // Search array for min
+   int min = Data[0];
+   for (int index = 0; index &lt; Count; index++)
+      if (min &gt; Data[index])
+	 min = Data[index];
+   return min;
+}
+
+//----------------------------------------------
+DataType Numbers::findMax()
+{
+   // Search array for max
+   int max = Data[0];
+   for (int index = 0; index &lt; Count; index++)
+      if (max &lt; Data[index])
+	 max = Data[index];
+   return max;
+}
+
+//----------------------------------------------
+DataType Numbers::findMean()
+{
+   // Calculate mean value of array
+   int total = 0;
+   for (int index = 0; index &lt; Count; index++)
+      total += Data[index];
+   if (Count &gt; 0)
+      return total / Count;
+   else
+      return 0;
+}
+
+DataType Numbers::findVariance()
+{
+  cout &lt;&lt; "\nIn findVariance method\n";
+  DataType total = 0;
+  DataType mean, sum = 0;
+  for (int index = 0; index &lt; Count; index++)
+     total += Data[index];
+  if (Count &gt; 0)
+     mean = total / Count;
+  else
+     cout &lt;&lt; "\nNo data available to compute variance\n";
+
+  for (int index = 0; index &lt; Count; index++)
+    sum += (Data[index] - mean) * (Data[index] - mean);
+  if (Count &gt; 0)
+    return sum / Count;
+  else
+    return 0;
+}
+
+DataType Numbers::findStandardDeviation()
+{
+  cout &lt;&lt; "\nIn findStandardDeviation method\n";
+  return pow(findVariance(),0.5);
+}
+
+
+Step #6:
+float and double types work the best: these were the only types that delivered decimal values
+int, long, and short types worked well, but these types did not provide decimal values
+char types did not provide any valuable information
+string types did not compile
+
+Step #7:
+//----------------------------------------------
+// Purpose: Numbers class with basic operations
+// Author:  John Gauch
+//----------------------------------------------
+
+#include "numbers.h"
+
+//----------------------------------------------
+template &lt;class DataType&gt;
+Numbers&lt;DataType&gt;::Numbers()
+{
+   // Initialize variables
+   Count = 0;
+   for (int i = 0; i &lt; SIZE; i++)
+      Data[i] = 0;
+}
+
+//----------------------------------------------
+template &lt;class DataType&gt;
+Numbers&lt;DataType&gt;::~Numbers()
+{
+}
+
+//----------------------------------------------
+template &lt;class DataType&gt;
+void Numbers&lt;DataType&gt;::readFile(string filename)
+{
+   // Open input file
+   ifstream din;
+   din.open(filename.c_str());
+   if (din.fail())
+      return;
+
+   // Read integers into Data array
+   Count = 0;
+   int num;
+   din &gt;&gt; num;
+   while (!din.eof() &amp;&amp; Count &lt; SIZE)
+   {
+      Data[Count++] = num;
+      din &gt;&gt; num;
+   }
+   din.close();
+}
+
+//----------------------------------------------
+template &lt;class DataType&gt;
+DataType Numbers&lt;DataType&gt;::getCount()
+{
+   return Count;
+}
+
+//----------------------------------------------
+template &lt;class DataType&gt;
+DataType Numbers&lt;DataType&gt;::getValue(int index)
+{
+   // Return specified value
+   if ((index &gt;= 0) &amp;&amp; (index &lt; Count))
+      return Data[index];
+   else
+      return 0;
+}
+
+//----------------------------------------------
+template &lt;class DataType&gt;
+DataType Numbers&lt;DataType&gt;::findMin()
+{
+   // Search array for min
+   int min = Data[0];
+   for (int index = 0; index &lt; Count; index++)
+      if (min &gt; Data[index])
+	 min = Data[index];
+   return min;
+}
+
+//----------------------------------------------
+template &lt;class DataType&gt;
+DataType Numbers&lt;DataType&gt;::findMax()
+{
+   // Search array for max
+   int max = Data[0];
+   for (int index = 0; index &lt; Count; index++)
+      if (max &lt; Data[index])
+	 max = Data[index];
+   return max;
+}
+
+//----------------------------------------------
+template &lt;class DataType&gt;
+DataType Numbers&lt;DataType&gt;::findMean()
+{
+   // Calculate mean value of array
+   int total = 0;
+   for (int index = 0; index &lt; Count; index++)
+      total += Data[index];
+   if (Count &gt; 0)
+      return total / Count;
+   else
+      return 0;
+}
+
+template &lt;class DataType&gt;
+DataType Numbers&lt;DataType&gt;::findVariance()
+{
+  DataType total = 0;
+  DataType mean, sum = 0;
+  for (int index = 0; index &lt; Count; index++)
+     total += Data[index];
+  if (Count &gt; 0)
+     mean = total / Count;
+  else
+     cout &lt;&lt; "\nNo data available to compute variance\n";
+
+  for (int index = 0; index &lt; Count; index++)
+    sum += (Data[index] - mean) * (Data[index] - mean);
+  if (Count &gt; 0)
+    return sum / Count;
+  else
+    return 0;
+}
+
+template &lt;class DataType&gt;
+DataType Numbers&lt;DataType&gt;::findStandardDeviation()
+{
+  return pow(findVariance(),0.5);
+}
+
+</textarea>
+</p><h4>Instructions:</h4>
+</li><li>Show your lab report to your GTA for grading and feedback.
+</li><li>Backup any files you want to keep and delete unwanted files.
+</li><li>Logout from your machine.
+
+
+</li></body></html>

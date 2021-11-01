@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html style="background-color:LightGray;">
+<head>
+  <title>Sebastian Vivo's Page</title>
+</head>
+<body>
+  <script>
+    function eval(){
+
+    var question1 = document.quiz.question1.value;
+    var question2 = document.quiz.question2.value;
+    var question3 = document.quiz.question3.value;
+    var messages = ["Wrong", "Correct"];
+
+    document.getElementById("onClick").style.visibility = "visible";
+
+    if (question1 == "correct" )
+      document.getElementById("message1").innerHTML = messages[1];
+    else if (question1 == "wrong" )
+      document.getElementById("message1").innerHTML = messages[0];
+
+    if (question2 == "correct")
+      document.getElementById("message2").innerHTML = messages[1];
+    else if (question2 == "wrong")
+      document.getElementById("message2").innerHTML = messages[0];
+
+    if (question3 == "correct")
+      document.getElementById("message3").innerHTML = messages[1];
+    else if (question3 == "wrong" )
+      document.getElementById("message3").innerHTML = messages[0];
+
+    }
+    function test(){
+      var ma = [5,10,,15,20];
+      console.log(ma[2]);
+    }
+  </script>
+
+  <h1>Sebastian Vivo's Page</h1>
+  <p>This page is about hydroponics. However, I am no expert; I will let the experts explain all about <a href="https://www.explainthatstuff.com/hydroponics.html" target="_blank">hydroponics</a>.</p>
+
+  <form id = "quiz" name = "quiz">
+
+  <p>Where do plants usually get their nutrients in hydroponics systems?</p>
+
+  <input type = "radio" id = "mc" name = "question1" value = "correct" onclick = "eval();"> <img src="water.jpg" alt="Water" height="100" width="100"><br>
+  <input type = "radio" id = "mc" name = "question1" value = "wrong" onclick = "eval();"> <img src="soil.jpg" alt="Soil" height="100" width="100"><br>
+  <input type = "radio" id = "mc" name = "question1" value = "wrong" onclick = "eval();"> <img src="koolaid.jpg" alt="Koolaid" height="100" width="100"><br>
+  <div id = "onClick">
+  <p id = "message1"></p>
+
+  <p>Through what process do plants grow?</p>
+
+  <input type = "radio" id = "mc" name = "question2" value = "wrong" onclick = "eval();"> repetition<br>
+  <input type = "radio" id = "mc" name = "question2" value = "wrong" onclick = "eval();"> growth<br>
+  <input type = "radio" id = "mc" name = "question2" value = "correct" onclick = "eval();"> photosynthesis<br>
+  <div id = "onClick">
+  <p id = "message2"></p>
+
+  <p>What don't you need to grow plants hydroponically?</p>
+
+  <input type = "radio" id = "mc" name = "question3" value = "wrong" onclick = "eval();"> water<br>
+  <input type = "radio" id = "mc" name = "question3" value = "correct" onclick = "eval();"> soil<br>
+  <input type = "radio" id = "mc" name = "question3" value = "wrong" onclick = "eval();"> nutrient solution<br>
+  <div id = "onClick">
+  <p id = "message3"></p>
+
+  <input id = "button" type = "button" value = "Reset" onclick = quiz.reset()>
+
+  </form>
+
+</body>
+</html>

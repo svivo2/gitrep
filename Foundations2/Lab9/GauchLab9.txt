@@ -1,0 +1,70 @@
+CSCE 2014 - Laboratory Report
+Student Information:
+Name: Sebastian Vivo
+UAID: 010849203
+Assignment: lab12
+Laboratory Contents:
+
+
+Step #1:
+int main()
+{
+  // Initialize random number generator
+  srandom(time(NULL));
+
+  HashTable ht(SIZE);
+
+  for (int i = 0; i < COUNT; i++)
+    ht.Insert(random() % MAX, random() % MAX);
+
+  ht.Print();
+
+
+}
+
+
+Step #2:
+Index	Value	Key
+0 .            541         540
+1	776	800
+2	231	522
+3	0	-1
+4	280	684
+5	0	-1
+6	0	-1
+7	0	-1
+8	915	788
+9	682	989
+10	0	-1
+11	173	591
+12	301	452
+13	498	893
+14	0	-1
+15	0	-1
+16	0	-1
+17	0	-1
+18	0	-1
+19	16	259
+
+Step #3:
+COUNT COLLISIONS
+ 5      -- 1
+10      -- 2
+15      -- 5
+20      -- 10
+25      -- 20
+30      -- 40
+35      -- 64
+
+
+Step #4:
+I did not run into this issue, i think i did something wrong :(
+
+Step #5:
+To be added...
+
+
+Instructions:
+Show your lab report to your GTA for grading and feedback.
+Backup any files you want to keep and delete unwanted files.
+Logout from your machine.

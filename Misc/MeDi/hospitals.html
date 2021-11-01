@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Hospital </title>
+  </head>
+  <header>
+    <a href="home.html"> Home </a>
+    <a href="manufacturers.html"> Manufacturers </a>
+    <a href="distributors.html"> Distributors </a>
+    <a href="hospitals.html"> Hospitals </a>
+    <a href="patients.html"> Patients </a>
+  </header>
+  <body>
+    <div>
+      <p> Order Pack from Distributor <p>
+      <form id = "OwnerTransfer" name = "OwnerTransfer">
+        <div>
+          <label for "oldOwner"> Distributor: </label>
+          <input type = "text" id = "oldOwner"  name = "oldOwner" required>
+        </div>
+        <div>
+          <label for "newOwner"> Hospital: </label>
+          <input type = "text" id = "newOwner"  name = "newOwner" required>
+        </div>
+        <div>
+          <label for "serialNum"> Serial Number: </label>
+          <input type = "text" id = "serialNum"  name = "serialNum" required>
+        </div>
+        <div>
+          <input type = "submit" value = "Submit" onclick="ownerTransfer();">
+        </div>
+      </form>
+    </div>
+    <div>
+      <p> Assign Device to Patient <p>
+      <form id = "OwnerTransfer" name = "OwnerTransfer">
+        <div>
+          <label for "oldOwner"> Hospital: </label>
+          <input type = "text" id = "oldOwner"  name = "oldOwner" required>
+        </div>
+        <div>
+          <label for "newOwner"> Patient: </label>
+          <input type = "text" id = "newOwner"  name = "newOwner" required>
+        </div>
+        <div>
+          <label for "serialNum"> Serial Number: </label>
+          <input type = "text" id = "serialNum"  name = "serialNum" required>
+        </div>
+        <div>
+          <input type = "submit" value = "Submit" onclic = "transaction();">
+        </div>
+      </form>
+    </div>
+    <script>
+      function transaction()
+      {
+        var oldOwner = document.OwnerTransfer.oldOwner.value;
+        var newOwner = document.OwnerTransfer.newOwner.value;
+        var serialNum = document.OwnerTransfer.serialNum.value;
+
+        console.log(oldOwner);
+        console.log(newOwner);
+        console.log(serialNum);
+
+        newData = {
+          "oldOwner" : "org.medid.Distributor#" + oldOwner,
+          "newOwner" : "org.medid.Hospital#" + newOwner,
+          "SN" : "org.medid.device#" + serialNum
+        }
+
+        console.log(data);
+
+        $.ajax({
+          url : "http://10.25.12.134:3000/api/org.medid.transferdeviceowner",
+          type: "POST",
+          dataType: "json",
+          data:newData,
+          success: function()
+          {
+            console.log("Success\n");
+          }
+          error: function()
+          {
+            console.log("There was a problem\n");
+          }
+          complete: function()
+          {
+            console.log("The request was completed\n");
+          }
+        });
+      }
+    </script>
+
+
+  </body>
+</html>

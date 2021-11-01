@@ -1,0 +1,130 @@
+Student Information:
+
+Name: Sebastian Vivo
+UAID: 010849203
+Assignment: lab4
+Laboratory Contents:
+
+Step #1:
+//----------------------------------------------
+// Purpose: Demonstrate student ADT
+// Author:  John Gauch
+//----------------------------------------------
+
+#include "Student.h"
+
+//----------------------------------------------
+int main()
+{
+   float *ptr = new float;
+   *ptr = 3.14159;
+   cout << *ptr << endl;
+
+   Student *john = new Student();
+   john->setName("John");
+   john->setAddress("Johnson, AR");
+   john->setGPA(3.2);
+   john->print();
+
+   Student *fred = new Student();
+   fred->setName("Fred");
+   fred->setAddress("Fredson, AR");
+   fred->setGPA(3.4);
+   fred->getName();
+   fred->getAddress();
+   fred->getGPA();
+   fred->print();
+
+}
+
+Step #2:
+//----------------------------------------------
+// Purpose: Demonstrate student ADT
+// Author:  John Gauch
+//----------------------------------------------
+
+#include "StudentNode.h"
+
+//----------------------------------------------
+StudentNode::StudentNode()
+{
+   Name = "";
+   Address = "";
+   GPA = 0;
+   Next = NULL;
+}
+
+//----------------------------------------------
+StudentNode::StudentNode(string name, string address, float gpa)
+{
+   Name = name;
+   Address = address;
+   GPA = gpa;
+   Next = NULL;
+}
+
+//----------------------------------------------
+StudentNode::StudentNode(const StudentNode & node)
+{
+   Name = node.Name;
+   Address = node.Address;
+   GPA = node.GPA;
+   Next = node.Next;
+}
+
+//----------------------------------------------
+StudentNode::~StudentNode()
+{
+}
+
+
+
+Step #3:
+StudentNode *StudentNode::getNext() const
+{
+   return Next;
+}
+
+void StudentNode::setNext(StudentNode * next)
+{
+   Next = next;
+}
+
+Step #4:
+Name: John
+Address: Johnson, AR
+GPA: 2.5
+Name: Fred
+Address: Fayetteville, AR
+GPA: 3.5
+Name: Sam
+Address: Springdale, AR
+GPA: 2.9
+
+
+Step #5:
+//----------------------------------------------
+// Purpose: Demonstrate student ADT
+// Author:  John Gauch
+//----------------------------------------------
+
+#include "StudentNode.h"
+
+//----------------------------------------------
+int main()
+{
+   StudentNode *ptr1 = new StudentNode("John", "Johnson, AR", 2.5);
+   StudentNode *ptr2 = new StudentNode("Fred", "Fayetteville, AR", 3.5);
+   StudentNode *ptr3 = new StudentNode("Sam", "Springdale, AR", 2.9);
+   StudentNode *ptr4 = new StudentNode("Dave", "Bentonville, AR", 4.0);
+   StudentNode *ptr5 = new StudentNode("Bob", "Rogers, AR", 3.7);
+
+   ptr5->setNext(ptr4);
+   ptr4->setNext(ptr3);
+   ptr3->setNext(ptr2);
+   ptr2->setNext(ptr1);
+   ptr5->print();
+}
+
+Step #6:
+To be added...

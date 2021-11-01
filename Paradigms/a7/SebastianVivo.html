@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html style="background-color:LightGray;">
+  <head>
+    <title>Sebastian Vivo's Assignment 7</title>
+  </head>
+  <body>
+    <script>
+    function Car(name,fuel,engine){
+      var name = name;
+      var engine = engine;
+      var tank = new Tank(fuel);
+      var x = 0;
+      var y = 0;
+
+      //this.fuel = function() {return tank.fuel();};
+      this.description = function(){
+        return name + ": " + engine.getDesc() + ") Fuel: " + tank.getLevel() + "/" + tank.fuel() + ", Location: (" + x + "," + y + ")";
+      };
+
+      this.drive = function(miles, x, y){
+        var miles
+      }
+    }
+
+    function Engine(name,mpg,speed){
+      var name = name;
+      var mpg = mpg;
+      var speed = speed;
+
+      this.getMPG = function(){return mpg;};
+      this.getName = function(){return name;};
+      this.getSpeed = function(){return speed;};
+
+      this.getDesc = function(){return name + ": (mpg: " + this.getMPG() + ", Max Speed: " + this.getSpeed() + ")";};
+    }
+
+    function Tank(fuel) {
+      var fuel = fuel;
+     	var level = 0;
+
+      this.getLevel = function() {return level;};
+      this.setLevel = function(fill){level = fill;}
+      this.fuel = function() {return fuel;};
+    }
+
+    function createAuto(){
+      var car = document.carForm.car.value;
+      var eng = document.carForm.engine.value;
+      var mpg = document.carForm.mpg.value;
+      var maxSpeed = document.carForm.maxSpeed.value;
+      var maxFuel = document.carForm.maxFuel.value;
+
+      var engine = new Engine(eng, mpg, maxSpeed);
+      var car = new Car(car,maxFuel,engine);
+      this.car = car;
+
+      document.getElementById("onClick").style.visibility = "visible";
+      document.getElementById("driveForm").style.visibility = "visible";
+      document.getElementById("carInfo").innerHTML = car.description();
+
+      console.log(car.description());
+
+      return false;
+    }
+    createAuto.prototype.drive = function(){
+      var miles = document.driveForm.miles.value;
+      var xRatio = document.driveForm.xRatio.value;
+      var yRatio = document.driveForm.yRatio.value;
+
+      console.log("miles: " + miles + " xRatio: " + xRatio + " yRatio: " + yRatio);
+
+      this.car.drive(miles,xRatio,yRatio);
+      return false;
+    }
+    </script>
+    <h1>Sebastian Vivo's Page</h1>
+    <form id = "carForm" name = "carForm">
+      <div>
+        <label for="engine"> Enter Engine Description: </label>
+        <input type = "text" name="engine" id="engine" value="V8">
+      </div>
+      <div>
+        <label for = "mpg"> Enter Miles per Gallon: </label>
+        <input type = "number" name="mpg" id="mpg" value="30">
+      </div>
+      <div>
+        <label for = "maxSpeed"> Enter Max Speed: </label>
+        <input type = "number" name="maxSpeed" id="maxSpeed" value="120">
+      </div>
+      <div>
+        <label for = "car" > Enter Auto Description: </label>
+        <input type = "text" name="car" id="car" value="Car">
+      </div>
+      <div>
+        <label for = "maxFuel"> Enter Max Fuel: </label>
+        <input type = "numeber" name="maxFuel" id="maxFuel" value="20">
+      </div>
+      <div>
+        <input type="submit" value="Create Auto" onclick="return createAuto();">
+      </div>
+    </form>
+    <div id = "onClick" visibility = "hidden">
+      <p id = "carInfo"></p>
+      <form id = "driveForm" name = "driveForm">
+        <div>
+          <label for="miles"> Enter Miles to Drive: </label>
+          <input type = "number" name="miles" id="miles" value="800">
+        </div>
+        <div>
+          <label for = "xRatio"> Enter x ratio: </label>
+          <input type = "number" name="xRatio" id="xRatio" value="4">
+        </div>
+        <div>
+          <label for = "yRatio"> Enter y ratio: </label>
+          <input type = "number" name="yRatio" id="yRatio" value="1.5">
+        </div>
+        <div>
+          <input type="submit" value="Drive" onclick="return drive();">
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

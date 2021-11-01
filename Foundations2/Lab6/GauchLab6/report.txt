@@ -1,0 +1,290 @@
+
+Step #1:
+Sebastians-Air:gauchlab6 sebastianvivo$ ./main
+
+Please enter a number: 5
+
+Factorial of 5 = 120
+Sebastians-Air:gauchlab6 sebastianvivo$ ./main
+
+Please enter a number: -1
+
+Factorial of -1 = 1
+Sebastians-Air:gauchlab6 sebastianvivo$ ./main
+
+Please enter a number: -5
+
+Factorial of -5 = 1
+Sebastians-Air:gauchlab6 sebastianvivo$ ./main
+
+Please enter a number: 100
+
+Factorial of 100 = 0
+Sebastians-Air:gauchlab6 sebastianvivo$ ./main
+
+Please enter a number: 10
+
+Factorial of 10 = 3628800
+Sebastians-Air:gauchlab6 sebastianvivo$ ./main
+
+Please enter a number: 20
+
+Factorial of 20 = -2102132736
+Sebastians-Air:gauchlab6 sebastianvivo$ ./main
+
+Please enter a number: 15
+
+Factorial of 15 = 2004310016
+Sebastians-Air:gauchlab6 sebastianvivo$ ./main
+
+Please enter a number: 16
+
+Factorial of 16 = 2004189184
+Sebastians-Air:gauchlab6 sebastianvivo$ ./main
+
+Please enter a number: 17
+
+Factorial of 17 = -288522240
+
+
+Step #2:
+
+Please enter a number: 5
+Entering Factorial, Num = 5
+Entering Factorial, Num = 4
+Entering Factorial, Num = 3
+Entering Factorial, Num = 2
+Entering Factorial, Num = 1
+Leaving Factorial, Return = 2
+Leaving Factorial, Return = 6
+Leaving Factorial, Return = 24
+Leaving Factorial, Return = 120
+
+Factorial of 5 = 120
+Sebastians-Air:gauchlab6 sebastianvivo$ ./main
+
+Please enter a number: 10
+Entering Factorial, Num = 10
+Entering Factorial, Num = 9
+Entering Factorial, Num = 8
+Entering Factorial, Num = 7
+Entering Factorial, Num = 6
+Entering Factorial, Num = 5
+Entering Factorial, Num = 4
+Entering Factorial, Num = 3
+Entering Factorial, Num = 2
+Entering Factorial, Num = 1
+Leaving Factorial, Return = 2
+Leaving Factorial, Return = 6
+Leaving Factorial, Return = 24
+Leaving Factorial, Return = 120
+Leaving Factorial, Return = 720
+Leaving Factorial, Return = 5040
+Leaving Factorial, Return = 40320
+Leaving Factorial, Return = 362880
+Leaving Factorial, Return = 3628800
+
+Factorial of 10 = 3628800
+Sebastians-Air:gauchlab6 sebastianvivo$ ./main
+
+Please enter a number: -5
+Entering Factorial, Num = -5
+
+Factorial of -5 = 1
+Sebastians-Air:gauchlab6 sebastianvivo$ ./main
+
+Please enter a number: 20
+Entering Factorial, Num = 20
+Entering Factorial, Num = 19
+Entering Factorial, Num = 18
+Entering Factorial, Num = 17
+Entering Factorial, Num = 16
+Entering Factorial, Num = 15
+Entering Factorial, Num = 14
+Entering Factorial, Num = 13
+Entering Factorial, Num = 12
+Entering Factorial, Num = 11
+Entering Factorial, Num = 10
+Entering Factorial, Num = 9
+Entering Factorial, Num = 8
+Entering Factorial, Num = 7
+Entering Factorial, Num = 6
+Entering Factorial, Num = 5
+Entering Factorial, Num = 4
+Entering Factorial, Num = 3
+Entering Factorial, Num = 2
+Entering Factorial, Num = 1
+Leaving Factorial, Return = 2
+Leaving Factorial, Return = 6
+Leaving Factorial, Return = 24
+Leaving Factorial, Return = 120
+Leaving Factorial, Return = 720
+Leaving Factorial, Return = 5040
+Leaving Factorial, Return = 40320
+Leaving Factorial, Return = 362880
+Leaving Factorial, Return = 3628800
+Leaving Factorial, Return = 39916800
+Leaving Factorial, Return = 479001600
+Leaving Factorial, Return = 1932053504
+Leaving Factorial, Return = 1278945280
+Leaving Factorial, Return = 2004310016
+Leaving Factorial, Return = 2004189184
+Leaving Factorial, Return = -288522240
+Leaving Factorial, Return = -898433024
+Leaving Factorial, Return = 109641728
+Leaving Factorial, Return = -2102132736
+
+Factorial of 20 = -2102132736
+Sebastians-Air:gauchlab6 sebastianvivo$ ./main
+
+Please enter a number: 16
+Entering Factorial, Num = 16
+Entering Factorial, Num = 15
+Entering Factorial, Num = 14
+Entering Factorial, Num = 13
+Entering Factorial, Num = 12
+Entering Factorial, Num = 11
+Entering Factorial, Num = 10
+Entering Factorial, Num = 9
+Entering Factorial, Num = 8
+Entering Factorial, Num = 7
+Entering Factorial, Num = 6
+Entering Factorial, Num = 5
+Entering Factorial, Num = 4
+Entering Factorial, Num = 3
+Entering Factorial, Num = 2
+Entering Factorial, Num = 1
+Leaving Factorial, Return = 2
+Leaving Factorial, Return = 6
+Leaving Factorial, Return = 24
+Leaving Factorial, Return = 120
+Leaving Factorial, Return = 720
+Leaving Factorial, Return = 5040
+Leaving Factorial, Return = 40320
+Leaving Factorial, Return = 362880
+Leaving Factorial, Return = 3628800
+Leaving Factorial, Return = 39916800
+Leaving Factorial, Return = 479001600
+Leaving Factorial, Return = 1932053504
+Leaving Factorial, Return = 1278945280
+Leaving Factorial, Return = 2004310016
+Leaving Factorial, Return = 2004189184
+
+Factorial of 16 = 2004189184
+
+Step #3:
+largest number  = 46 = 1836311903
+int main()
+{
+  int num = 0;
+  int fibonacci = 0;
+
+  cout << "\nPlease enter a number: ";
+  cin >> num;
+  fibonacci = Fibonacci(num);
+  cout << "\nFibonacci of " << num << " = " << fibonacci << endl;
+}
+
+Step #4:
+Please enter a number: 5
+Entering Fibonacci, Num = 5
+Entering Fibonacci, Num = 4
+Entering Fibonacci, Num = 3
+Entering Fibonacci, Num = 2
+Entering Fibonacci, Num = 1
+Leaving Fibonacci, Return = 2
+Entering Fibonacci, Num = 2
+Leaving Fibonacci, Return = 3
+Entering Fibonacci, Num = 3
+Entering Fibonacci, Num = 2
+Entering Fibonacci, Num = 1
+Leaving Fibonacci, Return = 2
+Leaving Fibonacci, Return = 5
+
+Fibonacci of 5 = 5
+
+
+Step #5:
+float Power(float X, int p)
+{
+  int half = 0;
+  // Terminating conditions
+  if (p == 0)
+    return 1;
+  if (p == 1)
+    return X;
+
+  // Recursive cases
+  if((p % 2) == 0)
+  {
+    half = Power(X,p/2);
+    return half * half;
+  }
+  else
+  {
+    half = Power(X,p/2);
+    return half * half * X;
+  }
+}
+
+Please enter a number: 2
+
+Please enter an exponent: 5
+
+2 to the Power of 5 = 32
+Sebastians-Air:gauchlab6 sebastianvivo$ ./main
+Please enter a number: 4
+
+Please enter an exponent: 7
+
+4 to the Power of 7 = 16384
+Sebastians-Air:gauchlab6 sebastianvivo$ ./main
+Please enter a number: 16
+
+Please enter an exponent: 2
+
+16 to the Power of 2 = 256
+Sebastians-Air:gauchlab6 sebastianvivo$ ./main
+Please enter a number: 2
+
+Please enter an exponent: 7
+
+2 to the Power of 7 = 128
+Sebastians-Air:gauchlab6 sebastianvivo$ ./main
+Please enter a number: 2
+
+Please enter an exponent: -1
+
+2 to the Power of -1 = 2
+
+Step #6:
+Please enter a number: 2
+
+Please enter an exponent: -3
+
+2 to the Power of -3 = 0.125
+Sebastians-Air:gauchlab6 sebastianvivo$ g++ -Wall main.cpp -o main
+Sebastians-Air:gauchlab6 sebastianvivo$ ./main
+Please enter a number: 2
+
+Please enter an exponent: -3
+
+2 to the Power of -3 = 0.125
+Sebastians-Air:gauchlab6 sebastianvivo$ ./main
+Please enter a number: 4
+
+Please enter an exponent: -2
+
+4 to the Power of -2 = 0.0625
+Sebastians-Air:gauchlab6 sebastianvivo$ ./main
+Please enter a number: 3
+
+Please enter an exponent: -3
+
+3 to the Power of -3 = 0.037037
+Sebastians-Air:gauchlab6 sebastianvivo$ ./main
+Please enter a number: 2
+
+Please enter an exponent: -5
+
+2 to the Power of -5 = 0.03125
