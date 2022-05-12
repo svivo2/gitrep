@@ -1,0 +1,2 @@
+1. once
+2. (2 memaccess / 1 operation) ^ timesrepeted = (2/1)^k = 2^k
